@@ -1,0 +1,137 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-fang-how-animals-eat">
+  <!-- <script src="js/slidebarnat.js"></script> -->
+  <script src="js/slidebar_fang_how_animals_eat.js"></script>
+  <link rel="stylesheet" href="css/style_fang_how_animals_eat.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnFangAnimals"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnFangAnimals"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnFangAnimals"></div></div>
+  <div class="infobtnholder"><div class="infobtnFangAnimals"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnFangAnimals"></div></div>
+  <div class="menubtnholder"><div class="menubtnFangAnimals"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:14px;"><h1>Fang ... How Animals Eat!</h1></div>
+  
+    <div data-role="content" class="kidzcontent">
+      <div class="navFangAnimals-content">
+        <p>Animals are fuelled by food  they must eat to get enough nutrients and energy to survive.</p>
+		<p>The world is like a smorgasbord for animals  so many different foods to eat!  But how to choose what to eat?  And how to chew it up and digest it?</p>
+		<p>In this story, we'll learn about many of the foods of animals (spit stew anyone?), how they eat them (can you push your stomach out of your mouth?) and what it means about how big they can get.</p>
+      </div>
+      <div class="navbtn1">
+        <p><a href="sub-fang-how-animals-eat-weird-and-wonderful.html" data-transition="slide"><img src="css/images/9-12/Animals/Fang_How_Animals_Eat/Weired_And_Wonderful.png"></a></p>
+      </div>
+      <div class="navbtn2">
+        <p><a href="sub-fang-how-animals-eat-who-eats-who.html" data-transition="slide"><img src="css/images/9-12/Animals/Fang_How_Animals_Eat/Who_Eats_Who.png"></a></p>
+      </div>
+      <div class="navbtn3">
+        <p><a href="sub-fang-how-animals-eat-you-are-what-you-eat.html" data-transition="slide"><img src="css/images/9-12/Animals/Fang_How_Animals_Eat/You_Are_What_You_Eat.png"></a></p>
+      </div>
+      <div class="navbtn4">
+        <p><a href="sub-fang-how-animals-eat-create-your-own-beast.html" data-transition="slide"><img src="css/images/9-12/Animals/Fang_How_Animals_Eat/Create_Your_Own_Beast.png"></a></p>
+      </div>
+        
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/Animals/bottomhomeani.png"></a></div>
+    </div> <!-- end content -->  
+    
+  
+  <!--<div class="audiopanel">-->
+    <!-- images are in slidebarnat.js -->
+    <div class="micbtnholder"><div class="micbtnFangAnimals" id="playstopFangAnimals"></div></div>
+    <div class="bFangAnimals"><div class="rwFangAnimals" id="FangAnimalsaudiobbtn"></div></div>
+    <div class="plFangAnimals"><div class="plpsFangAnimals" id="FangAnimalsaudioplbtn"></div></div>
+    <div class="fFangAnimals"><div class="fwFangAnimals" id="FangAnimalsaudiofbtn"></div></div>
+    <div id="actualaudio-FangAnimals" style="visibility:hidden;"></div>
+  <!--</div>-->
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+    var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-FangAnimals').html('<audio id="FangAnimalsaudio" controls preload onpause="playsFangAnimals()" onplay="pauseFangAnimals()"><source src="audio/Fang_How_Animals_Eat/Fang-How-Animals-Eat-BG.mp3" type="audio/mpeg"></audio>');
+      } 
+    
+      $("#sub-fang-how-animals-eat").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { bgsoundFangAnimals.pause(); bgsoundFangAnimals.currentTime = 0; mainaudiobg.play(); });
+    
+    function goBack() {
+      $.mobile.changePage("sub-animals.html", {transition: "slide", reverse: true });
+      bgsoundFangAnimals.pause(); 
+      bgsoundFangAnimals.currentTime = 0;
+      animalsoundbg.play();
+    }
+    
+    function playsFangAnimals() {
+         bgsoundFangAnimals.play();
+    }
+       
+    function pauseFangAnimals() {
+         bgsoundFangAnimals.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+	
+    $("#playstopFangAnimals").on('tap', function() {
+      if(!playing) {
+        FangAnimalsaudio.play();
+        $('.micbtnFangAnimals').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        FangAnimalsaudio.pause(); FangAnimalsaudio.currentTime = 0;
+        $('.micbtnFangAnimals').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#FangAnimalsaudioplbtn").on('tap', function() {
+      if(!paused) {
+        FangAnimalsaudio.pause();
+        paused = true;
+      } else {
+        FangAnimalsaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#FangAnimalsaudiofbtn").on('tap', function() {
+      var ctime = FangAnimalsaudio.currentTime;
+      FangAnimalsaudio.currentTime = ctime + 10;
+    });
+    
+    $("#FangAnimalsaudiobbtn").on('tap', function() {
+      var ctime = FangAnimalsaudio.currentTime;
+      FangAnimalsaudio.currentTime = ctime - 10;
+    });
+    
+    $("#FangAnimalsaudiopsbtn").on('tap', function() {
+      FangAnimalsaudio.pause();
+      //$(".audiopanel").css({"backgroundPosition":"0px 0px"});
+    });
+    
+    $('.navbtn1').on('tap', function() { 
+      nav1Effects(); 
+    });
+    
+    $('.navbtn2').on('tap', function() { 
+      nav2Effects(); 
+    });
+    
+    $('.navbtn3').on('tap', function() { 
+      nav3Effects(); 
+    });
+    
+    $('.navbtn4').on('tap', function() { 
+      nav4Effects(); 
+    });
+  </script>
+</div> <!--//home-->

@@ -1,0 +1,175 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-fang-how-animals-eat-weird-and-wonderful-spear-time">
+  <script src="js/hammer.js"></script>
+  <script src="js/jquery.hammer.js"></script>
+  <script src="js/slidebar_fang_how_animals_eat.js"></script>
+  <link rel="stylesheet" href="css/style_fang_how_animals_eat.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnFangAnimals"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnFangAnimals"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnFangAnimals"></div></div>
+  <div class="infobtnholder"><div class="infobtnFangAnimals"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnFangAnimals"></div></div>
+  <div class="menubtnholder"><div class="menubtnFangAnimals"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:0px;"><h1>Spear Time!</h1></div>
+  <div id="spacechar">&nbsp;
+    <div data-role="content" class="kidzcontent">
+      <div class="v-spacer"></div>
+      <div class="sidebarleft-half">
+        <a id="coneshelllink" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/Animals/Fang_How_Animals_Eat/Weird_And_Wonderful/Spear_Time/Coneshell_Hi_Res.jpg', 'Cone shells are very dangerous as they fire poisonous spears');">click here</a>
+		
+		<a id="jellyfishlink" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/Animals/Fang_How_Animals_Eat/Weird_And_Wonderful/Spear_Time/JellyFish_Hi_Res.jpg', 'The little harpoons made by jellyfish start off wound up inside the tiny cell, and then fires to stab into its prey!');">click here</a>
+		
+		<div id="f1_container" style="visibility:hidden;position:absolute;left:100px;top:270px;">
+          <div id="f1_card">
+            <div class="front face">
+              <img id="dopple" src="css/images/9-12/Animals/Fang_How_Animals_Eat/Weird_And_Wonderful/Spear_Time/Omnivores.png">
+            </div>
+            <div id="backofcard" class="back face center" style="background:url(css/images/9-12/Animals/Fang_How_Animals_Eat/Weird_And_Wonderful/Spear_Time/Omnivores_Reverse.png) no-repeat;">
+              <div class="returncard" style="position:absolute;left:0px;top:0px;width:362px;height:170px;"></div>
+              <div id="trueans" style="position:absolute;left:90px;top:180px;width:70px;height:50px;"></div>
+              <div id="falseans" style="position:absolute;left:200px;top:180px;width:70px;height:50px;"></div>
+            </div>
+          </div><!--/f1+card-->
+        </div><!--/f1_container-->
+		<div id="zoomwrapper">
+          <div id="pol1" class="pPiece" style="left:100px;top:270px;">
+             <img src="css/images/9-12/Animals/Fang_How_Animals_Eat/Weird_And_Wonderful/Spear_Time/Omnivores.png" alt="" />
+          </div>
+          <div id="pol2"class="pPiece" style="left:75px;top:290px;">
+             <img src="css/images/9-12/Animals/Fang_How_Animals_Eat/Weird_And_Wonderful/Spear_Time/Coneshell.png" alt="" />
+          </div>
+		  <div id="pol3"class="pPiece" style="left:80px;top:270px;">
+             <img src="css/images/9-12/Animals/Fang_How_Animals_Eat/Weird_And_Wonderful/Spear_Time/JellyFishNew.jpg" alt="" />
+          </div>
+        </div><!--/zoomwrapper-->
+      </div>
+      
+      <div class="bpcontentFangAnimals">
+        <p>If you need to catch some dinner, chasing it down can be hard work - there must be a better way!  Some animals use nifty tricks to catch their food.  Snails called cone shells make little harpoons that they can fire at an unsuspecting fish, pulling it back into their mouths using a long thread.  The harpoon is also highly poisonous.  It's not only able to kill small fish but some can kill people!</p>
+		<p>Jellyfish floating in the sea can look completely harmless, but they also make mini-spears that they fire from very long tentacles when an animal touches them.  Box jellyfish are particularly dangerous, so be careful not to touch them even when they're on the beach!</p>
+      </div>
+       
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/Animals/bottomhomeani.png"></a></div>
+    </div> <!-- end content -->  
+  </div><!--/spacechar-->        
+  
+    <div class="micbtnholder"><div class="micbtnFangAnimals" id="playstopspeartime"></div></div>
+    <div class="bFangAnimals"><div class="rwFangAnimals" id="speartimeaudiobbtn"></div></div>
+    <div class="plFangAnimals"><div class="plpsFangAnimals" id="speartimeaudioplbtn"></div></div>
+    <div class="fFangAnimals"><div class="fwFangAnimals" id="speartimeaudiofbtn"></div></div>
+    <div id="actualaudio-speartime" style="visibility:hidden;"></div>
+  <!-- </div> -->
+  
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+ 
+	var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      $('div#pol2').css("z-index", 1);
+      $('div#pol1').css("z-index", 2);
+      $('div#pol1 > img').css("-webkit-transform", "rotate(0deg)");
+      $('div#pol2 > img').css("-webkit-transform", "rotate(5deg)");
+      $('div#pol3 > img').css("-webkit-transform", "rotate(-3deg)");
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-speartime').html('<audio id="speartimeaudio" controls preload onpause="playsFangAnimals()" onplay="pauseFangAnimals()"><source src="audio/Fang_How_Animals_Eat/Spear_Time.mp3" type="audio/mpeg"></audio>');
+      }             
+      $("#sub-fang-how-animals-eat-weird-and-wonderful-spear-time").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundFangAnimals.pause(); bgsoundFangAnimals.currentTime = 0;});
+	
+    $('#falseans').on('tap', function() {
+      alert("Wrong answer");
+    });
+    $('#trueans').on('tap', function() {
+      alert("Correct answer");
+    });
+    
+    $(".returncard").on('tap', function() {
+      $('#f1_card').css({"-webkit-transform": "rotateY(0deg)"});
+      $('#f1_card').css({"-moz-transform": "rotateY(0deg)"});
+      $('#f1_card').css({"-o-transform": "rotateY(0deg)"});
+      $('#f1_card').css({"transform": "rotateY(0deg)"});
+      setTimeout(function() {
+        $("#pol1").css({"visibility":"visible", "z-index":4});
+        $('#f1_container').css({"visibility":"hidden", "z-index":0});
+      }, 1000);
+    });
+    
+    $("#pol1").on('tap', function() {
+      $('#f1_container').css({"visibility":"visible", "z-index":10});
+      $(this).css({"visibility":"hidden"});
+      $('#f1_card').css({"-webkit-transform": "rotateY(180deg)"});
+      $('#f1_card').css({"-moz-transform": "rotateY(180deg)"});
+      $('#f1_card').css({"-o-transform": "rotateY(180deg)"});
+      $('#f1_card').css({"transform": "rotateY(180deg)"});
+    });
+	
+    $("#pol2").on('tap', function() {
+      $('#coneshelllink')[0].click();
+    });
+	
+	$("#pol3").on('tap', function() {
+      $('#jellyfishlink')[0].click();
+    });
+    
+    function goBack() {
+      $.mobile.changePage("sub-fang-how-animals-eat-weird-and-wonderful.html", {transition: "slide", reverse: true });
+    }
+    
+    function playsFangAnimals() {
+         bgsoundFangAnimals.play();
+    }
+       
+    function pauseFangAnimals() {
+         bgsoundFangAnimals.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+    $("#playstopspeartime").on('tap', function() {
+      if(!playing) {
+        speartimeaudio.play();
+        $('.micbtnFangAnimals').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        speartimeaudio.pause(); speartimeaudio.currentTime = 0;
+        $('.micbtnFangAnimals').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#speartimeaudioplbtn").on('tap', function() {
+      if(!paused) {
+        speartimeaudio.pause();
+        paused = true;
+      } else {
+        speartimeaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#speartimeaudiofbtn").on('tap', function() {
+      var ctime = speartimeaudio.currentTime;
+      speartimeaudio.currentTime = ctime + 10;
+    });
+    
+    $("#speartimeaudiobbtn").on('tap', function() {
+      var ctime = speartimeaudio.currentTime;
+      speartimeaudio.currentTime = ctime - 10;
+    });
+    
+    $("#speartimeaudiopsbtn").on('tap', function() {
+      speartimeaudio.pause();
+    });
+  </script>
+  <script src="js/threecardLogic.js"></script>  <!-- for card dragging effects -->
+</div> <!--//home-->

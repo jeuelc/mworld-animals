@@ -1,0 +1,128 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-fang-how-animals-eat-you-are-what-you-eat">
+  <script src="js/slidebar_fang_how_animals_eat.js"></script>
+  <link rel="stylesheet" href="css/style_fang_how_animals_eat.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnFangAnimals"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnFangAnimals"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnFangAnimals"></div></div>
+  <div class="infobtnholder"><div class="infobtnFangAnimals"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnFangAnimals"></div></div>
+  <div class="menubtnholder"><div class="menubtnFangAnimals"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:14px;"><h1>You Are What You Eat!</h1></div>
+  <div id="dinnerlink" style="position: absolute;left: 352px;top: 265px;width: 185px;height: 194px;"></div>
+  <div id="teethlink" style="position: absolute;left: 620px;top: 260px;width: 175px;height: 183px;"></div>
+  <div id="howbiglink" style="position: absolute;left: 122px;top: 458px;width: 222px;height: 212px;"></div>
+  <div id="friendslink" style="position: absolute;left: 435px;top: 485px;width: 253px;height: 175px;"></div>
+  <div id="usandeatinglink" style="position: absolute;left: 780px;top: 440px;width: 188px;height: 215px;"></div>
+  <div data-role="content" class="kidzcontent">
+	<div class="bpcontentFangAnimals-whatyoueat">
+        <p>Food gives you energy - to play, fight and find a mate.  Some foods have lots of energy in them, like meat, while for other foods you have to eat a lot to get enough energy, like grass.</p>
+		<p>The more high-energy food you eat, the more time you have for playing, fighting and mating rather than searching for food!  There are other special ingredients like protein that you use to make muscle  you need to make sure you get enough of these.  Other foods provide the very small but essential things that you must have but only in tiny quantities, like iron to make healthy blood cells.  But too much iron is bad for you.  Some foods supply all that you need, so many animals will not just search for foods they like but also what is good for them.  Elephants can walk a long way to find salt for example, as that is very important for many things in the body.</p>
+		<p>So the type of food you eat determines a lot about you - so you really are what you eat!</p>
+	</div>
+    <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/Animals/bottomhomeani.png"></a></div>
+  </div> <!-- end content -->  
+    
+  
+  <!--<div class="audiopanel">-->
+    <!-- images are in slidebarnat.js 
+         note: change the ids to be able play the narration
+    -->
+    <div class="micbtnholder"><div class="micbtnFangAnimals" id="playstopWhatYouEat"></div></div>
+    <div class="bFangAnimals"><div class="rwFangAnimals" id="WhatYouEataudiobbtn"></div></div>
+    <div class="plFangAnimals"><div class="plpsFangAnimals" id="WhatYouEataudioplbtn"></div></div>
+    <div class="fFangAnimals"><div class="fwFangAnimals" id="WhatYouEataudiofbtn"></div></div>
+    <div id="actualaudio-WhatYouEat" style="visibility:hidden;"></div>
+  <!--</div>-->
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+    var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-WhatYouEat').html('<audio id="WhatYouEataudio" controls preload onpause="playsFangAnimals()" onplay="pauseFangAnimals()"><source src="audio/Fang_How_Animals_Eat/What_You_Eat.mp3" type="audio/mpeg"></audio>');
+      } 
+    
+      $("#sub-fang-how-animals-eat-you-are-what-you-eat").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+	$('#dinnerlink').on('tap', function() {
+      $.mobile.changePage("sub-fang-how-animals-eat-you-are-what-you-eat-dinner-or-your-life.html", {transition: "slide"});
+    });
+    
+    $('#teethlink').on('tap', function() {
+      $.mobile.changePage("sub-fang-how-animals-eat-you-are-what-you-eat-teeth-or-not.html", {transition: "slide"});
+    });
+    
+    $('#howbiglink').on('tap', function() {
+      $.mobile.changePage("sub-fang-how-animals-eat-you-are-what-you-eat-how-big-can-I-get.html", {transition: "slide"});
+    });
+	
+	$('#friendslink').on('tap', function() {
+      $.mobile.changePage("sub-fang-how-animals-eat-you-are-what-you-eat-friends-or-no-friends.html", {transition: "slide"});
+    });
+	
+	$('#usandeatinglink').on('tap', function() {
+      $.mobile.changePage("sub-fang-how-animals-eat-you-are-what-you-eat-us-and-eating.html", {transition: "slide"});
+    });
+	
+    $('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundFangAnimals.pause(); bgsoundFangAnimals.currentTime = 0;});
+    
+    function goBack() {
+      $.mobile.changePage("sub-fang-how-animals-eat.html", {transition: "slide", reverse: true });
+    }
+    
+    function playsFangAnimals() {
+         bgsoundFangAnimals.play();
+    }
+       
+    function pauseFangAnimals() {
+         bgsoundFangAnimals.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+    $("#playstopWhatYouEat").on('tap', function() {
+      if(!playing) {
+        WhatYouEataudio.play();
+        $('.micbtnFangAnimals').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        WhatYouEataudio.pause(); WhatYouEataudio.currentTime = 0;
+        $('.micbtnFangAnimals').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#WhatYouEataudioplbtn").on('tap', function() {
+      if(!paused) {
+        WhatYouEataudio.pause();
+        paused = true;
+      } else {
+        WhatYouEataudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#WhatYouEataudiofbtn").on('tap', function() {
+      var ctime = WhatYouEataudio.currentTime;
+      WhatYouEataudio.currentTime = ctime + 10;
+    });
+    
+    $("#WhatYouEataudiobbtn").on('tap', function() {
+      var ctime = WhatYouEataudio.currentTime;
+      WhatYouEataudio.currentTime = ctime - 10;
+    });
+    
+    $("#WhatYouEataudiopsbtn").on('tap', function() {
+      WhatYouEataudio.pause();
+    });
+  </script>
+</div> <!--//home-->

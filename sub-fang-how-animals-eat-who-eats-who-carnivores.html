@@ -1,0 +1,181 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-fang-how-animals-eat-who-eats-who-carnivores">
+  <script src="js/hammer.js"></script>
+  <script src="js/jquery.hammer.js"></script>
+  <script src="js/slidebar_fang_how_animals_eat.js"></script>
+  <link rel="stylesheet" href="css/style_fang_how_animals_eat.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnFangAnimals"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnFangAnimals"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnFangAnimals"></div></div>
+  <div class="infobtnholder"><div class="infobtnFangAnimals"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnFangAnimals"></div></div>
+  <div class="menubtnholder"><div class="menubtnFangAnimals"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:0px;"><h1>Carnivores</h1></div>
+  <div id="spacechar">&nbsp;
+    <div data-role="content" class="kidzcontent">
+      <div class="v-spacer"></div>
+      <div class="sidebarleft-half">
+        <a id="catmouselink" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/Animals/Fang_How_Animals_Eat/Who_Eats_Who/Carnivores/Cat_And_Mouse_Hi_Res.jpg', 'Eating a mouse is not that easy - cats are great hunters with sharp claws and teeth');">click here</a>
+		
+		<a id="sharklink" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/Animals/Fang_How_Animals_Eat/Who_Eats_Who/Carnivores/Shark_Hi_Res.jpg', 'Shark on the attack');">click here</a>
+		
+		<a id="animalcelllink" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/Animals/Fang_How_Animals_Eat/Who_Eats_Who/Carnivores/Animal_Cell_Hi_Res.jpg', 'Animal cells don\'t have a wall around them and so are easier to digest');">click here</a>
+        
+        <div id="zoomwrapper">
+          <div id="pol1" class="pPiece" style="left:100px;top:270px;">
+             <img src="css/images/9-12/Animals/Fang_How_Animals_Eat/Who_Eats_Who/Carnivores/Lion_Teeth.png" alt="" />
+          </div>
+          <div id="pol2"class="pPiece" style="left:75px;top:290px;">
+             <img src="css/images/9-12/Animals/Fang_How_Animals_Eat/Who_Eats_Who/Carnivores/Cat_And_Mouse.png" alt="" />
+          </div>
+		  <div id="pol3"class="pPiece" style="left:80px;top:270px;">
+             <img src="css/images/9-12/Animals/Fang_How_Animals_Eat/Who_Eats_Who/Carnivores/Shark.png" alt="" />
+          </div>
+		  <div id="pol4"class="pPiece" style="left:70px;top:270px;">
+             <img src="css/images/9-12/Animals/Fang_How_Animals_Eat/Who_Eats_Who/Carnivores/Animal_Cell.png" alt="" />
+          </div>
+        </div><!--/zoomwrapper-->
+      </div>
+      
+      <div class="bpcontentFangAnimals">
+        <p>Eating animals can be good for you - after all, they contain all the same nutrients as your own body.  Like plants, animals don't like to be eaten, but they are able to run, fight and hide to get away!  If you want to be a carnivore, you have to find ways of hunting and chasing to get your dinner.</p>
+		<p>So carnivores usually have big, sharp teeth to help them catch food and tear it apart before they swallow it.  In comparison to wombats, lions chew up and down with their bladed teeth, check out the video to see more!  Think about yourself when you eat a bit of steak or a carrot.  Which one do you chew more before swallowing?  How long does your pet rabbit to feed in a day and compare that to how long your pet cat or dog takes to eat their meal?  Cats and dogs have claws and sharp teeth to catch little animals like mice.</p>
+		<p>Animal tissue is quite easy to digest, though, because the cells are not surrounded by a wall like they are in plants.</p>
+	  </div>
+       
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/Animals/bottomhomeani.png"></a></div>
+    </div> <!-- end content -->  
+  </div><!--/spacechar-->        
+  
+    <div class="micbtnholder"><div class="micbtnFangAnimals" id="playstopcarnivores"></div></div>
+    <div class="bFangAnimals"><div class="rwFangAnimals" id="carnivoresaudiobbtn"></div></div>
+    <div class="plFangAnimals"><div class="plpsFangAnimals" id="carnivoresaudioplbtn"></div></div>
+    <div class="fFangAnimals"><div class="fwFangAnimals" id="carnivoresaudiofbtn"></div></div>
+    <div id="actualaudio-carnivores" style="visibility:hidden;"></div>
+  <!-- </div> -->
+  
+  <!-- ----------------------- Video embedding --------------------------- -->
+  
+	<div id="watchLavaFlowholder" style="width:1024px;height:748px;position:absolute;left:0px;top:0px;visibility:hidden;background:#000000;z-index:-1;">
+    <video id="watchLavaFlow" width="1024" height="748" preload>
+      <source src="css/images/9-12/Animals/Fang_How_Animals_Eat/Who_Eats_Who/Carnivores/Lion_Teeth.avi" type="video/mp4">
+    </video>
+  </div>
+  
+  <!-- ------------------------------------------------------------------ -->
+  
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+ 
+	var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      $('div#pol1').css("z-index", 3);
+      $('div#pol2').css("z-index", 2);
+      $('div#pol3').css("z-index", 1);
+      $('div#pol1 > img').css("-webkit-transform", "rotate(0deg)");
+      $('#watchLavaFlowholder').css({"visibility":"hidden", "z-index":-10});		
+      $('div#pol2 > img').css("-webkit-transform", "rotate(5deg)");
+      $('div#pol3 > img').css("-webkit-transform", "rotate(-3deg)");
+      $('#watchMtTungurahuaholder').css({"visibility":"hidden", "z-index":-10});		
+      $('div#pol4 > img').css("-webkit-transform", "rotate(-6deg)");
+      
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-carnivores').html('<audio id="carnivoresaudio" controls preload onpause="playsFangAnimals()" onplay="pauseFangAnimals()"><source src="audio/Fang_How_Animals_Eat/Carnivores.mp3" type="audio/mpeg"></audio>');
+      }             
+      $("#sub-fang-how-animals-eat-who-eats-who-carnivores").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+	  watchLavaFlow.addEventListener('ended', function() { 
+        $("#watchLavaFlowholder").css({"visibility":"hidden", "z-index":-1});
+        $("#watchLavaFlow").css({"z-index":-1});
+        bgsoundFangAnimals.play(); 
+      });
+    
+      $("#watchLavaFlow").on('tap', function() {
+        $("#watchLavaFlowholder").css({"visibility":"hidden", "z-index":-1});
+        $("#watchLavaFlow").css({"z-index":-1});
+        bgsoundFangAnimals.play();
+        watchLavaFlow.pause();
+        watchLavaFlow.currentTime = 0;
+      });
+	  
+    $('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundFangAnimals.pause(); bgsoundFangAnimals.currentTime = 0;});
+	
+    $("#pol1").on('tap', function(){
+      $("#watchLavaFlowholder").css({"visibility":"visible", "z-index":10});
+      $("#watchLavaFlow").css({"z-index":9});
+      bgsoundFangAnimals.pause();
+      watchLavaFlow.play();
+    });
+    $("#pol2").on('tap', function(){
+      $('#catmouselink')[0].click();
+    });
+	
+    $("#pol3").on('tap', function() {
+      $('#sharklink')[0].click();
+    });
+	
+	$("#pol4").on('tap', function() {
+      $('#animalcelllink')[0].click();
+    });
+    
+    function goBack() {
+      $.mobile.changePage("sub-fang-how-animals-eat-who-eats-who.html", {transition: "slide", reverse: true });
+    }
+    
+    function playsFangAnimals() {
+         bgsoundFangAnimals.play();
+    }
+       
+    function pauseFangAnimals() {
+         bgsoundFangAnimals.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+    $("#playstopcarnivores").on('tap', function() {
+      if(!playing) {
+        carnivoresaudio.play();
+        $('.micbtnFangAnimals').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        carnivoresaudio.pause(); carnivoresaudio.currentTime = 0;
+        $('.micbtnFangAnimals').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#carnivoresaudioplbtn").on('tap', function() {
+      if(!paused) {
+        carnivoresaudio.pause();
+        paused = true;
+      } else {
+        carnivoresaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#carnivoresaudiofbtn").on('tap', function() {
+      var ctime = carnivoresaudio.currentTime;
+      carnivoresaudio.currentTime = ctime + 10;
+    });
+    
+    $("#carnivoresaudiobbtn").on('tap', function() {
+      var ctime = carnivoresaudio.currentTime;
+      carnivoresaudio.currentTime = ctime - 10;
+    });
+    
+    $("#carnivoresaudiopsbtn").on('tap', function() {
+      carnivoresaudio.pause();
+    });
+  </script>
+  <script src="js/fourcardLogic.js"></script>  <!-- for card dragging effects -->
+</div> <!--//home-->
