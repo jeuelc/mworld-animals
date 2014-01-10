@@ -1,0 +1,102 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-adapting-to-new-world-how-do-animals-adapt-Responding-to-change-Great-Snakes">
+  <script src="js/slidebar_Adapting_New_World.js"></script>
+  <link rel="stylesheet" href="css/style_Adapting_New_World.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnAdaptingNewWorld"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnAdaptingNewWorld"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnAdaptingNewWorld"></div></div>
+  <div class="infobtnholder"><div class="infobtnAdaptingNewWorld"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnAdaptingNewWorld"></div></div>
+  <div class="menubtnholder"><div class="menubtnAdaptingNewWorld"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:14px;"><h1>Great Snakes!</h1></div>
+  <div data-role="content" class="kidzcontent">
+	<div class="navAdaptingNewWorld-great-snakes">
+        <p>Island life is often peculiar.  The scientist Charles Darwin visited the Galapagos islands and explained how evolution occurs based on the many new animal and plant species he found there.</p>
+		<p>Weird things can happen to animals' bodies when they are isolated on an island.  Australian tiger snakes are a fascinating example of this phenomenon, with giants occurring on some islands, and dwarfs on others!  These body size changes have occurred on multiple occasions and within 10,000 years, which is relatively quick by evolutionary standards!</p>
+		<p>Variations in their prey were probably responsible for this difference in size.  Where the prey was larger, perhaps the head size needed to grow to enable the snake to eat.  Snakes that could produce larger young through genetic mutations or by stretching their mouths to swallow food were more likely to dominate and give birth to the next generation.</p>
+      </div>
+    <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/Animals/bottomhomeani.png"></a></div>
+  </div> <!-- end content -->  
+    
+  
+    <!--<div class="audiopanel">-->
+    <!-- images are in slidebarnat.js 
+         note: change the ids to be able play the narration -->
+    <div class="micbtnholder"><div class="micbtnAdaptingNewWorld" id="playstopGreatSnakes"></div></div>
+    <div class="bAdaptingNewWorld"><div class="rwAdaptingNewWorld" id="GreatSnakesaudiobbtn"></div></div>
+    <div class="plAdaptingNewWorld"><div class="plpsAdaptingNewWorld" id="GreatSnakesaudioplbtn"></div></div>
+    <div class="fAdaptingNewWorld"><div class="fwAdaptingNewWorld" id="GreatSnakesaudiofbtn"></div></div>
+    <div id="actualaudio-GreatSnakes" style="visibility:hidden;"></div>
+  <!--</div>-->
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+    var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-GreatSnakes').html('<audio id="GreatSnakesaudio" controls preload onpause="playsAdaptingToNewWorld()" onplay="pauseAdaptingToNewWorld()"><source src="audio/Adapting_To_New_World/Great_Snakes.mp3" type="audio/mpeg"></audio>');
+      } 
+    
+      $("#sub-adapting-to-new-world-how-do-animals-adapt-Responding-to-change-Great-Snakes").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundAdaptingToNewWorld.pause(); bgsoundAdaptingToNewWorld.currentTime = 0;});
+    
+    function goBack() {
+      $.mobile.changePage("sub-adapting-to-new-world-how-do-animals-adapt-Responding-to-change.html", {transition: "slide", reverse: true });
+    }
+    
+    function playsAdaptingToNewWorld() {
+         bgsoundAdaptingToNewWorld.play();
+    }
+       
+    function pauseAdaptingToNewWorld() {
+         bgsoundAdaptingToNewWorld.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+    $("#playstopGreatSnakes").on('tap', function() {
+      if(!playing) {
+        GreatSnakesaudio.play();
+        $('.micbtnAdaptingNewWorld').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        GreatSnakesaudio.pause(); GreatSnakesaudio.currentTime = 0;
+        $('.micbtnAdaptingNewWorld').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#GreatSnakesaudioplbtn").on('tap', function() {
+      if(!paused) {
+        GreatSnakesaudio.pause();
+        paused = true;
+      } else {
+        GreatSnakesaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#GreatSnakesaudiofbtn").on('tap', function() {
+      var ctime = GreatSnakesaudio.currentTime;
+      GreatSnakesaudio.currentTime = ctime + 10;
+    });
+    
+    $("#GreatSnakesaudiobbtn").on('tap', function() {
+      var ctime = GreatSnakesaudio.currentTime;
+      GreatSnakesaudio.currentTime = ctime - 10;
+    });
+    
+    $("#GreatSnakesaudiopsbtn").on('tap', function() {
+      GreatSnakesaudio.pause();
+    });
+  </script>
+</div> <!--//home-->

@@ -1,0 +1,127 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-adapting-to-new-world-extinction-and-new-species">
+  <script src="js/slidebar_Adapting_New_World.js"></script>
+  <link rel="stylesheet" href="css/style_Adapting_New_World.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnAdaptingNewWorld"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnAdaptingNewWorld"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnAdaptingNewWorld"></div></div>
+  <div class="infobtnholder"><div class="infobtnAdaptingNewWorld"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnAdaptingNewWorld"></div></div>
+  <div class="menubtnholder"><div class="menubtnAdaptingNewWorld"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:14px;"><h1>Extinctions and New Species</h1></div>
+  
+    <div data-role="content" class="kidzcontent">
+      <div class="navAdaptingNewWorld-content3">
+        <p>Animals can never relax when it comes to adaptation. Your environment is constantly changing, and you will need to do likewise - much like running on a treadmill! Whether your food sources are dwindling or parasites and predators are moving into your territory, if you stop adapting you lag behind. Those species not up to the task fall back and may eventually become extinct. In contrast, species that are good at change may even split into multiple species. We call this 'speciation'. This happens when individuals change so much that they can no longer reproduce with animals who share a common ancestor.</p >
+      </div>
+        
+      <div class="navbtn1" style="top:420px;">
+        <p><a href="sub-adapting-to-new-world-extinction-and-new-species-Speed-Breeders.html" data-transition="slide"><img src="css/images/9-12/Animals/Adapting_To_New_Worlds/Extinctions_And_New_Species/Speed_Breeders.png"></a></p>
+      </div>
+      <div class="navbtn2" style="left:400px;">
+        <p><a href="sub-adapting-to-new-world-extinction-and-new-species-Forming-New-Species.html" data-transition="slide"><img src="css/images/9-12/Animals/Adapting_To_New_Worlds/Extinctions_And_New_Species/Forming_New_Species.png"></a></p>
+      </div>
+      <div class="navbtn3" style="top:420px;">
+        <p><a href="sub-adapting-to-new-world-extinction-and-new-species-Extinction-The-End.html" data-transition="slide"><img src="css/images/9-12/Animals/Adapting_To_New_Worlds/Extinctions_And_New_Species/Extinction_The_End.png"></a></p>
+      </div>
+        
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/Animals/bottomhomeani.png"></a></div>
+    </div> <!-- end content -->  
+    
+  
+  <!--<div class="audiopanel">-->
+    <!-- images are in slidebarnat.js 
+         note: change the ids to be able play the narration
+    -->
+    <div class="micbtnholder"><div class="micbtnAdaptingNewWorld" id="playstopExtinction"></div></div>
+    <div class="bAdaptingNewWorld"><div class="rwAdaptingNewWorld" id="Extinctionaudiobbtn"></div></div>
+    <div class="plAdaptingNewWorld"><div class="plpsAdaptingNewWorld" id="Extinctionaudioplbtn"></div></div>
+    <div class="fAdaptingNewWorld"><div class="fwAdaptingNewWorld" id="Extinctionaudiofbtn"></div></div>
+    <div id="actualaudio-Extinction" style="visibility:hidden;"></div>
+  <!--</div>-->
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+    var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-Extinction').html('<audio id="Extinctionaudio" controls preload onpause="playsAdaptingNewWorld()" onplay="pauseAdaptingNewWorld()"><source src="audio/Adapting_To_New_World/Extinction_New_Species.mp3" type="audio/mpeg"></audio>');
+      } 
+    
+      $("#sub-adapting-to-new-world-extinction-and-new-species").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { bgsoundAdaptingToNewWorld.pause(); bgsoundAdaptingToNewWorld.currentTime = 0; mainaudiobg.play(); });
+    
+    function goBack() {
+      $.mobile.changePage("sub-adapting-to-new-world.html", {transition: "slide", reverse: true });
+    }
+    
+    function playsAdaptingToNewWorld() {
+         bgsoundAdaptingToNewWorld.play();
+    }
+       
+    function pauseAdaptingToNewWorld() {
+         bgsoundAdaptingToNewWorld.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+    $("#playstopExtinction").on('tap', function() {
+      if(!playing) {
+        Extinctionaudio.play();
+        $('.micbtnAdaptingNewWorld').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        Extinctionaudio.pause(); Extinctionaudio.currentTime = 0;
+        $('.micbtnAdaptingNewWorld').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#Extinctionaudioplbtn").on('tap', function() {
+      if(!paused) {
+        Extinctionaudio.pause();
+        paused = true;
+      } else {
+        Extinctionaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#Extinctionaudiofbtn").on('tap', function() {
+      var ctime = Extinctionaudio.currentTime;
+      Extinctionaudio.currentTime = ctime + 10;
+    });
+    
+    $("#Extinctionaudiobbtn").on('tap', function() {
+      var ctime = Extinctionaudio.currentTime;
+      Extinctionaudio.currentTime = ctime - 10;
+    });
+    
+    $("#Extinctionaudiopsbtn").on('tap', function() {
+      Extinctionaudio.pause();
+      //$(".audiopanel").css({"backgroundPosition":"0px 0px"});
+    });
+    
+    $('.navbtn1').on('tap', function() { 
+      nav1Effects(); 
+    });
+    
+    $('.navbtn2').on('tap', function() { 
+      nav2Effects(); 
+    });
+    
+    $('.navbtn3').on('tap', function() { 
+      nav3Effects(); 
+    });
+    
+  </script>
+</div> <!--//home-->

@@ -1,0 +1,182 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-adapting-to-new-world-how-do-animals-adapt-Responding-to-change">
+  <script src="js/hammer.js"></script>
+  <script src="js/jquery.hammer.js"></script>
+  <script src="js/slidebar_Adapting_New_World.js"></script>
+  <link rel="stylesheet" href="css/style_Adapting_New_World.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnAdaptingNewWorld"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnAdaptingNewWorld"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnAdaptingNewWorld"></div></div>
+  <div class="infobtnholder"><div class="infobtnAdaptingNewWorld"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnAdaptingNewWorld"></div></div>
+  <div class="menubtnholder"><div class="menubtnAdaptingNewWorld"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:14px;"><h1>Responding to Change</h1></div>
+  <div id="spacechar">&nbsp;
+    <div data-role="content" class="kidzcontent">
+      <div class="v-spacer"></div>
+      <div class="sidebarleft-half">
+        
+		<a id="grasshoperlink" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/Animals/Adapting_To_New_Worlds/How_Do_Animals_Adapt/Responding_To_Change/Grasshoppers_Hi_Res.png', 'Not all behavioral and physical change is controlled by your genome.  These otherwise identical grasshoppers change their appearance as they grow!  When they live in large groups, they are mottled.  (Courtesy: Gregory Sword)');">click here</a>
+		
+        <div id="f1_container" style="visibility:hidden;position:absolute;left:100px;top:270px;">
+          <div id="f1_card">
+            <div class="front face">
+              <img id="dopple" src="css/images/9-12/Animals/Adapting_To_New_Worlds/How_Do_Animals_Adapt/Responding_To_Change/DNA_With_Cards.png">
+            </div>
+            <div id="backofcard" class="back face center" style="background:url(css/images/9-12/Animals/Adapting_To_New_Worlds/How_Do_Animals_Adapt/Responding_To_Change/DNA_With_Cards_Reverse.png) no-repeat;">
+              <div class="returncard" style="position:absolute;left:0px;top:0px;width:362px;height:170px;"></div>
+              <div id="trueans" style="position:absolute;left:90px;top:180px;width:70px;height:50px;"></div>
+              <div id="falseans" style="position:absolute;left:200px;top:180px;width:70px;height:50px;"></div>
+            </div>
+          </div><!--/f1+card-->
+        </div><!--/f1_container-->
+		
+        <div id="zoomwrapper">
+          <div id="pol1" class="pPiece" style="left:100px;top:270px;">
+             <img src="css/images/9-12/Animals/Adapting_To_New_Worlds/How_Do_Animals_Adapt/Responding_To_Change/DNA_With_Cards.png" alt="" />
+          </div>
+          <div id="pol2"class="pPiece" style="left:75px;top:290px;">
+             <img src="css/images/9-12/Animals/Adapting_To_New_Worlds/How_Do_Animals_Adapt/Responding_To_Change/Spot_The_Moth.png" alt="" />
+          </div>
+          <div id="pol3"class="pPiece" style="left:80px;top:270px;">
+             <img src="css/images/9-12/Animals/Adapting_To_New_Worlds/How_Do_Animals_Adapt/Responding_To_Change/Great_Snakes.png" alt="" />
+          </div>
+          <div id="pol4"class="pPiece" style="left:70px;top:270px;">
+             <img src="css/images/9-12/Animals/Adapting_To_New_Worlds/How_Do_Animals_Adapt/Responding_To_Change/Grasshoppers.png" alt="" />
+          </div>
+          
+        </div><!--/zoomwrapper-->
+      </div>
+      
+      <div class="bpcontentAdaptingNewWorld">
+        <p>For most of our lives, our cells are dividing all the time.  Every time a cell divides, a copy of the DNA is created.  But since DNA is billions of nucleotides long, mistakes (or 'mutations') are common in the copying process.  Mutations may be random but can be accelerated through environmental factors such as the presence of ultraviolet light or radioactivity.  Most of these errors have no major impact, but others are bad and affect the animals' chances of survival.</p>
+		<p>DNA copying and mutations also occur during reproduction as animals produce their young.  Every so often a mutation results in a new genotype that is able to produce a phenotype that is better suited to the environment.</p>
+		<p>The process whereby animals with negative mutations do not survive is called 'natural selection'.  The animals that do survive give birth to the next generation.</p>
+      </div>
+       
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/Animals/bottomhomeani.png"></a></div>
+    </div> <!-- end content -->  
+  </div><!--/spacechar-->        
+  
+  <!-- <div class="audiopanel"> -->
+    <!-- images are in slidebarnat.js 
+         note: change the ids to be able play the narration
+    -->
+    <div class="micbtnholder"><div class="micbtnAdaptingNewWorld" id="playstopRespondingToChange"></div></div>
+    <div class="bAdaptingNewWorld"><div class="rwAdaptingNewWorld" id="RespondingToChangeaudiobbtn"></div></div>
+    <div class="plAdaptingNewWorld"><div class="plpsAdaptingNewWorld" id="RespondingToChangeaudioplbtn"></div></div>
+    <div class="fAdaptingNewWorld"><div class="fwAdaptingNewWorld" id="RespondingToChangeaudiofbtn"></div></div>
+    <div id="actualaudio-RespondingToChange" style="visibility:hidden;"></div>
+  <!-- </div> -->
+  
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+    var playing;
+    var paused;
+    (function() {
+      $('div#pol1').css("z-index", 3);
+      $('div#pol2').css("z-index", 2);
+      $('div#pol3').css("z-index", 1);
+      $('div#pol1 > img').css("-webkit-transform", "rotate(0deg)");
+      $('div#pol2 > img').css("-webkit-transform", "rotate(5deg)");
+      $('div#pol3 > img').css("-webkit-transform", "rotate(-3deg)");
+      $('div#pol4 > img').css("-webkit-transform", "rotate(-3deg)");
+      
+      playing = false;
+      paused = true;
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-RespondingToChange').html('<audio id="RespondingToChangeaudio" controls preload onpause="playsAdaptingToNewWorld()" onplay="pauseAdaptingToNewWorld()"><source src="audio/Adapting_To_New_World/Responding_To_Change.mp3" type="audio/mpeg"></audio>');
+      } 
+
+      $("#sub-adapting-to-new-world-how-do-animals-adapt-Responding-to-change").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundAdaptingToNewWorld.pause(); bgsoundAdaptingToNewWorld.currentTime = 0;});
+    
+    function goBack() {
+      $.mobile.changePage("sub-adapting-to-new-world-how-do-animals-adapt.html", {transition: "slide", reverse: true });
+    }
+    
+    $(".returncard").on('tap', function() {
+      $('#f1_card').css({"-webkit-transform": "rotateY(0deg)"});
+      $('#f1_card').css({"-moz-transform": "rotateY(0deg)"});
+      $('#f1_card').css({"-o-transform": "rotateY(0deg)"});
+      $('#f1_card').css({"transform": "rotateY(0deg)"});
+      setTimeout(function() {
+        $("#pol1").css({"visibility":"visible", "z-index":4});
+        $('#f1_container').css({"visibility":"hidden", "z-index":0});
+      }, 1000);
+    });
+    
+    $("#pol1").on('tap', function() {
+      $('#f1_container').css({"visibility":"visible", "z-index":10});
+      $(this).css({"visibility":"hidden"});
+      $('#f1_card').css({"-webkit-transform": "rotateY(180deg)"});
+      $('#f1_card').css({"-moz-transform": "rotateY(180deg)"});
+      $('#f1_card').css({"-o-transform": "rotateY(180deg)"});
+      $('#f1_card').css({"transform": "rotateY(180deg)"});
+    });
+    $("#pol2").on('tap', function() {
+      $.mobile.changePage("sub-adapting-to-new-world-how-do-animals-adapt-Responding-to-change-Spot-the-Moth.html", {transition: "slide"});
+    });
+    $("#pol3").on('tap', function() {
+      $.mobile.changePage("sub-adapting-to-new-world-how-do-animals-adapt-Responding-to-change-Great-Snakes.html", {transition: "slide"});
+    }); 
+    $("#pol4").on('tap', function() {
+      $('#grasshoperlink')[0].click();
+    });
+    
+    function playsAdaptingToNewWorld() {
+         bgsoundAdaptingToNewWorld.play();
+    }
+       
+    function pauseAdaptingToNewWorld() {
+         bgsoundAdaptingToNewWorld.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+    $("#playstopRespondingToChange").on('tap', function() {
+      if(!playing) {
+        RespondingToChangeaudio.play();
+        $('.micbtnAdaptingNewWorld').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        RespondingToChangeaudio.pause(); RespondingToChangeaudio.currentTime = 0;
+        $('.micbtnAdaptingNewWorld').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#RespondingToChangeaudioplbtn").on('tap', function() {
+      if(!paused) {
+        RespondingToChangeaudio.pause();
+        paused = true;
+      } else {
+        RespondingToChangeaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#RespondingToChangeaudiofbtn").on('tap', function() {
+      var ctime = RespondingToChangeaudio.currentTime;
+      RespondingToChangeaudio.currentTime = ctime + 10;
+    });
+    
+    $("#RespondingToChangeaudiobbtn").on('tap', function() {
+      var ctime = RespondingToChangeaudio.currentTime;
+      RespondingToChangeaudio.currentTime = ctime - 10;
+    });
+    
+    $("#RespondingToChangeaudiopsbtn").on('tap', function() {
+      RespondingToChangeaudio.pause();
+      //$(".audiopanel").css({"backgroundPosition":"0px 0px"});
+    });
+  </script>
+  <script src="js/fourcardLogic.js"></script>  <!-- for card dragging effects -->
+</div> <!--//home-->

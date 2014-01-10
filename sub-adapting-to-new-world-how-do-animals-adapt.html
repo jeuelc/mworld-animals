@@ -1,0 +1,98 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-adapting-to-new-world-how-do-animals-adapt">
+  <script src="js/slidebar_Adapting_New_World.js"></script>
+  <link rel="stylesheet" href="css/style_Adapting_New_World.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnAdaptingNewWorld"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnAdaptingNewWorld"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnAdaptingNewWorld"></div></div>
+  <div class="infobtnholder"><div class="infobtnAdaptingNewWorld"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnAdaptingNewWorld"></div></div>
+  <div class="menubtnholder"><div class="menubtnAdaptingNewWorld"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:14px;"><h1>How Do Animals Adapt?</h1></div>
+  
+    <div data-role="content" class="kidzcontent">
+      <div class="navAdaptingNewWorld-content">
+        <p>All animals carry around with them a blueprint of themselves.  Or course we're not talking about a piece of paper with some drawings on it!  The blueprint is called a 'genotype' and it is stored in the animal's cells in a molecule we call 'DNA'.  While DNA is microscopically small, it is actually relatively large as far as molecules go.  It is an intricate combination of four different building blocks called 'nucleotides'.  You can also think of the genotype as a unique code or biological recipe for making that animal.  Identical twins have the same genotype.</p>
+		<p>The way an animal looks and behaves is determined by its genotype and the environment.  We call the animal's appearance and behaviour its 'phenotype'.  Temperature, rainfall or the presence of predators may change how the DNA recipe is followed as the animal grows.  Animals constantly experience small changes to their genotype between generations as they attempt to adapt to the environments in which they are living.</p>
+      </div>
+        
+      <div class="navbtn1" style="top:320px;">
+        <p><a href="sub-adapting-to-new-world-how-do-animals-adapt-Responding-to-change.html" data-transition="slide"><img src="css/images/9-12/Animals/Adapting_To_New_Worlds/How_Do_Animals_Adapt/Responding_To_Change_demo.png"></a></p>
+      </div>
+      <div class="navbtn3" style="top:320px;">
+        <p><a href="sub-adapting-to-new-world-how-do-animals-adapt-Humans-changing-the-world.html" data-transition="slide" ><img src="css/images/9-12/Animals/Adapting_To_New_Worlds/How_Do_Animals_Adapt/Humans_Changing_The_World.png"></a></p>
+      </div>
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/Animals/bottomhomeani.png"></a></div>
+    </div> <!-- end content -->  
+  
+  <!--<div class="audiopanel">-->
+    <div class="micbtnholder"><div class="micbtnAdaptingNewWorld" id="playstopAnimalsAdapt"></div></div>
+    <div class="bAdaptingNewWorld"><div class="rwAdaptingNewWorld" id="AnimalsAdaptaudiobbtn"></div></div>
+    <div class="plAdaptingNewWorld"><div class="plpsAdaptingNewWorld" id="AnimalsAdaptaudioplbtn"></div></div>
+    <div class="fAdaptingNewWorld"><div class="fwAdaptingNewWorld" id="AnimalsAdaptaudiofbtn"></div></div>
+    <div id="actualaudio-AnimalsAdapt" style="visibility:hidden;"></div>
+  <!--</div>-->
+  <script>
+    sound = new Audio(); // 'sound' is now an audio object
+    var playing;
+    (function() {
+      playing = false;
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-AnimalsAdapt').html('<audio id="AnimalsAdaptaudio" controls preload onpause="playsAdaptingToNewWorld()" onplay="pauseAdaptingToNewWorld()"><source src="audio/Adapting_To_New_World/Animals_Adopt.mp3" type="audio/mpeg"></audio>');
+      } 
+    
+      $("#sub-adapting-to-new-world-how-do-animals-adapt").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundAdaptingToNewWorld.pause(); bgsoundAdaptingToNewWorld.currentTime = 0;});
+    
+    function goBack() {
+      $.mobile.changePage("sub-adapting-to-new-world.html", {transition: "slide", reverse: true });
+    }
+    
+    function playsAdaptingToNewWorld() {
+         bgsoundAdaptingToNewWorld.play();
+    }
+       
+    function pauseAdaptingToNewWorld() {
+         bgsoundAdaptingToNewWorld.pause();
+    }
+    /* ******************** */
+    $("#playstopAnimalsAdapt").on('tap', function() {
+      if(!playing) {
+        AnimalsAdaptaudio.play();
+        $('.micbtnAdaptingNewWorld').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        AnimalsAdaptaudio.pause(); AnimalsAdaptaudio.currentTime = 0;
+        $('.micbtnAdaptingNewWorld').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#AnimalsAdaptaudioplbtn").on('tap', function() {
+      if(!paused) {
+        AnimalsAdaptaudio.pause();
+        paused = true;
+      } else {
+        AnimalsAdaptaudio.play();
+        paused = false;
+      }
+    });
+    
+    $("#AnimalsAdaptaudiofbtn").on('tap', function() {
+      var ctime = AnimalsAdaptaudio.currentTime;
+      AnimalsAdaptaudio.currentTime = ctime + 10;
+    });
+    
+    $("#AnimalsAdaptaudiobbtn").on('tap', function() {
+      var ctime = AnimalsAdaptaudio.currentTime;
+      AnimalsAdaptaudio.currentTime = ctime - 10;
+    }); 
+    
+  </script>
+</div> <!--//home-->

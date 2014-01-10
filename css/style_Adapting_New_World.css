@@ -1,0 +1,260 @@
+/********* Adapting To New World **********/
+
+#sub-adapting-to-new-world, #sub-adapting-to-new-world-extinction-and-new-species, #sub-adapting-to-new-world-Frogs-Bugs-and-Us, #sub-adapting-to-new-world-how-do-animals-adapt, #sub-adapting-to-new-world-safety-in-diversity, #sub-adapting-to-new-world-how-do-animals-adapt-Humans-changing-the-world, #sub-adapting-to-new-world-how-do-animals-adapt-Responding-to-change{
+  background:url('images/9-12/Animals/Adapting_To_New_Worlds/Adapting_To_New_Worlds_BG.png') no-repeat;
+  height:748px !important;
+  overflow:hidden !important;
+  width:1024px !important;
+}
+
+#sub-adapting-to-new-world-how-do-animals-adapt-Responding-to-change-Great-Snakes{
+  background:url('images/9-12/Animals/Adapting_To_New_Worlds/How_Do_Animals_Adapt/Responding_To_Change/Great_Snakes/Great_Snakes_BG.png') no-repeat;
+  height:748px !important;
+  overflow:hidden !important;
+  width:1024px !important;
+}
+
+#sub-adapting-to-new-world-how-do-animals-adapt-Responding-to-change-Spot-the-Moth{
+  background:url('images/9-12/Animals/Adapting_To_New_Worlds/How_Do_Animals_Adapt/Responding_To_Change/Spot_The_Moth/Spot_The_Moth_BG.png') no-repeat;
+  height:748px !important;
+  overflow:hidden !important;
+  width:1024px !important;
+}
+
+.plAdaptingNewWorld, .psAdaptingNewWorld, .bAdaptingNewWorld, .fAdaptingNewWorld {
+  position:absolute;
+  top:670px;
+  left:1024px;
+  z-index:20;
+}
+
+.micbtnAdaptingNewWorld {
+  background:url('images/9-12/Animals/micani.png') no-repeat 0 -81px;
+  height:81px;
+  width:81px;
+}
+
+.rwAdaptingNewWorld {
+  background:url('images/9-12/Animals/rwani.png') no-repeat 0 -73px;
+  height:73px;
+  width:73px;
+}
+
+.plpsAdaptingNewWorld {
+  background:url('images/9-12/Animals/playani.png') no-repeat 0 -73px;
+  height:73px;
+  width:73px;
+}
+
+.fwAdaptingNewWorld {
+  background:url('images/9-12/Animals/fwani.png') no-repeat 0 -73px;
+  height:73px;
+  width:73px;
+}
+
+.menubtnAdaptingNewWorld {
+  background:url('images/9-12/Animals/menuani.png') no-repeat 0 -90px;
+  height:90px;
+  width:90px;
+}
+
+
+.homebtnAdaptingNewWorld {
+  background:url('images/9-12/Animals/mapani.png') no-repeat 0 -74px;
+  height:74px;
+  width:80px;
+}
+
+.mpbtnAdaptingNewWorld {
+  background:url('images/9-12/Animals/mpointsani.png') no-repeat 0 -84px;
+  height:79px;
+  width:80px;
+}
+
+.cpbtnAdaptingNewWorld {
+  background:url('images/9-12/Animals/ctrlpnlani.png') no-repeat 0 -74px;
+  height:74px;
+  width:74px;
+}
+
+.infobtnAdaptingNewWorld {
+  background:url('images/9-12/Animals/infoani.png') no-repeat 0 -74px;
+  height:74px;
+  width:74px;
+}
+
+.credsbtnAdaptingNewWorld {
+  background:url('images/9-12/Animals/creditsani.png') no-repeat 0 -74px;
+  height:74px;
+  width:74px;
+}
+
+.navtitleholderAdaptingNewWorld{
+	width: 435px;
+	height: 68px;
+	position: absolute;
+	top: 169px;
+	left: 295px;
+	text-align: center;
+	line-height: 32px;
+}
+
+.navtitleholderAdaptingNewWorld h1{
+	text-transform: uppercase;
+	color: #FFF;
+	font-family: comic sans ms;
+	padding: 0;
+	margin: 0;
+	font-weight: bold;
+}
+
+.bptitleholderAdaptingNewWorld {
+  width:627px;
+  height:68px;
+  text-align:center;
+  line-height:28px;
+  position:absolute;
+  top:169px;
+  left:194px;
+}
+
+.bptitleholderAdaptingNewWorld h1{
+  text-transform:uppercase;
+  color: #FFFFFF;
+  font-family:"comic sans ms";
+  font-weight:bold;
+  padding:0;
+  margin:0;
+}
+
+.navAdaptingNewWorld-content{
+  position:absolute;
+  left:305px;
+  top:263px;
+  width:410px;
+  height:359px;
+  /*overflow-y:scroll;*/
+  overflow:auto;
+  text-align:center;
+  font-family:"comic sans ms";
+  font-size:18px;
+  font-weight:normal;
+  color:#000000;
+}
+
+.navAdaptingNewWorld-great-snakes{
+  position: absolute;
+  left: 540px;
+  top: 124px;
+  width: 410px;
+  height: 327px;
+  overflow: auto;
+  text-align: left;
+  font-family: "comic sans ms";
+  font-size: 18px;
+  font-weight: normal;
+  color: #ffffff;
+}
+
+.navAdaptingNewWorld-spot-the-moth{
+  position: absolute;
+  left: 31px;
+  top: 159px;
+  width: 410px;
+  height: 484px;
+  overflow: auto;
+  text-align: left;
+  font-family: "comic sans ms";
+  font-size: 18px;
+  font-weight: normal;
+  color: #ffffff;
+}
+
+.navAdaptingNewWorld-content p {
+  margin-top:0 !important;
+}
+
+.navAdaptingNewWorld-content3 {
+  position:absolute;
+  left:59px;
+  top:263px;
+  width:920px;
+  height:160px;
+  overflow-y:scroll;
+  text-align:left;
+  font-family:"comic sans ms";
+  font-size:18px;
+  font-weight:normal;
+  color:#000000;
+}
+
+.bpcontentAdaptingNewWorld{
+  width:413px;
+  height:356px;
+  position:absolute;
+  left:550px;
+  top:266px;
+  overflow:auto;
+  font-family:"comic sans ms";
+  font-size:18px;
+  font-weight:normal;
+  text-align:left;
+  color:#000000;
+}
+
+#sub-adapting-to-new-world .bptitleholder h1, #sub-adapting-to-new-world-extinction-and-new-species .bptitleholder h1, #sub-adapting-to-new-world-Frogs-Bugs-and-Us .bptitleholder h1, #sub-adapting-to-new-world-how-do-animals-adapt .bptitleholder h1, #sub-adapting-to-new-world-safety-in-diversity .bptitleholder h1, #sub-adapting-to-new-world-how-do-animals-adapt-Humans-changing-the-world .bptitleholder h1, #sub-adapting-to-new-world-how-do-animals-adapt-Responding-to-change .bptitleholder h1{
+	text-transform: uppercase;
+	color: #ffffff !important;
+	font-family: "comic sans ms";
+	font-weight: bold;
+	padding: 0;
+	margin: 0;
+}
+
+#sub-adapting-to-new-world-how-do-animals-adapt-Responding-to-change-Great-Snakes .bptitleholder h1{
+	text-transform: uppercase;
+	color: #f3ac78 !important;
+	font-family: "comic sans ms";
+	font-weight: bold;
+	padding: 0;
+	margin: 0;
+}
+
+#sub-adapting-to-new-world-how-do-animals-adapt-Responding-to-change-Spot-the-Moth .bptitleholder h1{
+	text-transform: uppercase;
+	color: #f3ac78 !important;
+	font-family: "comic sans ms";
+	font-weight: bold;
+	padding: 0;
+	margin: 0;
+}
+
+#sub-adapting-to-new-world .bptitleholder, #sub-adapting-to-new-world-extinction-and-new-species .bptitleholder, #sub-adapting-to-new-world-Frogs-Bugs-and-Us .bptitleholder, #sub-adapting-to-new-world-how-do-animals-adapt .bptitleholder, #sub-adapting-to-new-world-safety-in-diversity .bptitleholder, #sub-adapting-to-new-world-how-do-animals-adapt-Humans-changing-the-world .bptitleholder, #sub-adapting-to-new-world-how-do-animals-adapt-Responding-to-change .bptitleholder{
+	width: 627px;
+	height: 68px;
+	text-align: center;
+	line-height: 28px;
+	position: absolute;
+	top: 169px;
+	left: 194px;
+}
+
+#sub-adapting-to-new-world-how-do-animals-adapt-Responding-to-change-Great-Snakes .bptitleholder{
+	width: 627px;
+	height: 68px;
+	text-align: center;
+	line-height: 28px;
+	position: absolute;
+	top: 56px;
+	left: 372px;
+}
+
+#sub-adapting-to-new-world-how-do-animals-adapt-Responding-to-change-Spot-the-Moth .bptitleholder{
+	width: 627px;
+	height: 68px;
+	text-align: center;
+	line-height: 28px;
+	position: absolute;
+	top: 56px;
+	left: 372px;
+}

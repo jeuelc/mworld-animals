@@ -1,0 +1,102 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-adapting-to-new-world-safety-in-diversity">
+  <script src="js/slidebar_Adapting_New_World.js"></script>
+  <link rel="stylesheet" href="css/style_Adapting_New_World.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnAdaptingNewWorld"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnAdaptingNewWorld"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnAdaptingNewWorld"></div></div>
+  <div class="infobtnholder"><div class="infobtnAdaptingNewWorld"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnAdaptingNewWorld"></div></div>
+  <div class="menubtnholder"><div class="menubtnAdaptingNewWorld"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:14px;"><h1>Safety in Diversity</h1></div>
+  
+    <div data-role="content" class="kidzcontent">
+      <div class="navAdaptingNewWorld-content">
+        <p>When your environment changes, you are left with three options:</p>
+		<p>1.  Move somewhere else which suits you better.</p>
+		<p>2.  Adapt to your new environment.</p>
+		<p>3.  Fail to achieve either of the first two options and become extinct.</p>
+		<p>It's an obvious choice, but adapting to the changes in your world isn't an easy thing to do!  Your ability to do so depends on the diversity of genotypes that are present in your population.</p>
+		<p>If you and your fellow creatures have more variety in your DNA, particularly in the parts that help you produce more suitable phenotypes, you'll generally be more adaptable.  If that means you can reach fruit that are higher up because you're a little taller than your parents, or it allows you to run a little faster than your friends, you'll probably do well when food is scarce!</p>
+      </div>
+        
+      <div class="navbtn1" style="top:320px;">
+        <p><a href="sub-adapting-to-new-world-safety-in-diversity-Surviving-attack.html" data-transition="slide"><img src="css/images/9-12/Animals/Adapting_To_New_Worlds/Safety_In_Diversity/Surviving_Attack.png"></a></p>
+      </div>
+      <div class="navbtn3" style="top:320px;">
+        <p><a href="sub-adapting-to-new-world-safety-in-diversity-safety-in-the-food-web.html" data-transition="slide" ><img src="css/images/9-12/Animals/Adapting_To_New_Worlds/Safety_In_Diversity/Safety_In_The_Food_Web.png"></a></p>
+      </div>
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/Animals/bottomhomeani.png"></a></div>
+    </div> <!-- end content -->  
+  
+  <!--<div class="audiopanel">-->
+    <div class="micbtnholder"><div class="micbtnAdaptingNewWorld" id="playstopSafetyInDiversity"></div></div>
+    <div class="bAdaptingNewWorld"><div class="rwAdaptingNewWorld" id="SafetyInDiversityaudiobbtn"></div></div>
+    <div class="plAdaptingNewWorld"><div class="plpsAdaptingNewWorld" id="SafetyInDiversityaudioplbtn"></div></div>
+    <div class="fAdaptingNewWorld"><div class="fwAdaptingNewWorld" id="SafetyInDiversityaudiofbtn"></div></div>
+    <div id="actualaudio-SafetyInDiversity" style="visibility:hidden;"></div>
+  <!--</div>-->
+  <script>
+    sound = new Audio(); // 'sound' is now an audio object
+    var playing;
+    (function() {
+      playing = false;
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-SafetyInDiversity').html('<audio id="SafetyInDiversityaudio" controls preload onpause="playsFrogsBugsUs()" onplay="pauseFrogsBugsUs()"><source src="audio/Adapting_To_New_World/Safety_In_Diversity.mp3" type="audio/mpeg"></audio>');
+      } 
+    
+      $("#sub-adapting-to-new-world-safety-in-diversity").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundbh.pause(); bgsoundbh.currentTime = 0;});
+    
+    function goBack() {
+      $.mobile.changePage("sub-adapting-to-new-world.html", {transition: "slide", reverse: true });
+    }
+    
+    function playsFrogsBugsUs() {
+         bgsoundFrogsBugsUs.play();
+    }
+       
+    function pauseFrogsBugsUs() {
+         bgsoundFrogsBugsUs.pause();
+    }
+    /* ******************** */
+    $("#playstopSafetyInDiversity").on('tap', function() {
+      if(!playing) {
+        SafetyInDiversityaudio.play();
+        $('.micbtnAdaptingNewWorld').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        SafetyInDiversityaudio.pause(); SafetyInDiversityaudio.currentTime = 0;
+        $('.micbtnAdaptingNewWorld').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#SafetyInDiversityaudioplbtn").on('tap', function() {
+      if(!paused) {
+        SafetyInDiversityaudio.pause();
+        paused = true;
+      } else {
+        SafetyInDiversityaudio.play();
+        paused = false;
+      }
+    });
+    
+    $("#SafetyInDiversityaudiofbtn").on('tap', function() {
+      var ctime = SafetyInDiversityaudio.currentTime;
+      SafetyInDiversityaudio.currentTime = ctime + 10;
+    });
+    
+    $("#SafetyInDiversityaudiobbtn").on('tap', function() {
+      var ctime = SafetyInDiversityaudio.currentTime;
+      SafetyInDiversityaudio.currentTime = ctime - 10;
+    }); 
+    
+  </script>
+</div> <!--//home-->

@@ -834,3 +834,11 @@ bgsoundManga.addEventListener('ended', function() { bgsoundManga.play(); });
 
 function pauseManga() { bgsoundManga.pause() }
 function playsManga() { bgsoundManga.play(); $(".audiopanel").css({"backgroundPosition":"0px 0px"}); }
+
+/************************ Adapting To New World *******************************/
+var bgsoundAdaptingToNewWorld = new Audio();
+bgsoundAdaptingToNewWorld.src = "audio/Adapting_To_New_World/Adapting_To_New_World_BG.mp3";
+bgsoundAdaptingToNewWorld.addEventListener('ended', function() { bgsoundAdaptingToNewWorld.play(); });
+
+function pauseAdaptingToNewWorld() { bgsoundAdaptingToNewWorld.pause() }
+function playsAdaptingToNewWorld() { bgsoundAdaptingToNewWorld.play(); $(".audiopanel").css({"backgroundPosition":"0px 0px"}); }

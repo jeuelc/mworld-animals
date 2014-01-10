@@ -1,0 +1,156 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-adapting-to-new-world-how-do-animals-adapt-Humans-changing-the-world">
+  <script src="js/hammer.js"></script>
+  <script src="js/jquery.hammer.js"></script>
+  <script src="js/slidebar_Adapting_New_World.js"></script>
+  <link rel="stylesheet" href="css/style_Adapting_New_World.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnAdaptingNewWorld"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnAdaptingNewWorld"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnAdaptingNewWorld"></div></div>
+  <div class="infobtnholder"><div class="infobtnAdaptingNewWorld"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnAdaptingNewWorld"></div></div>
+  <div class="menubtnholder"><div class="menubtnAdaptingNewWorld"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:14px;"><h1>Humans Changing the World</h1></div>
+  <div id="spacechar">&nbsp;
+    <div data-role="content" class="kidzcontent">
+      <div class="v-spacer"></div>
+      <div class="sidebarleft-half">
+      
+        <a id="birdlink" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/Animals/Adapting_To_New_Worlds/How_Do_Animals_Adapt/Humans_Changing_The_World/Bird_In_Oil_Slick_Hi_Res.jpg', 'Oils spills spell danger for seabirds whose feathers become matted and inefficient when coated with oil.  (Courtesy: Getty Images)');">click here</a>
+		<a id="pikalink" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/Animals/Adapting_To_New_Worlds/How_Do_Animals_Adapt/Humans_Changing_The_World/Pika_Hi_Res.jpg', 'Tiny rabbits called pikas live on mountains.  They are forced uphill when the temperature warms.  (Courtesy: Thinkstock)');">click here</a>
+		<a id="pigeonslink" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/Animals/Adapting_To_New_Worlds/How_Do_Animals_Adapt/Humans_Changing_The_World/Pigeons_Hi_Res.jpg', 'Pigeons and rats enjoy living in cities as much as we do! (Courtesy: ZeroOne / Flickr (CC-BY-SA))');">click here</a>
+		<a id="fukushimalink" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/Animals/Adapting_To_New_Worlds/How_Do_Animals_Adapt/Humans_Changing_The_World/Fukushima_Butterfly_Hi_Res.jpg', 'Radiation leaking from a nuclear reactor at Fukushima in Japan caused this butterfly to develop abnormally.  (Courtesy: Chiyo Nohara / Masaki Iwata / Joji Otaki)');">click here</a>
+      
+        <div id="zoomwrapper">
+          <div id="pol1" class="pPiece" style="left:100px;top:270px;">
+             <img src="css/images/9-12/Animals/Adapting_To_New_Worlds/How_Do_Animals_Adapt/Humans_Changing_The_World/Bird_In_Oil_Slick.jpg" alt="" />
+          </div>
+          <div id="pol2"class="pPiece" style="left:75px;top:290px;">
+             <img src="css/images/9-12/Animals/Adapting_To_New_Worlds/How_Do_Animals_Adapt/Humans_Changing_The_World/Pika.jpg" alt="" />
+          </div>
+          <div id="pol3"class="pPiece" style="left:80px;top:270px;">
+             <img src="css/images/9-12/Animals/Adapting_To_New_Worlds/How_Do_Animals_Adapt/Humans_Changing_The_World/Pigeons.jpg" alt="" />
+          </div>
+          <div id="pol4"class="pPiece" style="left:70px;top:270px;">
+             <img src="css/images/9-12/Animals/Adapting_To_New_Worlds/How_Do_Animals_Adapt/Humans_Changing_The_World/Fukushima_Butterfly.jpg" alt="" />
+          </div>
+          
+        </div><!--/zoomwrapper-->
+      </div>
+      
+      <div class="bpcontentAdaptingNewWorld">
+        <p>Humans are just one of millions of species that live on Earth, but our impact on the world is profound.  We clear habitats to build our cities, and mine valuable rocks from the earth to build our houses, businesses and roads.  Our daily lives result in the pollution of the air, water and landscape.  This not only changes our world, but also the environments available for animals to live in.</p>
+		<p>Some of these environments  like skyscrapers - are weird and wonderful, and many animals like rats and pigeons have adapted and manage to thrive in these very unnatural habitats.</p>
+		<p>Many human-induced changes are so sudden and severe that affected animals have no chance of surviving.  For example when we chop down or burn jungle to make way for roads or farms, animals perish.  If that is the animal's only habitat, they face extinction.  In the case of global warming, the effect is much slower.  Even so, a number of animal species cannot adapt fast enough.</p>
+      </div>
+       
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/Animals/bottomhomeani.png"></a></div>
+    </div> <!-- end content -->  
+  </div><!--/spacechar-->        
+  
+  <!-- <div class="audiopanel"> -->
+    <!-- images are in slidebarnat.js 
+         note: change the ids to be able play the narration
+    -->
+    <div class="micbtnholder"><div class="micbtnAdaptingNewWorld" id="playstopHumanChangingWorld"></div></div>
+    <div class="bAdaptingNewWorld"><div class="rwAdaptingNewWorld" id="HumanChangingWorldaudiobbtn"></div></div>
+    <div class="plAdaptingNewWorld"><div class="plpsAdaptingNewWorld" id="HumanChangingWorldaudioplbtn"></div></div>
+    <div class="fAdaptingNewWorld"><div class="fwAdaptingNewWorld" id="HumanChangingWorldaudiofbtn"></div></div>
+    <div id="actualaudio-HumanChangingWorld" style="visibility:hidden;"></div>
+  <!-- </div> -->
+  
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+    var playing;
+    var paused;
+    (function() {
+      $('div#pol1').css("z-index", 3);
+      $('div#pol2').css("z-index", 2);
+      $('div#pol3').css("z-index", 1);
+      $('div#pol1 > img').css("-webkit-transform", "rotate(0deg)");
+      $('div#pol2 > img').css("-webkit-transform", "rotate(5deg)");
+      $('div#pol3 > img').css("-webkit-transform", "rotate(-3deg)");
+      $('div#pol4 > img').css("-webkit-transform", "rotate(-3deg)");
+      
+      playing = false;
+      paused = true;
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-HumanChangingWorld').html('<audio id="HumanChangingWorldaudio" controls preload onpause="playsAdaptingToNewWorld()" onplay="pauseAdaptingToNewWorld()"><source src="audio/Adapting_To_New_World/Human_Changing_The_World.mp3" type="audio/mpeg"></audio>');
+      } 
+
+      $("#sub-adapting-to-new-world-how-do-animals-adapt-Humans-changing-the-world").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundAdaptingToNewWorld.pause(); bgsoundAdaptingToNewWorld.currentTime = 0;});
+    
+    function goBack() {
+      $.mobile.changePage("sub-adapting-to-new-world-how-do-animals-adapt.html", {transition: "slide", reverse: true });
+    }
+    
+    $("#pol1").on('tap', function() {
+      $('#birdlink')[0].click();
+    });
+    $("#pol2").on('tap', function() {
+      $('#pikalink')[0].click();
+    });
+    $("#pol3").on('tap', function() {
+      $('#pigeonslink')[0].click();
+    }); 
+    $("#pol4").on('tap', function() {
+      $('#fukushimalink')[0].click();
+    });
+    
+    function playsAdaptingToNewWorld() {
+         bgsoundAdaptingToNewWorld.play();
+    }
+       
+    function pauseAdaptingToNewWorld() {
+         bgsoundAdaptingToNewWorld.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+    $("#playstopHumanChangingWorld").on('tap', function() {
+      if(!playing) {
+        HumanChangingWorldaudio.play();
+        $('.micbtnAdaptingNewWorld').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        HumanChangingWorldaudio.pause(); HumanChangingWorldaudio.currentTime = 0;
+        $('.micbtnAdaptingNewWorld').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#HumanChangingWorldaudioplbtn").on('tap', function() {
+      if(!paused) {
+        HumanChangingWorldaudio.pause();
+        paused = true;
+      } else {
+        HumanChangingWorldaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#HumanChangingWorldaudiofbtn").on('tap', function() {
+      var ctime = HumanChangingWorldaudio.currentTime;
+      HumanChangingWorldaudio.currentTime = ctime + 10;
+    });
+    
+    $("#HumanChangingWorldaudiobbtn").on('tap', function() {
+      var ctime = HumanChangingWorldaudio.currentTime;
+      HumanChangingWorldaudio.currentTime = ctime - 10;
+    });
+    
+    $("#HumanChangingWorldaudiopsbtn").on('tap', function() {
+      HumanChangingWorldaudio.pause();
+      //$(".audiopanel").css({"backgroundPosition":"0px 0px"});
+    });
+  </script>
+  <script src="js/fourcardLogic.js"></script>  <!-- for card dragging effects -->
+</div> <!--//home-->

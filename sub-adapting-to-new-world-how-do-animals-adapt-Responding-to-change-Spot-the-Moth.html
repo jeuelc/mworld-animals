@@ -1,0 +1,103 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-adapting-to-new-world-how-do-animals-adapt-Responding-to-change-Spot-the-Moth">
+  <script src="js/slidebar_Adapting_New_World.js"></script>
+  <link rel="stylesheet" href="css/style_Adapting_New_World.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnAdaptingNewWorld"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnAdaptingNewWorld"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnAdaptingNewWorld"></div></div>
+  <div class="infobtnholder"><div class="infobtnAdaptingNewWorld"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnAdaptingNewWorld"></div></div>
+  <div class="menubtnholder"><div class="menubtnAdaptingNewWorld"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:14px;"></div>
+  <div data-role="content" class="kidzcontent">
+	<div class="navAdaptingNewWorld-spot-the-moth">
+        <p>How many moths can you see on this tree?  Which one is easier to spot?  They are the same species but their DNA differs by one mutation.</p>
+		<p>Birds like to eat moths and have an easy time spotting black moths on grey trees.  In the 1700s, most of these so called peppered moths in England were mottled  salt-and-pepper coloured, if you like.  Their dark brothers and sisters did not escape the hungry birds in the forest.</p>
+		<p>In the 1800s, factories nearby produced a lot of soot which coated the trees.  This meant that the dark moths became almost invisible and multiplied, while the previously camouflaged salt-and-pepper moths became easy prey for birds.</p>
+		<p>In the last 50 years we have used more advanced factories, which produce less pollution.  If you're a black moth, you'll need to fly away!</p>
+    </div>
+    <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/Animals/bottomhomeani.png"></a></div>
+  </div> <!-- end content -->  
+    
+  
+    <!--<div class="audiopanel">-->
+    <!-- images are in slidebarnat.js 
+         note: change the ids to be able play the narration -->
+    <div class="micbtnholder"><div class="micbtnAdaptingNewWorld" id="playstopGreatSnakes"></div></div>
+    <div class="bAdaptingNewWorld"><div class="rwAdaptingNewWorld" id="GreatSnakesaudiobbtn"></div></div>
+    <div class="plAdaptingNewWorld"><div class="plpsAdaptingNewWorld" id="GreatSnakesaudioplbtn"></div></div>
+    <div class="fAdaptingNewWorld"><div class="fwAdaptingNewWorld" id="GreatSnakesaudiofbtn"></div></div>
+    <div id="actualaudio-GreatSnakes" style="visibility:hidden;"></div>
+  <!--</div>-->
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+    var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-GreatSnakes').html('<audio id="GreatSnakesaudio" controls preload onpause="playsAdaptingToNewWorld()" onplay="pauseAdaptingToNewWorld()"><source src="audio/Adapting_To_New_World/Spot_The_Moth.mp3" type="audio/mpeg"></audio>');
+      } 
+    
+      $("#sub-adapting-to-new-world-how-do-animals-adapt-Responding-to-change-Spot-the-Moth").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundAdaptingToNewWorld.pause(); bgsoundAdaptingToNewWorld.currentTime = 0;});
+    
+    function goBack() {
+      $.mobile.changePage("sub-adapting-to-new-world-how-do-animals-adapt-Responding-to-change.html", {transition: "slide", reverse: true });
+    }
+    
+    function playsAdaptingToNewWorld() {
+         bgsoundAdaptingToNewWorld.play();
+    }
+       
+    function pauseAdaptingToNewWorld() {
+         bgsoundAdaptingToNewWorld.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+    $("#playstopGreatSnakes").on('tap', function() {
+      if(!playing) {
+        GreatSnakesaudio.play();
+        $('.micbtnAdaptingNewWorld').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        GreatSnakesaudio.pause(); GreatSnakesaudio.currentTime = 0;
+        $('.micbtnAdaptingNewWorld').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#GreatSnakesaudioplbtn").on('tap', function() {
+      if(!paused) {
+        GreatSnakesaudio.pause();
+        paused = true;
+      } else {
+        GreatSnakesaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#GreatSnakesaudiofbtn").on('tap', function() {
+      var ctime = GreatSnakesaudio.currentTime;
+      GreatSnakesaudio.currentTime = ctime + 10;
+    });
+    
+    $("#GreatSnakesaudiobbtn").on('tap', function() {
+      var ctime = GreatSnakesaudio.currentTime;
+      GreatSnakesaudio.currentTime = ctime - 10;
+    });
+    
+    $("#GreatSnakesaudiopsbtn").on('tap', function() {
+      GreatSnakesaudio.pause();
+    });
+  </script>
+</div> <!--//home-->
