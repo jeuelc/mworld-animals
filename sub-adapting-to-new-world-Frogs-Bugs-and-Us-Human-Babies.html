@@ -1,0 +1,128 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-adapting-to-new-world-Frogs-Bugs-and-Us-Human-Babies">
+  <script src="js/hammer.js"></script>
+  <script src="js/jquery.hammer.js"></script>
+  <script src="js/slidebar_Adapting_New_World.js"></script>
+  <link rel="stylesheet" href="css/style_Adapting_New_World.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnAdaptingNewWorld"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnAdaptingNewWorld"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnAdaptingNewWorld"></div></div>
+  <div class="infobtnholder"><div class="infobtnAdaptingNewWorld"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnAdaptingNewWorld"></div></div>
+  <div class="menubtnholder"><div class="menubtnAdaptingNewWorld"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:14px;"><h1>Human Babies</h1></div>
+  <div id="spacechar">&nbsp;
+    <div data-role="content" class="kidzcontent">
+      <div class="v-spacer"></div>
+      <div class="sidebarleft-half">
+        
+		<a id="fruitflieslink" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/Animals/Adapting_To_New_Worlds/Frogs_Bugs_And_Us/Human_Babies/Premature_Baby_Hi_Res.jpg', 'Babies who are born early or \'prematurely\' are kept safe and warm in incubators at hospitals.  (Courtesy: Thinkstock)');">click here</a>
+		
+        <div id="zoomwrapper">
+          <div id="pol1" class="pPiece" style="left:100px;top:270px;">
+             <img src="css/images/9-12/Animals/Adapting_To_New_Worlds/Frogs_Bugs_And_Us/Human_Babies/Premature_Baby.jpg" alt="" />
+          </div>
+        </div><!--/zoomwrapper-->
+      </div>
+      
+      <div class="bpcontentAdaptingNewWorld">
+        <p>Human knowledge and technology has affected the course of our own evolution.  Until the 20th century, babies that were too small or too large were unlikely to survive.  Small babies that were born too soon (called 'premature') were sometimes too weak to survive after birth, while large babies couldn't be born naturally and required an operation on the mother called a 'Caesarean section'.  A few hundred years ago, a mother might die if her baby was too big to pass through the birth canal or if there were other complications.  In some cases the baby died too.  This meant that only DNA that produced medium-sized babies was likely to be passed on to future generations.</p>
+		<p>Advances in medical technology have resulted in more premature babies surviving, and larger babies being born by Caesarean sections.  In some countries this has led to a greater diversity in the size of newborns surviving.  We are the only animal on Earth that has managed to harness technology to relax the intensity of natural selection.  This makes us very adaptable!</p>
+      </div>
+       
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/Animals/bottomhomeani.png"></a></div>
+    </div> <!-- end content -->  
+  </div><!--/spacechar-->        
+  
+  <!-- <div class="audiopanel"> -->
+    <!-- images are in slidebarnat.js 
+         note: change the ids to be able play the narration
+    -->
+    <div class="micbtnholder"><div class="micbtnAdaptingNewWorld" id="playstopFruitFlies"></div></div>
+    <div class="bAdaptingNewWorld"><div class="rwAdaptingNewWorld" id="FruitFliesaudiobbtn"></div></div>
+    <div class="plAdaptingNewWorld"><div class="plpsAdaptingNewWorld" id="FruitFliesaudioplbtn"></div></div>
+    <div class="fAdaptingNewWorld"><div class="fwAdaptingNewWorld" id="FruitFliesaudiofbtn"></div></div>
+    <div id="actualaudio-FruitFlies" style="visibility:hidden;"></div>
+  <!-- </div> -->
+  
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+    var playing;
+    var paused;
+    (function() {
+      $('div#pol1').css("z-index", 1);
+      $('div#pol1 > img').css("-webkit-transform", "rotate(0deg)");
+      
+      playing = false;
+      paused = true;
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-FruitFlies').html('<audio id="FruitFliesaudio" controls preload onpause="playsAdaptingToNewWorld()" onplay="pauseAdaptingToNewWorld()"><source src="audio/Adapting_To_New_World/Human_Babies.mp3" type="audio/mpeg"></audio>');
+      } 
+
+      $("#sub-adapting-to-new-world-Frogs-Bugs-and-Us-Human-Babies").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundAdaptingToNewWorld.pause(); bgsoundAdaptingToNewWorld.currentTime = 0;});
+    
+    function goBack() {
+      $.mobile.changePage("sub-adapting-to-new-world-Frogs-Bugs-and-Us.html", {transition: "slide", reverse: true });
+    }
+    
+    $("#pol1").on('tap', function() {
+      $('#fruitflieslink')[0].click();
+    });
+    
+    function playsAdaptingToNewWorld() {
+         bgsoundAdaptingToNewWorld.play();
+    }
+       
+    function pauseAdaptingToNewWorld() {
+         bgsoundAdaptingToNewWorld.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+    $("#playstopFruitFlies").on('tap', function() {
+      if(!playing) {
+        FruitFliesaudio.play();
+        $('.micbtnAdaptingNewWorld').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        FruitFliesaudio.pause(); FruitFliesaudio.currentTime = 0;
+        $('.micbtnAdaptingNewWorld').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#FruitFliesaudioplbtn").on('tap', function() {
+      if(!paused) {
+        FruitFliesaudio.pause();
+        paused = true;
+      } else {
+        FruitFliesaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#FruitFliesaudiofbtn").on('tap', function() {
+      var ctime = FruitFliesaudio.currentTime;
+      FruitFliesaudio.currentTime = ctime + 10;
+    });
+    
+    $("#FruitFliesaudiobbtn").on('tap', function() {
+      var ctime = FruitFliesaudio.currentTime;
+      FruitFliesaudio.currentTime = ctime - 10;
+    });
+    
+    $("#FruitFliesaudiopsbtn").on('tap', function() {
+      FruitFliesaudio.pause();
+      //$(".audiopanel").css({"backgroundPosition":"0px 0px"});
+    });
+  </script>
+  <script src="js/onecardLogic.js"></script>  <!-- for card dragging effects -->
+</div> <!--//home-->

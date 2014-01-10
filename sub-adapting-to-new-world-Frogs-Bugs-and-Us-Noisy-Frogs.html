@@ -1,0 +1,180 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-adapting-to-new-world-Frogs-Bugs-and-Us-Noisy-Frogs">
+  <script src="js/hammer.js"></script>
+  <script src="js/jquery.hammer.js"></script>
+  <script src="js/slidebar_Adapting_New_World.js"></script>
+  <link rel="stylesheet" href="css/style_Adapting_New_World.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnAdaptingNewWorld"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnAdaptingNewWorld"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnAdaptingNewWorld"></div></div>
+  <div class="infobtnholder"><div class="infobtnAdaptingNewWorld"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnAdaptingNewWorld"></div></div>
+  <div class="menubtnholder"><div class="menubtnAdaptingNewWorld"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:14px;"><h1>Noisy Frogs</h1></div>
+  <div id="spacechar">&nbsp;
+    <div data-role="content" class="kidzcontent">
+      <div class="v-spacer"></div>
+      <div class="sidebarleft-half">
+        
+		<a id="NoisyFrogslink" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/Animals/Adapting_To_New_Worlds/Frogs_Bugs_And_Us/Noisy_Frogs/Taipei_Frog_Hi_Res.jpg', 'These Taipei frogs in Thailand are one species whose calls have been found to change when near human noise pollution.  (Courtesy: Bikramadittya Guha Roy)');">click here</a>
+		
+        <div id="f1_container" style="visibility:hidden;position:absolute;left:100px;top:270px;">
+          <div id="f1_card">
+            <div class="front face">
+              <img id="dopple" src="css/images/9-12/Animals/Adapting_To_New_Worlds/Frogs_Bugs_And_Us/Noisy_Frogs/Frog_Calls.png">
+            </div>
+            <div id="backofcard" class="back face center" style="background:url(css/images/9-12/Animals/Adapting_To_New_Worlds/Frogs_Bugs_And_Us/Noisy_Frogs/Frog_Calls_Reverse.png) no-repeat;">
+              <div class="returncard" style="position:absolute;left:0px;top:0px;width:362px;height:170px;"></div>
+			  <div id="Frogcalls_hear_me" style="height: 59px;width: 60px;position: absolute;left: 152px;top: 173px;"></div>
+            </div>
+          </div><!--/f1+card-->
+        </div><!--/f1_container-->
+		
+        <div id="zoomwrapper">
+          <div id="pol1" class="pPiece" style="left:100px;top:270px;">
+             <img src="css/images/9-12/Animals/Adapting_To_New_Worlds/Frogs_Bugs_And_Us/Noisy_Frogs/Frog_Calls.png" alt="" />
+          </div>
+          <div id="pol2"class="pPiece" style="left:75px;top:290px;">
+             <img src="css/images/9-12/Animals/Adapting_To_New_Worlds/Frogs_Bugs_And_Us/Noisy_Frogs/Taipei_Frog.jpg" alt="" />
+          </div>
+        </div><!--/zoomwrapper-->
+      </div>
+      
+      <div class="bpcontentAdaptingNewWorld">
+        <p>Have you ever tried to have a conversation in a noisy room?  Either you have to shout loudly to be heard by the other person, or move somewhere else to continue the conversation.  Frogs that communicate with each other using sound are having a similar problem in our increasingly noisy world.  Frogs use their calls to let other individuals know where they are, or to locate potential mates.</p>
+		<p>Those frogs living near noisy roads or airports have been adapting the way that they call and communicate with each other.  Some species stop calling during noisy periods, while others do the opposite and call more and at a higher pitch to be heard above the racket.  To persist in these human environments, frogs need to change the way that they croak.</p>
+      </div>
+       
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/Animals/bottomhomeani.png"></a></div>
+    </div> <!-- end content -->  
+  </div><!--/spacechar-->        
+  
+  <!-- <div class="audiopanel"> -->
+    <!-- images are in slidebarnat.js 
+         note: change the ids to be able play the narration
+    -->
+    <div class="micbtnholder"><div class="micbtnAdaptingNewWorld" id="playstopNoisyFrogs"></div></div>
+    <div class="bAdaptingNewWorld"><div class="rwAdaptingNewWorld" id="NoisyFrogsaudiobbtn"></div></div>
+    <div class="plAdaptingNewWorld"><div class="plpsAdaptingNewWorld" id="NoisyFrogsaudioplbtn"></div></div>
+    <div class="fAdaptingNewWorld"><div class="fwAdaptingNewWorld" id="NoisyFrogsaudiofbtn"></div></div>
+    <div id="actualaudio-NoisyFrogs" style="visibility:hidden;"></div>
+  <!-- </div> -->
+    <div id="actualaudio-rhythms" style="display: none;">
+		<audio id="frogcallsAudio" controls preload onpause="playsAdaptingToNewWorld()" onplay="pauseAdaptingToNewWorld()" style="visibility:hidden;"><source src="css/images/9-12/Animals/Adapting_To_New_Worlds/Frogs_Bugs_And_Us/Noisy_Frogs/Frog_Calls.mp3" type="audio/mpeg"></audio>
+	</div>
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+    var playing;
+    var paused;
+    (function() {
+      $('div#pol1').css("z-index", 2);
+      $('div#pol2').css("z-index", 1);
+      $('div#pol1 > img').css("-webkit-transform", "rotate(0deg)");
+      $('div#pol2 > img').css("-webkit-transform", "rotate(5deg)");
+      
+      playing = false;
+      paused = true;
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-NoisyFrogs').html('<audio id="NoisyFrogsaudio" controls preload onpause="playsAdaptingToNewWorld()" onplay="pauseAdaptingToNewWorld()"><source src="audio/Adapting_To_New_World/Noisy_Frogs.mp3" type="audio/mpeg"></audio>');
+      } 
+
+      $("#sub-adapting-to-new-world-Frogs-Bugs-and-Us-Noisy-Frogs").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundAdaptingToNewWorld.pause(); bgsoundAdaptingToNewWorld.currentTime = 0;});
+	
+    $("#Frogcalls_hear_me").on('tap', function() {
+        if(frogcallsAudio.currentTime == 0){
+			frogcallsAudio.play();
+			NoisyFrogsaudio.pause();
+			NoisyFrogsaudio.currentTime = 0;
+			bgsoundAdaptingToNewWorld.pause();
+			bgsoundAdaptingToNewWorld.currentTime = 0;
+		}
+		if(frogcallsAudio.currentTime > 0){
+			frogcallsAudio.pause();
+			frogcallsAudio.currentTime = 0;
+		}
+	});
+	
+    function goBack() {
+      $.mobile.changePage("sub-adapting-to-new-world-Frogs-Bugs-and-Us.html", {transition: "slide", reverse: true });
+    }
+    
+    $(".returncard").on('tap', function() {
+      $('#f1_card').css({"-webkit-transform": "rotateY(0deg)"});
+      $('#f1_card').css({"-moz-transform": "rotateY(0deg)"});
+      $('#f1_card').css({"-o-transform": "rotateY(0deg)"});
+      $('#f1_card').css({"transform": "rotateY(0deg)"});
+      setTimeout(function() {
+        $("#pol1").css({"visibility":"visible", "z-index":4});
+        $('#f1_container').css({"visibility":"hidden", "z-index":0});
+      }, 1000);
+    });
+    
+    $("#pol1").on('tap', function() {
+      $('#f1_container').css({"visibility":"visible", "z-index":10});
+      $(this).css({"visibility":"hidden"});
+      $('#f1_card').css({"-webkit-transform": "rotateY(180deg)"});
+      $('#f1_card').css({"-moz-transform": "rotateY(180deg)"});
+      $('#f1_card').css({"-o-transform": "rotateY(180deg)"});
+      $('#f1_card').css({"transform": "rotateY(180deg)"});
+    });
+    $("#pol2").on('tap', function() {
+      $('#NoisyFrogslink')[0].click();
+    });
+    
+    function playsAdaptingToNewWorld() {
+         bgsoundAdaptingToNewWorld.play();
+    }
+       
+    function pauseAdaptingToNewWorld() {
+         bgsoundAdaptingToNewWorld.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+    $("#playstopNoisyFrogs").on('tap', function() {
+      if(!playing) {
+        NoisyFrogsaudio.play();
+        $('.micbtnAdaptingNewWorld').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        NoisyFrogsaudio.pause(); NoisyFrogsaudio.currentTime = 0;
+        $('.micbtnAdaptingNewWorld').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#NoisyFrogsaudioplbtn").on('tap', function() {
+      if(!paused) {
+        NoisyFrogsaudio.pause();
+        paused = true;
+      } else {
+        NoisyFrogsaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#NoisyFrogsaudiofbtn").on('tap', function() {
+      var ctime = NoisyFrogsaudio.currentTime;
+      NoisyFrogsaudio.currentTime = ctime + 10;
+    });
+    
+    $("#NoisyFrogsaudiobbtn").on('tap', function() {
+      var ctime = NoisyFrogsaudio.currentTime;
+      NoisyFrogsaudio.currentTime = ctime - 10;
+    });
+    
+    $("#NoisyFrogsaudiopsbtn").on('tap', function() {
+      NoisyFrogsaudio.pause();
+      //$(".audiopanel").css({"backgroundPosition":"0px 0px"});
+    });
+  </script>
+  <script src="js/twocardLogic.js"></script>  <!-- for card dragging effects -->
+</div> <!--//home-->

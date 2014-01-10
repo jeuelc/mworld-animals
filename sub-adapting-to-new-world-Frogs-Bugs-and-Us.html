@@ -130,4 +130,1192 @@
       nav4Effects(); 
     });
   </script>
+</div> <!--//home--><!-- i-C-a -->
+<div data-role="page" id="sub-adapting-to-new-world-Frogs-Bugs-and-Us">
+  <!-- <script src="js/slidebarnat.js"></script> -->
+  <script src="js/slidebar_Adapting_New_World.js"></script>
+  <link rel="stylesheet" href="css/style_Adapting_New_World.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnAdaptingNewWorld"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnAdaptingNewWorld"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnAdaptingNewWorld"></div></div>
+  <div class="infobtnholder"><div class="infobtnAdaptingNewWorld"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnAdaptingNewWorld"></div></div>
+  <div class="menubtnholder"><div class="menubtnAdaptingNewWorld"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:14px;"><h1>Frogs, Bugs and Us</h1></div>
+  
+    <div data-role="content" class="kidzcontent">
+      <div class="navAdaptingNewWorld-content">
+        <p>Adaptation and evolution are generally seen as things that happen over long periods of time, perhaps even millions of years.  While changes in animals can be observed in fossils we dig up, they can also change much faster than that.  We call such changes that occur within our lifetime (but over several generations for the animal) 'contemporary evolution'.  Charles Darwin used evidence of contemporary evolution in pigeons and domestic animals to support his theory of natural selection.  But contemporary evolution can also be observed in animals as diverse as frogs, bugs, and even humans!</p>
+      </div>
+        
+      <div class="navbtn1">
+        <p><a href="sub-adapting-to-new-world-Frogs-Bugs-and-Us-Noisy-Frogs.html" data-transition="slide"><img src="css/images/9-12/Animals/Adapting_To_New_Worlds/Frogs_Bugs_And_Us/Noisy_Frogs.png"></a></p>
+      </div>
+      <div class="navbtn2">
+        <p><a href="sub-adapting-to-new-world-Frogs-Bugs-and-Us-soapberry-Bug.html" data-transition="slide"><img src="css/images/9-12/Animals/Adapting_To_New_Worlds/Frogs_Bugs_And_Us/Soapberry_Bug.png"></a></p>
+      </div>
+      <div class="navbtn3">
+        <p><a href="sub-adapting-to-new-world-Frogs-Bugs-and-Us-Fruit-Flies.html" data-transition="slide"><img src="css/images/9-12/Animals/Adapting_To_New_Worlds/Frogs_Bugs_And_Us/Fruit_Flies.png"></a></p>
+      </div>
+      <div class="navbtn4">
+        <p><a href="sub-adapting-to-new-world-Frogs-Bugs-and-Us-Human-Babies.html" data-transition="slide"><img src="css/images/9-12/Animals/Adapting_To_New_Worlds/Frogs_Bugs_And_Us/Human_Babies.png"></a></p>
+      </div>
+        
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/Animals/bottomhomeani.png"></a></div>
+    </div> <!-- end content -->  
+    
+  
+  <!--<div class="audiopanel">-->
+    <!-- images are in slidebarnat.js -->
+    <div class="micbtnholder"><div class="micbtnAdaptingNewWorld" id="playstopFrogsBugsUs"></div></div>
+    <div class="bAdaptingNewWorld"><div class="rwAdaptingNewWorld" id="FrogsBugsUsaudiobbtn"></div></div>
+    <div class="plAdaptingNewWorld"><div class="plpsAdaptingNewWorld" id="FrogsBugsUsaudioplbtn"></div></div>
+    <div class="fAdaptingNewWorld"><div class="fwAdaptingNewWorld" id="FrogsBugsUsaudiofbtn"></div></div>
+    <div id="actualaudio-FrogsBugsUs" style="visibility:hidden;"></div>
+  <!--</div>-->
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+    var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-FrogsBugsUs').html('<audio id="FrogsBugsUsaudio" controls preload onpause="playsFrogsBugsUs()" onplay="pauseFrogsBugsUs()"><source src="audio/Adapting_To_New_World/Frogs_Bugs_And_Us.mp3" type="audio/mpeg"></audio>');
+      } 
+    
+      $("#sub-adapting-to-new-world-Frogs-Bugs-and-Us").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { bgsoundFrogsBugsUs.pause(); bgsoundFrogsBugsUs.currentTime = 0; mainaudiobg.play(); });
+    
+    function goBack() {
+      $.mobile.changePage("sub-adapting-to-new-world.html", {transition: "slide", reverse: true });
+    }
+    
+    function playsFrogsBugsUs() {
+         bgsoundFrogsBugsUs.play();
+    }
+       
+    function pauseFrogsBugsUs() {
+         bgsoundFrogsBugsUs.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+	
+    $("#playstopFrogsBugsUs").on('tap', function() {
+      if(!playing) {
+        FrogsBugsUsaudio.play();
+        $('.micbtnAdaptingNewWorld').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        FrogsBugsUsaudio.pause(); FrogsBugsUsaudio.currentTime = 0;
+        $('.micbtnAdaptingNewWorld').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#FrogsBugsUsaudioplbtn").on('tap', function() {
+      if(!paused) {
+        FrogsBugsUsaudio.pause();
+        paused = true;
+      } else {
+        FrogsBugsUsaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#FrogsBugsUsaudiofbtn").on('tap', function() {
+      var ctime = FrogsBugsUsaudio.currentTime;
+      FrogsBugsUsaudio.currentTime = ctime + 10;
+    });
+    
+    $("#FrogsBugsUsaudiobbtn").on('tap', function() {
+      var ctime = FrogsBugsUsaudio.currentTime;
+      FrogsBugsUsaudio.currentTime = ctime - 10;
+    });
+    
+    $("#FrogsBugsUsaudiopsbtn").on('tap', function() {
+      FrogsBugsUsaudio.pause();
+      //$(".audiopanel").css({"backgroundPosition":"0px 0px"});
+    });
+    
+    $('.navbtn1').on('tap', function() { 
+      nav1Effects(); 
+    });
+    
+    $('.navbtn2').on('tap', function() { 
+      nav2Effects(); 
+    });
+    
+    $('.navbtn3').on('tap', function() { 
+      nav3Effects(); 
+    });
+    
+    $('.navbtn4').on('tap', function() { 
+      nav4Effects(); 
+    });
+  </script>
+</div> <!--//home--><!-- i-C-a -->
+<div data-role="page" id="sub-adapting-to-new-world-Frogs-Bugs-and-Us">
+  <!-- <script src="js/slidebarnat.js"></script> -->
+  <script src="js/slidebar_Adapting_New_World.js"></script>
+  <link rel="stylesheet" href="css/style_Adapting_New_World.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnAdaptingNewWorld"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnAdaptingNewWorld"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnAdaptingNewWorld"></div></div>
+  <div class="infobtnholder"><div class="infobtnAdaptingNewWorld"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnAdaptingNewWorld"></div></div>
+  <div class="menubtnholder"><div class="menubtnAdaptingNewWorld"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:14px;"><h1>Frogs, Bugs and Us</h1></div>
+  
+    <div data-role="content" class="kidzcontent">
+      <div class="navAdaptingNewWorld-content">
+        <p>Adaptation and evolution are generally seen as things that happen over long periods of time, perhaps even millions of years.  While changes in animals can be observed in fossils we dig up, they can also change much faster than that.  We call such changes that occur within our lifetime (but over several generations for the animal) 'contemporary evolution'.  Charles Darwin used evidence of contemporary evolution in pigeons and domestic animals to support his theory of natural selection.  But contemporary evolution can also be observed in animals as diverse as frogs, bugs, and even humans!</p>
+      </div>
+        
+      <div class="navbtn1">
+        <p><a href="sub-adapting-to-new-world-Frogs-Bugs-and-Us-Noisy-Frogs.html" data-transition="slide"><img src="css/images/9-12/Animals/Adapting_To_New_Worlds/Frogs_Bugs_And_Us/Noisy_Frogs.png"></a></p>
+      </div>
+      <div class="navbtn2">
+        <p><a href="sub-adapting-to-new-world-Frogs-Bugs-and-Us-soapberry-Bug.html" data-transition="slide"><img src="css/images/9-12/Animals/Adapting_To_New_Worlds/Frogs_Bugs_And_Us/Soapberry_Bug.png"></a></p>
+      </div>
+      <div class="navbtn3">
+        <p><a href="sub-adapting-to-new-world-Frogs-Bugs-and-Us-Fruit-Flies.html" data-transition="slide"><img src="css/images/9-12/Animals/Adapting_To_New_Worlds/Frogs_Bugs_And_Us/Fruit_Flies.png"></a></p>
+      </div>
+      <div class="navbtn4">
+        <p><a href="sub-adapting-to-new-world-Frogs-Bugs-and-Us-Human-Babies.html" data-transition="slide"><img src="css/images/9-12/Animals/Adapting_To_New_Worlds/Frogs_Bugs_And_Us/Human_Babies.png"></a></p>
+      </div>
+        
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/Animals/bottomhomeani.png"></a></div>
+    </div> <!-- end content -->  
+    
+  
+  <!--<div class="audiopanel">-->
+    <!-- images are in slidebarnat.js -->
+    <div class="micbtnholder"><div class="micbtnAdaptingNewWorld" id="playstopFrogsBugsUs"></div></div>
+    <div class="bAdaptingNewWorld"><div class="rwAdaptingNewWorld" id="FrogsBugsUsaudiobbtn"></div></div>
+    <div class="plAdaptingNewWorld"><div class="plpsAdaptingNewWorld" id="FrogsBugsUsaudioplbtn"></div></div>
+    <div class="fAdaptingNewWorld"><div class="fwAdaptingNewWorld" id="FrogsBugsUsaudiofbtn"></div></div>
+    <div id="actualaudio-FrogsBugsUs" style="visibility:hidden;"></div>
+  <!--</div>-->
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+    var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-FrogsBugsUs').html('<audio id="FrogsBugsUsaudio" controls preload onpause="playsFrogsBugsUs()" onplay="pauseFrogsBugsUs()"><source src="audio/Adapting_To_New_World/Frogs_Bugs_And_Us.mp3" type="audio/mpeg"></audio>');
+      } 
+    
+      $("#sub-adapting-to-new-world-Frogs-Bugs-and-Us").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { bgsoundFrogsBugsUs.pause(); bgsoundFrogsBugsUs.currentTime = 0; mainaudiobg.play(); });
+    
+    function goBack() {
+      $.mobile.changePage("sub-adapting-to-new-world.html", {transition: "slide", reverse: true });
+    }
+    
+    function playsFrogsBugsUs() {
+         bgsoundFrogsBugsUs.play();
+    }
+       
+    function pauseFrogsBugsUs() {
+         bgsoundFrogsBugsUs.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+	
+    $("#playstopFrogsBugsUs").on('tap', function() {
+      if(!playing) {
+        FrogsBugsUsaudio.play();
+        $('.micbtnAdaptingNewWorld').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        FrogsBugsUsaudio.pause(); FrogsBugsUsaudio.currentTime = 0;
+        $('.micbtnAdaptingNewWorld').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#FrogsBugsUsaudioplbtn").on('tap', function() {
+      if(!paused) {
+        FrogsBugsUsaudio.pause();
+        paused = true;
+      } else {
+        FrogsBugsUsaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#FrogsBugsUsaudiofbtn").on('tap', function() {
+      var ctime = FrogsBugsUsaudio.currentTime;
+      FrogsBugsUsaudio.currentTime = ctime + 10;
+    });
+    
+    $("#FrogsBugsUsaudiobbtn").on('tap', function() {
+      var ctime = FrogsBugsUsaudio.currentTime;
+      FrogsBugsUsaudio.currentTime = ctime - 10;
+    });
+    
+    $("#FrogsBugsUsaudiopsbtn").on('tap', function() {
+      FrogsBugsUsaudio.pause();
+      //$(".audiopanel").css({"backgroundPosition":"0px 0px"});
+    });
+    
+    $('.navbtn1').on('tap', function() { 
+      nav1Effects(); 
+    });
+    
+    $('.navbtn2').on('tap', function() { 
+      nav2Effects(); 
+    });
+    
+    $('.navbtn3').on('tap', function() { 
+      nav3Effects(); 
+    });
+    
+    $('.navbtn4').on('tap', function() { 
+      nav4Effects(); 
+    });
+  </script>
+</div> <!--//home--><!-- i-C-a -->
+<div data-role="page" id="sub-adapting-to-new-world-Frogs-Bugs-and-Us">
+  <!-- <script src="js/slidebarnat.js"></script> -->
+  <script src="js/slidebar_Adapting_New_World.js"></script>
+  <link rel="stylesheet" href="css/style_Adapting_New_World.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnAdaptingNewWorld"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnAdaptingNewWorld"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnAdaptingNewWorld"></div></div>
+  <div class="infobtnholder"><div class="infobtnAdaptingNewWorld"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnAdaptingNewWorld"></div></div>
+  <div class="menubtnholder"><div class="menubtnAdaptingNewWorld"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:14px;"><h1>Frogs, Bugs and Us</h1></div>
+  
+    <div data-role="content" class="kidzcontent">
+      <div class="navAdaptingNewWorld-content">
+        <p>Adaptation and evolution are generally seen as things that happen over long periods of time, perhaps even millions of years.  While changes in animals can be observed in fossils we dig up, they can also change much faster than that.  We call such changes that occur within our lifetime (but over several generations for the animal) 'contemporary evolution'.  Charles Darwin used evidence of contemporary evolution in pigeons and domestic animals to support his theory of natural selection.  But contemporary evolution can also be observed in animals as diverse as frogs, bugs, and even humans!</p>
+      </div>
+        
+      <div class="navbtn1">
+        <p><a href="sub-adapting-to-new-world-Frogs-Bugs-and-Us-Noisy-Frogs.html" data-transition="slide"><img src="css/images/9-12/Animals/Adapting_To_New_Worlds/Frogs_Bugs_And_Us/Noisy_Frogs.png"></a></p>
+      </div>
+      <div class="navbtn2">
+        <p><a href="sub-adapting-to-new-world-Frogs-Bugs-and-Us-soapberry-Bug.html" data-transition="slide"><img src="css/images/9-12/Animals/Adapting_To_New_Worlds/Frogs_Bugs_And_Us/Soapberry_Bug.png"></a></p>
+      </div>
+      <div class="navbtn3">
+        <p><a href="sub-adapting-to-new-world-Frogs-Bugs-and-Us-Fruit-Flies.html" data-transition="slide"><img src="css/images/9-12/Animals/Adapting_To_New_Worlds/Frogs_Bugs_And_Us/Fruit_Flies.png"></a></p>
+      </div>
+      <div class="navbtn4">
+        <p><a href="sub-adapting-to-new-world-Frogs-Bugs-and-Us-Human-Babies.html" data-transition="slide"><img src="css/images/9-12/Animals/Adapting_To_New_Worlds/Frogs_Bugs_And_Us/Human_Babies.png"></a></p>
+      </div>
+        
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/Animals/bottomhomeani.png"></a></div>
+    </div> <!-- end content -->  
+    
+  
+  <!--<div class="audiopanel">-->
+    <!-- images are in slidebarnat.js -->
+    <div class="micbtnholder"><div class="micbtnAdaptingNewWorld" id="playstopFrogsBugsUs"></div></div>
+    <div class="bAdaptingNewWorld"><div class="rwAdaptingNewWorld" id="FrogsBugsUsaudiobbtn"></div></div>
+    <div class="plAdaptingNewWorld"><div class="plpsAdaptingNewWorld" id="FrogsBugsUsaudioplbtn"></div></div>
+    <div class="fAdaptingNewWorld"><div class="fwAdaptingNewWorld" id="FrogsBugsUsaudiofbtn"></div></div>
+    <div id="actualaudio-FrogsBugsUs" style="visibility:hidden;"></div>
+  <!--</div>-->
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+    var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-FrogsBugsUs').html('<audio id="FrogsBugsUsaudio" controls preload onpause="playsFrogsBugsUs()" onplay="pauseFrogsBugsUs()"><source src="audio/Adapting_To_New_World/Frogs_Bugs_And_Us.mp3" type="audio/mpeg"></audio>');
+      } 
+    
+      $("#sub-adapting-to-new-world-Frogs-Bugs-and-Us").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { bgsoundFrogsBugsUs.pause(); bgsoundFrogsBugsUs.currentTime = 0; mainaudiobg.play(); });
+    
+    function goBack() {
+      $.mobile.changePage("sub-adapting-to-new-world.html", {transition: "slide", reverse: true });
+    }
+    
+    function playsFrogsBugsUs() {
+         bgsoundFrogsBugsUs.play();
+    }
+       
+    function pauseFrogsBugsUs() {
+         bgsoundFrogsBugsUs.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+	
+    $("#playstopFrogsBugsUs").on('tap', function() {
+      if(!playing) {
+        FrogsBugsUsaudio.play();
+        $('.micbtnAdaptingNewWorld').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        FrogsBugsUsaudio.pause(); FrogsBugsUsaudio.currentTime = 0;
+        $('.micbtnAdaptingNewWorld').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#FrogsBugsUsaudioplbtn").on('tap', function() {
+      if(!paused) {
+        FrogsBugsUsaudio.pause();
+        paused = true;
+      } else {
+        FrogsBugsUsaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#FrogsBugsUsaudiofbtn").on('tap', function() {
+      var ctime = FrogsBugsUsaudio.currentTime;
+      FrogsBugsUsaudio.currentTime = ctime + 10;
+    });
+    
+    $("#FrogsBugsUsaudiobbtn").on('tap', function() {
+      var ctime = FrogsBugsUsaudio.currentTime;
+      FrogsBugsUsaudio.currentTime = ctime - 10;
+    });
+    
+    $("#FrogsBugsUsaudiopsbtn").on('tap', function() {
+      FrogsBugsUsaudio.pause();
+      //$(".audiopanel").css({"backgroundPosition":"0px 0px"});
+    });
+    
+    $('.navbtn1').on('tap', function() { 
+      nav1Effects(); 
+    });
+    
+    $('.navbtn2').on('tap', function() { 
+      nav2Effects(); 
+    });
+    
+    $('.navbtn3').on('tap', function() { 
+      nav3Effects(); 
+    });
+    
+    $('.navbtn4').on('tap', function() { 
+      nav4Effects(); 
+    });
+  </script>
+</div> <!--//home--><!-- i-C-a -->
+<div data-role="page" id="sub-adapting-to-new-world-Frogs-Bugs-and-Us">
+  <!-- <script src="js/slidebarnat.js"></script> -->
+  <script src="js/slidebar_Adapting_New_World.js"></script>
+  <link rel="stylesheet" href="css/style_Adapting_New_World.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnAdaptingNewWorld"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnAdaptingNewWorld"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnAdaptingNewWorld"></div></div>
+  <div class="infobtnholder"><div class="infobtnAdaptingNewWorld"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnAdaptingNewWorld"></div></div>
+  <div class="menubtnholder"><div class="menubtnAdaptingNewWorld"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:14px;"><h1>Frogs, Bugs and Us</h1></div>
+  
+    <div data-role="content" class="kidzcontent">
+      <div class="navAdaptingNewWorld-content">
+        <p>Adaptation and evolution are generally seen as things that happen over long periods of time, perhaps even millions of years.  While changes in animals can be observed in fossils we dig up, they can also change much faster than that.  We call such changes that occur within our lifetime (but over several generations for the animal) 'contemporary evolution'.  Charles Darwin used evidence of contemporary evolution in pigeons and domestic animals to support his theory of natural selection.  But contemporary evolution can also be observed in animals as diverse as frogs, bugs, and even humans!</p>
+      </div>
+        
+      <div class="navbtn1">
+        <p><a href="sub-adapting-to-new-world-Frogs-Bugs-and-Us-Noisy-Frogs.html" data-transition="slide"><img src="css/images/9-12/Animals/Adapting_To_New_Worlds/Frogs_Bugs_And_Us/Noisy_Frogs.png"></a></p>
+      </div>
+      <div class="navbtn2">
+        <p><a href="sub-adapting-to-new-world-Frogs-Bugs-and-Us-soapberry-Bug.html" data-transition="slide"><img src="css/images/9-12/Animals/Adapting_To_New_Worlds/Frogs_Bugs_And_Us/Soapberry_Bug.png"></a></p>
+      </div>
+      <div class="navbtn3">
+        <p><a href="sub-adapting-to-new-world-Frogs-Bugs-and-Us-Fruit-Flies.html" data-transition="slide"><img src="css/images/9-12/Animals/Adapting_To_New_Worlds/Frogs_Bugs_And_Us/Fruit_Flies.png"></a></p>
+      </div>
+      <div class="navbtn4">
+        <p><a href="sub-adapting-to-new-world-Frogs-Bugs-and-Us-Human-Babies.html" data-transition="slide"><img src="css/images/9-12/Animals/Adapting_To_New_Worlds/Frogs_Bugs_And_Us/Human_Babies.png"></a></p>
+      </div>
+        
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/Animals/bottomhomeani.png"></a></div>
+    </div> <!-- end content -->  
+    
+  
+  <!--<div class="audiopanel">-->
+    <!-- images are in slidebarnat.js -->
+    <div class="micbtnholder"><div class="micbtnAdaptingNewWorld" id="playstopFrogsBugsUs"></div></div>
+    <div class="bAdaptingNewWorld"><div class="rwAdaptingNewWorld" id="FrogsBugsUsaudiobbtn"></div></div>
+    <div class="plAdaptingNewWorld"><div class="plpsAdaptingNewWorld" id="FrogsBugsUsaudioplbtn"></div></div>
+    <div class="fAdaptingNewWorld"><div class="fwAdaptingNewWorld" id="FrogsBugsUsaudiofbtn"></div></div>
+    <div id="actualaudio-FrogsBugsUs" style="visibility:hidden;"></div>
+  <!--</div>-->
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+    var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-FrogsBugsUs').html('<audio id="FrogsBugsUsaudio" controls preload onpause="playsFrogsBugsUs()" onplay="pauseFrogsBugsUs()"><source src="audio/Adapting_To_New_World/Frogs_Bugs_And_Us.mp3" type="audio/mpeg"></audio>');
+      } 
+    
+      $("#sub-adapting-to-new-world-Frogs-Bugs-and-Us").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { bgsoundFrogsBugsUs.pause(); bgsoundFrogsBugsUs.currentTime = 0; mainaudiobg.play(); });
+    
+    function goBack() {
+      $.mobile.changePage("sub-adapting-to-new-world.html", {transition: "slide", reverse: true });
+    }
+    
+    function playsFrogsBugsUs() {
+         bgsoundFrogsBugsUs.play();
+    }
+       
+    function pauseFrogsBugsUs() {
+         bgsoundFrogsBugsUs.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+	
+    $("#playstopFrogsBugsUs").on('tap', function() {
+      if(!playing) {
+        FrogsBugsUsaudio.play();
+        $('.micbtnAdaptingNewWorld').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        FrogsBugsUsaudio.pause(); FrogsBugsUsaudio.currentTime = 0;
+        $('.micbtnAdaptingNewWorld').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#FrogsBugsUsaudioplbtn").on('tap', function() {
+      if(!paused) {
+        FrogsBugsUsaudio.pause();
+        paused = true;
+      } else {
+        FrogsBugsUsaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#FrogsBugsUsaudiofbtn").on('tap', function() {
+      var ctime = FrogsBugsUsaudio.currentTime;
+      FrogsBugsUsaudio.currentTime = ctime + 10;
+    });
+    
+    $("#FrogsBugsUsaudiobbtn").on('tap', function() {
+      var ctime = FrogsBugsUsaudio.currentTime;
+      FrogsBugsUsaudio.currentTime = ctime - 10;
+    });
+    
+    $("#FrogsBugsUsaudiopsbtn").on('tap', function() {
+      FrogsBugsUsaudio.pause();
+      //$(".audiopanel").css({"backgroundPosition":"0px 0px"});
+    });
+    
+    $('.navbtn1').on('tap', function() { 
+      nav1Effects(); 
+    });
+    
+    $('.navbtn2').on('tap', function() { 
+      nav2Effects(); 
+    });
+    
+    $('.navbtn3').on('tap', function() { 
+      nav3Effects(); 
+    });
+    
+    $('.navbtn4').on('tap', function() { 
+      nav4Effects(); 
+    });
+  </script>
+</div> <!--//home--><!-- i-C-a -->
+<div data-role="page" id="sub-adapting-to-new-world-Frogs-Bugs-and-Us">
+  <!-- <script src="js/slidebarnat.js"></script> -->
+  <script src="js/slidebar_Adapting_New_World.js"></script>
+  <link rel="stylesheet" href="css/style_Adapting_New_World.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnAdaptingNewWorld"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnAdaptingNewWorld"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnAdaptingNewWorld"></div></div>
+  <div class="infobtnholder"><div class="infobtnAdaptingNewWorld"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnAdaptingNewWorld"></div></div>
+  <div class="menubtnholder"><div class="menubtnAdaptingNewWorld"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:14px;"><h1>Frogs, Bugs and Us</h1></div>
+  
+    <div data-role="content" class="kidzcontent">
+      <div class="navAdaptingNewWorld-content">
+        <p>Adaptation and evolution are generally seen as things that happen over long periods of time, perhaps even millions of years.  While changes in animals can be observed in fossils we dig up, they can also change much faster than that.  We call such changes that occur within our lifetime (but over several generations for the animal) 'contemporary evolution'.  Charles Darwin used evidence of contemporary evolution in pigeons and domestic animals to support his theory of natural selection.  But contemporary evolution can also be observed in animals as diverse as frogs, bugs, and even humans!</p>
+      </div>
+        
+      <div class="navbtn1">
+        <p><a href="sub-adapting-to-new-world-Frogs-Bugs-and-Us-Noisy-Frogs.html" data-transition="slide"><img src="css/images/9-12/Animals/Adapting_To_New_Worlds/Frogs_Bugs_And_Us/Noisy_Frogs.png"></a></p>
+      </div>
+      <div class="navbtn2">
+        <p><a href="sub-adapting-to-new-world-Frogs-Bugs-and-Us-soapberry-Bug.html" data-transition="slide"><img src="css/images/9-12/Animals/Adapting_To_New_Worlds/Frogs_Bugs_And_Us/Soapberry_Bug.png"></a></p>
+      </div>
+      <div class="navbtn3">
+        <p><a href="sub-adapting-to-new-world-Frogs-Bugs-and-Us-Fruit-Flies.html" data-transition="slide"><img src="css/images/9-12/Animals/Adapting_To_New_Worlds/Frogs_Bugs_And_Us/Fruit_Flies.png"></a></p>
+      </div>
+      <div class="navbtn4">
+        <p><a href="sub-adapting-to-new-world-Frogs-Bugs-and-Us-Human-Babies.html" data-transition="slide"><img src="css/images/9-12/Animals/Adapting_To_New_Worlds/Frogs_Bugs_And_Us/Human_Babies.png"></a></p>
+      </div>
+        
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/Animals/bottomhomeani.png"></a></div>
+    </div> <!-- end content -->  
+    
+  
+  <!--<div class="audiopanel">-->
+    <!-- images are in slidebarnat.js -->
+    <div class="micbtnholder"><div class="micbtnAdaptingNewWorld" id="playstopFrogsBugsUs"></div></div>
+    <div class="bAdaptingNewWorld"><div class="rwAdaptingNewWorld" id="FrogsBugsUsaudiobbtn"></div></div>
+    <div class="plAdaptingNewWorld"><div class="plpsAdaptingNewWorld" id="FrogsBugsUsaudioplbtn"></div></div>
+    <div class="fAdaptingNewWorld"><div class="fwAdaptingNewWorld" id="FrogsBugsUsaudiofbtn"></div></div>
+    <div id="actualaudio-FrogsBugsUs" style="visibility:hidden;"></div>
+  <!--</div>-->
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+    var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-FrogsBugsUs').html('<audio id="FrogsBugsUsaudio" controls preload onpause="playsFrogsBugsUs()" onplay="pauseFrogsBugsUs()"><source src="audio/Adapting_To_New_World/Frogs_Bugs_And_Us.mp3" type="audio/mpeg"></audio>');
+      } 
+    
+      $("#sub-adapting-to-new-world-Frogs-Bugs-and-Us").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { bgsoundFrogsBugsUs.pause(); bgsoundFrogsBugsUs.currentTime = 0; mainaudiobg.play(); });
+    
+    function goBack() {
+      $.mobile.changePage("sub-adapting-to-new-world.html", {transition: "slide", reverse: true });
+    }
+    
+    function playsFrogsBugsUs() {
+         bgsoundFrogsBugsUs.play();
+    }
+       
+    function pauseFrogsBugsUs() {
+         bgsoundFrogsBugsUs.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+	
+    $("#playstopFrogsBugsUs").on('tap', function() {
+      if(!playing) {
+        FrogsBugsUsaudio.play();
+        $('.micbtnAdaptingNewWorld').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        FrogsBugsUsaudio.pause(); FrogsBugsUsaudio.currentTime = 0;
+        $('.micbtnAdaptingNewWorld').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#FrogsBugsUsaudioplbtn").on('tap', function() {
+      if(!paused) {
+        FrogsBugsUsaudio.pause();
+        paused = true;
+      } else {
+        FrogsBugsUsaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#FrogsBugsUsaudiofbtn").on('tap', function() {
+      var ctime = FrogsBugsUsaudio.currentTime;
+      FrogsBugsUsaudio.currentTime = ctime + 10;
+    });
+    
+    $("#FrogsBugsUsaudiobbtn").on('tap', function() {
+      var ctime = FrogsBugsUsaudio.currentTime;
+      FrogsBugsUsaudio.currentTime = ctime - 10;
+    });
+    
+    $("#FrogsBugsUsaudiopsbtn").on('tap', function() {
+      FrogsBugsUsaudio.pause();
+      //$(".audiopanel").css({"backgroundPosition":"0px 0px"});
+    });
+    
+    $('.navbtn1').on('tap', function() { 
+      nav1Effects(); 
+    });
+    
+    $('.navbtn2').on('tap', function() { 
+      nav2Effects(); 
+    });
+    
+    $('.navbtn3').on('tap', function() { 
+      nav3Effects(); 
+    });
+    
+    $('.navbtn4').on('tap', function() { 
+      nav4Effects(); 
+    });
+  </script>
+</div> <!--//home--><!-- i-C-a -->
+<div data-role="page" id="sub-adapting-to-new-world-Frogs-Bugs-and-Us">
+  <!-- <script src="js/slidebarnat.js"></script> -->
+  <script src="js/slidebar_Adapting_New_World.js"></script>
+  <link rel="stylesheet" href="css/style_Adapting_New_World.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnAdaptingNewWorld"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnAdaptingNewWorld"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnAdaptingNewWorld"></div></div>
+  <div class="infobtnholder"><div class="infobtnAdaptingNewWorld"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnAdaptingNewWorld"></div></div>
+  <div class="menubtnholder"><div class="menubtnAdaptingNewWorld"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:14px;"><h1>Frogs, Bugs and Us</h1></div>
+  
+    <div data-role="content" class="kidzcontent">
+      <div class="navAdaptingNewWorld-content">
+        <p>Adaptation and evolution are generally seen as things that happen over long periods of time, perhaps even millions of years.  While changes in animals can be observed in fossils we dig up, they can also change much faster than that.  We call such changes that occur within our lifetime (but over several generations for the animal) 'contemporary evolution'.  Charles Darwin used evidence of contemporary evolution in pigeons and domestic animals to support his theory of natural selection.  But contemporary evolution can also be observed in animals as diverse as frogs, bugs, and even humans!</p>
+      </div>
+        
+      <div class="navbtn1">
+        <p><a href="sub-adapting-to-new-world-Frogs-Bugs-and-Us-Noisy-Frogs.html" data-transition="slide"><img src="css/images/9-12/Animals/Adapting_To_New_Worlds/Frogs_Bugs_And_Us/Noisy_Frogs.png"></a></p>
+      </div>
+      <div class="navbtn2">
+        <p><a href="sub-adapting-to-new-world-Frogs-Bugs-and-Us-soapberry-Bug.html" data-transition="slide"><img src="css/images/9-12/Animals/Adapting_To_New_Worlds/Frogs_Bugs_And_Us/Soapberry_Bug.png"></a></p>
+      </div>
+      <div class="navbtn3">
+        <p><a href="sub-adapting-to-new-world-Frogs-Bugs-and-Us-Fruit-Flies.html" data-transition="slide"><img src="css/images/9-12/Animals/Adapting_To_New_Worlds/Frogs_Bugs_And_Us/Fruit_Flies.png"></a></p>
+      </div>
+      <div class="navbtn4">
+        <p><a href="sub-adapting-to-new-world-Frogs-Bugs-and-Us-Human-Babies.html" data-transition="slide"><img src="css/images/9-12/Animals/Adapting_To_New_Worlds/Frogs_Bugs_And_Us/Human_Babies.png"></a></p>
+      </div>
+        
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/Animals/bottomhomeani.png"></a></div>
+    </div> <!-- end content -->  
+    
+  
+  <!--<div class="audiopanel">-->
+    <!-- images are in slidebarnat.js -->
+    <div class="micbtnholder"><div class="micbtnAdaptingNewWorld" id="playstopFrogsBugsUs"></div></div>
+    <div class="bAdaptingNewWorld"><div class="rwAdaptingNewWorld" id="FrogsBugsUsaudiobbtn"></div></div>
+    <div class="plAdaptingNewWorld"><div class="plpsAdaptingNewWorld" id="FrogsBugsUsaudioplbtn"></div></div>
+    <div class="fAdaptingNewWorld"><div class="fwAdaptingNewWorld" id="FrogsBugsUsaudiofbtn"></div></div>
+    <div id="actualaudio-FrogsBugsUs" style="visibility:hidden;"></div>
+  <!--</div>-->
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+    var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-FrogsBugsUs').html('<audio id="FrogsBugsUsaudio" controls preload onpause="playsFrogsBugsUs()" onplay="pauseFrogsBugsUs()"><source src="audio/Adapting_To_New_World/Frogs_Bugs_And_Us.mp3" type="audio/mpeg"></audio>');
+      } 
+    
+      $("#sub-adapting-to-new-world-Frogs-Bugs-and-Us").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { bgsoundFrogsBugsUs.pause(); bgsoundFrogsBugsUs.currentTime = 0; mainaudiobg.play(); });
+    
+    function goBack() {
+      $.mobile.changePage("sub-adapting-to-new-world.html", {transition: "slide", reverse: true });
+    }
+    
+    function playsFrogsBugsUs() {
+         bgsoundFrogsBugsUs.play();
+    }
+       
+    function pauseFrogsBugsUs() {
+         bgsoundFrogsBugsUs.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+	
+    $("#playstopFrogsBugsUs").on('tap', function() {
+      if(!playing) {
+        FrogsBugsUsaudio.play();
+        $('.micbtnAdaptingNewWorld').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        FrogsBugsUsaudio.pause(); FrogsBugsUsaudio.currentTime = 0;
+        $('.micbtnAdaptingNewWorld').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#FrogsBugsUsaudioplbtn").on('tap', function() {
+      if(!paused) {
+        FrogsBugsUsaudio.pause();
+        paused = true;
+      } else {
+        FrogsBugsUsaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#FrogsBugsUsaudiofbtn").on('tap', function() {
+      var ctime = FrogsBugsUsaudio.currentTime;
+      FrogsBugsUsaudio.currentTime = ctime + 10;
+    });
+    
+    $("#FrogsBugsUsaudiobbtn").on('tap', function() {
+      var ctime = FrogsBugsUsaudio.currentTime;
+      FrogsBugsUsaudio.currentTime = ctime - 10;
+    });
+    
+    $("#FrogsBugsUsaudiopsbtn").on('tap', function() {
+      FrogsBugsUsaudio.pause();
+      //$(".audiopanel").css({"backgroundPosition":"0px 0px"});
+    });
+    
+    $('.navbtn1').on('tap', function() { 
+      nav1Effects(); 
+    });
+    
+    $('.navbtn2').on('tap', function() { 
+      nav2Effects(); 
+    });
+    
+    $('.navbtn3').on('tap', function() { 
+      nav3Effects(); 
+    });
+    
+    $('.navbtn4').on('tap', function() { 
+      nav4Effects(); 
+    });
+  </script>
+</div> <!--//home--><!-- i-C-a -->
+<div data-role="page" id="sub-adapting-to-new-world-Frogs-Bugs-and-Us">
+  <!-- <script src="js/slidebarnat.js"></script> -->
+  <script src="js/slidebar_Adapting_New_World.js"></script>
+  <link rel="stylesheet" href="css/style_Adapting_New_World.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnAdaptingNewWorld"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnAdaptingNewWorld"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnAdaptingNewWorld"></div></div>
+  <div class="infobtnholder"><div class="infobtnAdaptingNewWorld"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnAdaptingNewWorld"></div></div>
+  <div class="menubtnholder"><div class="menubtnAdaptingNewWorld"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:14px;"><h1>Frogs, Bugs and Us</h1></div>
+  
+    <div data-role="content" class="kidzcontent">
+      <div class="navAdaptingNewWorld-content">
+        <p>Adaptation and evolution are generally seen as things that happen over long periods of time, perhaps even millions of years.  While changes in animals can be observed in fossils we dig up, they can also change much faster than that.  We call such changes that occur within our lifetime (but over several generations for the animal) 'contemporary evolution'.  Charles Darwin used evidence of contemporary evolution in pigeons and domestic animals to support his theory of natural selection.  But contemporary evolution can also be observed in animals as diverse as frogs, bugs, and even humans!</p>
+      </div>
+        
+      <div class="navbtn1">
+        <p><a href="sub-adapting-to-new-world-Frogs-Bugs-and-Us-Noisy-Frogs.html" data-transition="slide"><img src="css/images/9-12/Animals/Adapting_To_New_Worlds/Frogs_Bugs_And_Us/Noisy_Frogs.png"></a></p>
+      </div>
+      <div class="navbtn2">
+        <p><a href="sub-adapting-to-new-world-Frogs-Bugs-and-Us-soapberry-Bug.html" data-transition="slide"><img src="css/images/9-12/Animals/Adapting_To_New_Worlds/Frogs_Bugs_And_Us/Soapberry_Bug.png"></a></p>
+      </div>
+      <div class="navbtn3">
+        <p><a href="sub-adapting-to-new-world-Frogs-Bugs-and-Us-Fruit-Flies.html" data-transition="slide"><img src="css/images/9-12/Animals/Adapting_To_New_Worlds/Frogs_Bugs_And_Us/Fruit_Flies.png"></a></p>
+      </div>
+      <div class="navbtn4">
+        <p><a href="sub-adapting-to-new-world-Frogs-Bugs-and-Us-Human-Babies.html" data-transition="slide"><img src="css/images/9-12/Animals/Adapting_To_New_Worlds/Frogs_Bugs_And_Us/Human_Babies.png"></a></p>
+      </div>
+        
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/Animals/bottomhomeani.png"></a></div>
+    </div> <!-- end content -->  
+    
+  
+  <!--<div class="audiopanel">-->
+    <!-- images are in slidebarnat.js -->
+    <div class="micbtnholder"><div class="micbtnAdaptingNewWorld" id="playstopFrogsBugsUs"></div></div>
+    <div class="bAdaptingNewWorld"><div class="rwAdaptingNewWorld" id="FrogsBugsUsaudiobbtn"></div></div>
+    <div class="plAdaptingNewWorld"><div class="plpsAdaptingNewWorld" id="FrogsBugsUsaudioplbtn"></div></div>
+    <div class="fAdaptingNewWorld"><div class="fwAdaptingNewWorld" id="FrogsBugsUsaudiofbtn"></div></div>
+    <div id="actualaudio-FrogsBugsUs" style="visibility:hidden;"></div>
+  <!--</div>-->
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+    var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-FrogsBugsUs').html('<audio id="FrogsBugsUsaudio" controls preload onpause="playsFrogsBugsUs()" onplay="pauseFrogsBugsUs()"><source src="audio/Adapting_To_New_World/Frogs_Bugs_And_Us.mp3" type="audio/mpeg"></audio>');
+      } 
+    
+      $("#sub-adapting-to-new-world-Frogs-Bugs-and-Us").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { bgsoundFrogsBugsUs.pause(); bgsoundFrogsBugsUs.currentTime = 0; mainaudiobg.play(); });
+    
+    function goBack() {
+      $.mobile.changePage("sub-adapting-to-new-world.html", {transition: "slide", reverse: true });
+    }
+    
+    function playsFrogsBugsUs() {
+         bgsoundFrogsBugsUs.play();
+    }
+       
+    function pauseFrogsBugsUs() {
+         bgsoundFrogsBugsUs.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+	
+    $("#playstopFrogsBugsUs").on('tap', function() {
+      if(!playing) {
+        FrogsBugsUsaudio.play();
+        $('.micbtnAdaptingNewWorld').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        FrogsBugsUsaudio.pause(); FrogsBugsUsaudio.currentTime = 0;
+        $('.micbtnAdaptingNewWorld').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#FrogsBugsUsaudioplbtn").on('tap', function() {
+      if(!paused) {
+        FrogsBugsUsaudio.pause();
+        paused = true;
+      } else {
+        FrogsBugsUsaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#FrogsBugsUsaudiofbtn").on('tap', function() {
+      var ctime = FrogsBugsUsaudio.currentTime;
+      FrogsBugsUsaudio.currentTime = ctime + 10;
+    });
+    
+    $("#FrogsBugsUsaudiobbtn").on('tap', function() {
+      var ctime = FrogsBugsUsaudio.currentTime;
+      FrogsBugsUsaudio.currentTime = ctime - 10;
+    });
+    
+    $("#FrogsBugsUsaudiopsbtn").on('tap', function() {
+      FrogsBugsUsaudio.pause();
+      //$(".audiopanel").css({"backgroundPosition":"0px 0px"});
+    });
+    
+    $('.navbtn1').on('tap', function() { 
+      nav1Effects(); 
+    });
+    
+    $('.navbtn2').on('tap', function() { 
+      nav2Effects(); 
+    });
+    
+    $('.navbtn3').on('tap', function() { 
+      nav3Effects(); 
+    });
+    
+    $('.navbtn4').on('tap', function() { 
+      nav4Effects(); 
+    });
+  </script>
+</div> <!--//home--><!-- i-C-a -->
+<div data-role="page" id="sub-adapting-to-new-world-Frogs-Bugs-and-Us">
+  <!-- <script src="js/slidebarnat.js"></script> -->
+  <script src="js/slidebar_Adapting_New_World.js"></script>
+  <link rel="stylesheet" href="css/style_Adapting_New_World.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnAdaptingNewWorld"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnAdaptingNewWorld"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnAdaptingNewWorld"></div></div>
+  <div class="infobtnholder"><div class="infobtnAdaptingNewWorld"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnAdaptingNewWorld"></div></div>
+  <div class="menubtnholder"><div class="menubtnAdaptingNewWorld"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:14px;"><h1>Frogs, Bugs and Us</h1></div>
+  
+    <div data-role="content" class="kidzcontent">
+      <div class="navAdaptingNewWorld-content">
+        <p>Adaptation and evolution are generally seen as things that happen over long periods of time, perhaps even millions of years.  While changes in animals can be observed in fossils we dig up, they can also change much faster than that.  We call such changes that occur within our lifetime (but over several generations for the animal) 'contemporary evolution'.  Charles Darwin used evidence of contemporary evolution in pigeons and domestic animals to support his theory of natural selection.  But contemporary evolution can also be observed in animals as diverse as frogs, bugs, and even humans!</p>
+      </div>
+        
+      <div class="navbtn1">
+        <p><a href="sub-adapting-to-new-world-Frogs-Bugs-and-Us-Noisy-Frogs.html" data-transition="slide"><img src="css/images/9-12/Animals/Adapting_To_New_Worlds/Frogs_Bugs_And_Us/Noisy_Frogs.png"></a></p>
+      </div>
+      <div class="navbtn2">
+        <p><a href="sub-adapting-to-new-world-Frogs-Bugs-and-Us-soapberry-Bug.html" data-transition="slide"><img src="css/images/9-12/Animals/Adapting_To_New_Worlds/Frogs_Bugs_And_Us/Soapberry_Bug.png"></a></p>
+      </div>
+      <div class="navbtn3">
+        <p><a href="sub-adapting-to-new-world-Frogs-Bugs-and-Us-Fruit-Flies.html" data-transition="slide"><img src="css/images/9-12/Animals/Adapting_To_New_Worlds/Frogs_Bugs_And_Us/Fruit_Flies.png"></a></p>
+      </div>
+      <div class="navbtn4">
+        <p><a href="sub-adapting-to-new-world-Frogs-Bugs-and-Us-Human-Babies.html" data-transition="slide"><img src="css/images/9-12/Animals/Adapting_To_New_Worlds/Frogs_Bugs_And_Us/Human_Babies.png"></a></p>
+      </div>
+        
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/Animals/bottomhomeani.png"></a></div>
+    </div> <!-- end content -->  
+    
+  
+  <!--<div class="audiopanel">-->
+    <!-- images are in slidebarnat.js -->
+    <div class="micbtnholder"><div class="micbtnAdaptingNewWorld" id="playstopFrogsBugsUs"></div></div>
+    <div class="bAdaptingNewWorld"><div class="rwAdaptingNewWorld" id="FrogsBugsUsaudiobbtn"></div></div>
+    <div class="plAdaptingNewWorld"><div class="plpsAdaptingNewWorld" id="FrogsBugsUsaudioplbtn"></div></div>
+    <div class="fAdaptingNewWorld"><div class="fwAdaptingNewWorld" id="FrogsBugsUsaudiofbtn"></div></div>
+    <div id="actualaudio-FrogsBugsUs" style="visibility:hidden;"></div>
+  <!--</div>-->
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+    var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-FrogsBugsUs').html('<audio id="FrogsBugsUsaudio" controls preload onpause="playsFrogsBugsUs()" onplay="pauseFrogsBugsUs()"><source src="audio/Adapting_To_New_World/Frogs_Bugs_And_Us.mp3" type="audio/mpeg"></audio>');
+      } 
+    
+      $("#sub-adapting-to-new-world-Frogs-Bugs-and-Us").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { bgsoundFrogsBugsUs.pause(); bgsoundFrogsBugsUs.currentTime = 0; mainaudiobg.play(); });
+    
+    function goBack() {
+      $.mobile.changePage("sub-adapting-to-new-world.html", {transition: "slide", reverse: true });
+    }
+    
+    function playsFrogsBugsUs() {
+         bgsoundFrogsBugsUs.play();
+    }
+       
+    function pauseFrogsBugsUs() {
+         bgsoundFrogsBugsUs.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+	
+    $("#playstopFrogsBugsUs").on('tap', function() {
+      if(!playing) {
+        FrogsBugsUsaudio.play();
+        $('.micbtnAdaptingNewWorld').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        FrogsBugsUsaudio.pause(); FrogsBugsUsaudio.currentTime = 0;
+        $('.micbtnAdaptingNewWorld').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#FrogsBugsUsaudioplbtn").on('tap', function() {
+      if(!paused) {
+        FrogsBugsUsaudio.pause();
+        paused = true;
+      } else {
+        FrogsBugsUsaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#FrogsBugsUsaudiofbtn").on('tap', function() {
+      var ctime = FrogsBugsUsaudio.currentTime;
+      FrogsBugsUsaudio.currentTime = ctime + 10;
+    });
+    
+    $("#FrogsBugsUsaudiobbtn").on('tap', function() {
+      var ctime = FrogsBugsUsaudio.currentTime;
+      FrogsBugsUsaudio.currentTime = ctime - 10;
+    });
+    
+    $("#FrogsBugsUsaudiopsbtn").on('tap', function() {
+      FrogsBugsUsaudio.pause();
+      //$(".audiopanel").css({"backgroundPosition":"0px 0px"});
+    });
+    
+    $('.navbtn1').on('tap', function() { 
+      nav1Effects(); 
+    });
+    
+    $('.navbtn2').on('tap', function() { 
+      nav2Effects(); 
+    });
+    
+    $('.navbtn3').on('tap', function() { 
+      nav3Effects(); 
+    });
+    
+    $('.navbtn4').on('tap', function() { 
+      nav4Effects(); 
+    });
+  </script>
+</div> <!--//home--><!-- i-C-a -->
+<div data-role="page" id="sub-adapting-to-new-world-Frogs-Bugs-and-Us">
+  <!-- <script src="js/slidebarnat.js"></script> -->
+  <script src="js/slidebar_Adapting_New_World.js"></script>
+  <link rel="stylesheet" href="css/style_Adapting_New_World.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnAdaptingNewWorld"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnAdaptingNewWorld"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnAdaptingNewWorld"></div></div>
+  <div class="infobtnholder"><div class="infobtnAdaptingNewWorld"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnAdaptingNewWorld"></div></div>
+  <div class="menubtnholder"><div class="menubtnAdaptingNewWorld"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:14px;"><h1>Frogs, Bugs and Us</h1></div>
+  
+    <div data-role="content" class="kidzcontent">
+      <div class="navAdaptingNewWorld-content">
+        <p>Adaptation and evolution are generally seen as things that happen over long periods of time, perhaps even millions of years.  While changes in animals can be observed in fossils we dig up, they can also change much faster than that.  We call such changes that occur within our lifetime (but over several generations for the animal) 'contemporary evolution'.  Charles Darwin used evidence of contemporary evolution in pigeons and domestic animals to support his theory of natural selection.  But contemporary evolution can also be observed in animals as diverse as frogs, bugs, and even humans!</p>
+      </div>
+        
+      <div class="navbtn1">
+        <p><a href="sub-adapting-to-new-world-Frogs-Bugs-and-Us-Noisy-Frogs.html" data-transition="slide"><img src="css/images/9-12/Animals/Adapting_To_New_Worlds/Frogs_Bugs_And_Us/Noisy_Frogs.png"></a></p>
+      </div>
+      <div class="navbtn2">
+        <p><a href="sub-adapting-to-new-world-Frogs-Bugs-and-Us-soapberry-Bug.html" data-transition="slide"><img src="css/images/9-12/Animals/Adapting_To_New_Worlds/Frogs_Bugs_And_Us/Soapberry_Bug.png"></a></p>
+      </div>
+      <div class="navbtn3">
+        <p><a href="sub-adapting-to-new-world-Frogs-Bugs-and-Us-Fruit-Flies.html" data-transition="slide"><img src="css/images/9-12/Animals/Adapting_To_New_Worlds/Frogs_Bugs_And_Us/Fruit_Flies.png"></a></p>
+      </div>
+      <div class="navbtn4">
+        <p><a href="sub-adapting-to-new-world-Frogs-Bugs-and-Us-Human-Babies.html" data-transition="slide"><img src="css/images/9-12/Animals/Adapting_To_New_Worlds/Frogs_Bugs_And_Us/Human_Babies.png"></a></p>
+      </div>
+        
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/Animals/bottomhomeani.png"></a></div>
+    </div> <!-- end content -->  
+    
+  
+  <!--<div class="audiopanel">-->
+    <!-- images are in slidebarnat.js -->
+    <div class="micbtnholder"><div class="micbtnAdaptingNewWorld" id="playstopFrogsBugsUs"></div></div>
+    <div class="bAdaptingNewWorld"><div class="rwAdaptingNewWorld" id="FrogsBugsUsaudiobbtn"></div></div>
+    <div class="plAdaptingNewWorld"><div class="plpsAdaptingNewWorld" id="FrogsBugsUsaudioplbtn"></div></div>
+    <div class="fAdaptingNewWorld"><div class="fwAdaptingNewWorld" id="FrogsBugsUsaudiofbtn"></div></div>
+    <div id="actualaudio-FrogsBugsUs" style="visibility:hidden;"></div>
+  <!--</div>-->
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+    var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-FrogsBugsUs').html('<audio id="FrogsBugsUsaudio" controls preload onpause="playsFrogsBugsUs()" onplay="pauseFrogsBugsUs()"><source src="audio/Adapting_To_New_World/Frogs_Bugs_And_Us.mp3" type="audio/mpeg"></audio>');
+      } 
+    
+      $("#sub-adapting-to-new-world-Frogs-Bugs-and-Us").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { bgsoundFrogsBugsUs.pause(); bgsoundFrogsBugsUs.currentTime = 0; mainaudiobg.play(); });
+    
+    function goBack() {
+      $.mobile.changePage("sub-adapting-to-new-world.html", {transition: "slide", reverse: true });
+    }
+    
+    function playsFrogsBugsUs() {
+         bgsoundFrogsBugsUs.play();
+    }
+       
+    function pauseFrogsBugsUs() {
+         bgsoundFrogsBugsUs.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+	
+    $("#playstopFrogsBugsUs").on('tap', function() {
+      if(!playing) {
+        FrogsBugsUsaudio.play();
+        $('.micbtnAdaptingNewWorld').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        FrogsBugsUsaudio.pause(); FrogsBugsUsaudio.currentTime = 0;
+        $('.micbtnAdaptingNewWorld').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#FrogsBugsUsaudioplbtn").on('tap', function() {
+      if(!paused) {
+        FrogsBugsUsaudio.pause();
+        paused = true;
+      } else {
+        FrogsBugsUsaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#FrogsBugsUsaudiofbtn").on('tap', function() {
+      var ctime = FrogsBugsUsaudio.currentTime;
+      FrogsBugsUsaudio.currentTime = ctime + 10;
+    });
+    
+    $("#FrogsBugsUsaudiobbtn").on('tap', function() {
+      var ctime = FrogsBugsUsaudio.currentTime;
+      FrogsBugsUsaudio.currentTime = ctime - 10;
+    });
+    
+    $("#FrogsBugsUsaudiopsbtn").on('tap', function() {
+      FrogsBugsUsaudio.pause();
+      //$(".audiopanel").css({"backgroundPosition":"0px 0px"});
+    });
+    
+    $('.navbtn1').on('tap', function() { 
+      nav1Effects(); 
+    });
+    
+    $('.navbtn2').on('tap', function() { 
+      nav2Effects(); 
+    });
+    
+    $('.navbtn3').on('tap', function() { 
+      nav3Effects(); 
+    });
+    
+    $('.navbtn4').on('tap', function() { 
+      nav4Effects(); 
+    });
+  </script>
 </div> <!--//home-->

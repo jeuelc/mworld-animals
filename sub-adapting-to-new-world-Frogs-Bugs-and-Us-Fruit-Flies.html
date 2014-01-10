@@ -1,0 +1,165 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-adapting-to-new-world-Frogs-Bugs-and-Us-Fruit-Flies">
+  <script src="js/hammer.js"></script>
+  <script src="js/jquery.hammer.js"></script>
+  <script src="js/slidebar_Adapting_New_World.js"></script>
+  <link rel="stylesheet" href="css/style_Adapting_New_World.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnAdaptingNewWorld"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnAdaptingNewWorld"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnAdaptingNewWorld"></div></div>
+  <div class="infobtnholder"><div class="infobtnAdaptingNewWorld"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnAdaptingNewWorld"></div></div>
+  <div class="menubtnholder"><div class="menubtnAdaptingNewWorld"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:14px;"><h1>Fruit Flies</h1></div>
+  <div id="spacechar">&nbsp;
+    <div data-role="content" class="kidzcontent">
+      <div class="v-spacer"></div>
+      <div class="sidebarleft-half">
+        
+		<a id="fruitflieslink" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/Animals/Adapting_To_New_Worlds/Frogs_Bugs_And_Us/Fruit_Flies/Fruit_Flies_In_Tubes_Hi_Res.jpg', 'We often use fruit flies in experiments because their DNA is simple yet somewhat similar to human DNA.  They also grow up quickly and are cheap!  (Courtesy: Thinkstock)');">click here</a>
+		
+        <div id="f1_container" style="visibility:hidden;position:absolute;left:100px;top:270px;">
+          <div id="f1_card">
+            <div class="front face">
+              <img id="dopple" src="css/images/9-12/Animals/Adapting_To_New_Worlds/Frogs_Bugs_And_Us/Fruit_Flies/Big_Fly_Small_Fly.png">
+            </div>
+            <div id="backofcard" class="back face center" style="background:url(css/images/9-12/Animals/Adapting_To_New_Worlds/Frogs_Bugs_And_Us/Fruit_Flies/Big_Fly_Small_Fly_Reverse.png) no-repeat;">
+              <div class="returncard" style="position:absolute;left:0px;top:0px;width:362px;height:170px;"></div>
+              <div id="trueans" style="position:absolute;left:90px;top:180px;width:70px;height:50px;"></div>
+              <div id="falseans" style="position:absolute;left:200px;top:180px;width:70px;height:50px;"></div>
+            </div>
+          </div><!--/f1+card-->
+        </div><!--/f1_container-->
+		
+        <div id="zoomwrapper">
+          <div id="pol1" class="pPiece" style="left:100px;top:270px;">
+             <img src="css/images/9-12/Animals/Adapting_To_New_Worlds/Frogs_Bugs_And_Us/Fruit_Flies/Big_Fly_Small_Fly.png" alt="" />
+          </div>
+          <div id="pol2"class="pPiece" style="left:75px;top:290px;">
+             <img src="css/images/9-12/Animals/Adapting_To_New_Worlds/Frogs_Bugs_And_Us/Fruit_Flies/Fruit_Flies_In_Tubes.jpg" alt="" />
+          </div>
+        </div><!--/zoomwrapper-->
+      </div>
+      
+      <div class="bpcontentAdaptingNewWorld">
+        <p>Species that are widespread often have to cope with living in a diverse range of climates.  Some body types are better suited to particular regions than others.  In Europe, fruit flies that live in cold areas generally have larger wings than those in warmer regions.</p>
+		<p>When the species was first introduced to North America there was no relationship between wing size and the climate (or latitude) it lived in.  But over the following two decades the flies rapidly adapted to their new environment and eventually the same European pattern became evident in North America.  Thus, there appears to be strong selection for fruit flies to have wing sizes that best suit the climates that they are living in.</p>
+      </div>
+       
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/Animals/bottomhomeani.png"></a></div>
+    </div> <!-- end content -->  
+  </div><!--/spacechar-->        
+  
+  <!-- <div class="audiopanel"> -->
+    <!-- images are in slidebarnat.js 
+         note: change the ids to be able play the narration
+    -->
+    <div class="micbtnholder"><div class="micbtnAdaptingNewWorld" id="playstopFruitFlies"></div></div>
+    <div class="bAdaptingNewWorld"><div class="rwAdaptingNewWorld" id="FruitFliesaudiobbtn"></div></div>
+    <div class="plAdaptingNewWorld"><div class="plpsAdaptingNewWorld" id="FruitFliesaudioplbtn"></div></div>
+    <div class="fAdaptingNewWorld"><div class="fwAdaptingNewWorld" id="FruitFliesaudiofbtn"></div></div>
+    <div id="actualaudio-FruitFlies" style="visibility:hidden;"></div>
+  <!-- </div> -->
+  
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+    var playing;
+    var paused;
+    (function() {
+      $('div#pol1').css("z-index", 2);
+      $('div#pol2').css("z-index", 1);
+      $('div#pol1 > img').css("-webkit-transform", "rotate(0deg)");
+      $('div#pol2 > img').css("-webkit-transform", "rotate(5deg)");
+      
+      playing = false;
+      paused = true;
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-FruitFlies').html('<audio id="FruitFliesaudio" controls preload onpause="playsAdaptingToNewWorld()" onplay="pauseAdaptingToNewWorld()"><source src="audio/Adapting_To_New_World/Fruit_Flies.mp3" type="audio/mpeg"></audio>');
+      } 
+
+      $("#sub-adapting-to-new-world-Frogs-Bugs-and-Us-Fruit-Flies").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundAdaptingToNewWorld.pause(); bgsoundAdaptingToNewWorld.currentTime = 0;});
+    
+    function goBack() {
+      $.mobile.changePage("sub-adapting-to-new-world-Frogs-Bugs-and-Us.html", {transition: "slide", reverse: true });
+    }
+    
+    $(".returncard").on('tap', function() {
+      $('#f1_card').css({"-webkit-transform": "rotateY(0deg)"});
+      $('#f1_card').css({"-moz-transform": "rotateY(0deg)"});
+      $('#f1_card').css({"-o-transform": "rotateY(0deg)"});
+      $('#f1_card').css({"transform": "rotateY(0deg)"});
+      setTimeout(function() {
+        $("#pol1").css({"visibility":"visible", "z-index":4});
+        $('#f1_container').css({"visibility":"hidden", "z-index":0});
+      }, 1000);
+    });
+    
+    $("#pol1").on('tap', function() {
+      $('#f1_container').css({"visibility":"visible", "z-index":10});
+      $(this).css({"visibility":"hidden"});
+      $('#f1_card').css({"-webkit-transform": "rotateY(180deg)"});
+      $('#f1_card').css({"-moz-transform": "rotateY(180deg)"});
+      $('#f1_card').css({"-o-transform": "rotateY(180deg)"});
+      $('#f1_card').css({"transform": "rotateY(180deg)"});
+    });
+    $("#pol2").on('tap', function() {
+      $('#fruitflieslink')[0].click();
+    });
+    
+    function playsAdaptingToNewWorld() {
+         bgsoundAdaptingToNewWorld.play();
+    }
+       
+    function pauseAdaptingToNewWorld() {
+         bgsoundAdaptingToNewWorld.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+    $("#playstopFruitFlies").on('tap', function() {
+      if(!playing) {
+        FruitFliesaudio.play();
+        $('.micbtnAdaptingNewWorld').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        FruitFliesaudio.pause(); FruitFliesaudio.currentTime = 0;
+        $('.micbtnAdaptingNewWorld').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#FruitFliesaudioplbtn").on('tap', function() {
+      if(!paused) {
+        FruitFliesaudio.pause();
+        paused = true;
+      } else {
+        FruitFliesaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#FruitFliesaudiofbtn").on('tap', function() {
+      var ctime = FruitFliesaudio.currentTime;
+      FruitFliesaudio.currentTime = ctime + 10;
+    });
+    
+    $("#FruitFliesaudiobbtn").on('tap', function() {
+      var ctime = FruitFliesaudio.currentTime;
+      FruitFliesaudio.currentTime = ctime - 10;
+    });
+    
+    $("#FruitFliesaudiopsbtn").on('tap', function() {
+      FruitFliesaudio.pause();
+      //$(".audiopanel").css({"backgroundPosition":"0px 0px"});
+    });
+  </script>
+  <script src="js/twocardLogic.js"></script>  <!-- for card dragging effects -->
+</div> <!--//home-->
