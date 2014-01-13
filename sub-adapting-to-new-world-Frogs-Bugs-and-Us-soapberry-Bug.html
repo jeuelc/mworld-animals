@@ -29,8 +29,11 @@
             </div>
             <div id="backofcard" class="back face center" style="background:url(css/images/9-12/Animals/Adapting_To_New_Worlds/Frogs_Bugs_And_Us/Soapberry_Bug/Soapberry_Quiz_Reverse.png) no-repeat;">
               <div class="returncard" style="position:absolute;left:0px;top:0px;width:362px;height:170px;"></div>
-              <div id="trueans" style="position:absolute;left:90px;top:180px;width:70px;height:50px;"></div>
-              <div id="falseans" style="position:absolute;left:200px;top:180px;width:70px;height:50px;"></div>
+              <div id="trueans" style="position:absolute;left: 57px;top: 170px;width: 118px;height: 30px;"></div>
+              <div class="falseans" style="position:absolute;left: 193px;top: 170px;width: 118px;height: 30px;"></div>
+			  <div class="falseans" style="position:absolute;left: 58px;top: 204px;width: 118px;height: 30px;"></div>
+			  
+			  <div class="falseans" style="position:absolute;left: 193px;top: 204px;width: 118px;height: 30px;"></div>
             </div>
           </div><!--/f1+card-->
         </div><!--/f1_container-->
@@ -94,7 +97,13 @@
     function goBack() {
       $.mobile.changePage("sub-adapting-to-new-world-Frogs-Bugs-and-Us.html", {transition: "slide", reverse: true });
     }
-    
+
+	$('#trueans').on('tap',function(){
+		alert('correct answer');
+	});
+	$('.falseans').on('tap',function(){
+		alert('wrong answer');
+	});	    
     $(".returncard").on('tap', function() {
       $('#f1_card').css({"-webkit-transform": "rotateY(0deg)"});
       $('#f1_card').css({"-moz-transform": "rotateY(0deg)"});

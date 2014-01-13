@@ -1,0 +1,155 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-adapting-to-new-world-extinction-and-new-species-forming-new-species">
+  <script src="js/hammer.js"></script>
+  <script src="js/jquery.hammer.js"></script>
+  <script src="js/slidebar_Adapting_New_World.js"></script>
+  <link rel="stylesheet" href="css/style_Adapting_New_World.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnAdaptingNewWorld"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnAdaptingNewWorld"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnAdaptingNewWorld"></div></div>
+  <div class="infobtnholder"><div class="infobtnAdaptingNewWorld"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnAdaptingNewWorld"></div></div>
+  <div class="menubtnholder"><div class="menubtnAdaptingNewWorld"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:14px;"><h1>Forming New Species</h1></div>
+  <div id="spacechar">&nbsp;
+    <div data-role="content" class="kidzcontent">
+      <div class="v-spacer"></div>
+      <div class="sidebarleft-half">
+      
+        <a id="img1" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/Animals/Adapting_To_New_Worlds/Extinctions_And_New_Species/Forming_New_Species/Zebras_Hi_Res.jpg', 'There are actually three species of zebra.  Why do you think they have stripes?  (Courtesy: Thinkstock)');">click here</a>
+		
+		<a id="img2" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/Animals/Adapting_To_New_Worlds/Extinctions_And_New_Species/Forming_New_Species/Bonobos_Hi_Res.jpg', 'The human species is called Homo sapiens.  Our closest relatives are chimpanzees and bonobos (shown here) who share 99% of our DNA.  (Courtesy: Thinkstock)');">click here</a>
+		
+		<a id="img3" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/Animals/Adapting_To_New_Worlds/Extinctions_And_New_Species/Forming_New_Species/Peas_And_Cows_Hi_Res.png', 'Animals and plants evolved from the same DNA!  By looking at the similarities in their DNA, we\'re able to estimate that their common ancestor lived roughly 1.5 billion years ago.');">click here</a>
+		
+		
+
+		
+
+      
+        <div id="zoomwrapper">
+          <div id="pol1" class="pPiece" style="left:100px;top:270px;">
+             <img src="css/images/9-12/Animals/Adapting_To_New_Worlds/Extinctions_And_New_Species/Forming_New_Species/Zebras.jpg" alt="" />
+          </div>
+          <div id="pol2"class="pPiece" style="left:75px;top:290px;">
+             <img src="css/images/9-12/Animals/Adapting_To_New_Worlds/Extinctions_And_New_Species/Forming_New_Species/Bonobos.jpg" alt="" />
+          </div>
+          <div id="pol3"class="pPiece" style="left:80px;top:270px;">
+            <img src="css/images/9-12/Animals/Adapting_To_New_Worlds/Extinctions_And_New_Species/Forming_New_Species/Peas_And_Cows.png" alt="" />
+          </div>
+          
+        </div><!--/zoomwrapper-->
+      </div>
+      
+      <div class="bpcontentAdaptingNewWorld">
+        <p>Members of the same species are able to reproduce with each other to produce healthy offspring.  Members of different species either cannot reproduce, or do not produce young that can reproduce further.  How are new species formed?  How  for example - have we ended up with zebras and horses?</p>
+<p>The answer generally comes down to separation or isolation.  Individuals that hang out together are more likely to mate, and their genotypes never really get a chance to diverge too far from each other.  But when animals from different areas never meet - perhaps due to a river or mountain separating them - their genotypes gradually become more distinct as well.  Speciation is responsible for the great diversity of life that we have on Earth.</p>
+
+<p>While we are encountering new species daily, these species did not originate the previous day.  It's just that there is so much left to explore and discover in our world!</p>
+      </div>
+       
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/Animals/bottomhomeani.png"></a></div>
+    </div> <!-- end content -->  
+  </div><!--/spacechar-->        
+  
+  <!-- <div class="audiopanel"> -->
+    <!-- images are in slidebarnat.js 
+         note: change the ids to be able play the narration
+    -->
+    <div class="micbtnholder"><div class="micbtnAdaptingNewWorld" id="playstopFormingNewSpecies"></div></div>
+    <div class="bAdaptingNewWorld"><div class="rwAdaptingNewWorld" id="FormingNewSpeciesaudiobbtn"></div></div>
+    <div class="plAdaptingNewWorld"><div class="plpsAdaptingNewWorld" id="FormingNewSpeciesaudioplbtn"></div></div>
+    <div class="fAdaptingNewWorld"><div class="fwAdaptingNewWorld" id="FormingNewSpeciesaudiofbtn"></div></div>
+    <div id="actualaudio-FormingNewSpecies" style="visibility:hidden;"></div>
+  <!-- </div> -->
+  
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+    var playing;
+    var paused;
+    (function() {
+	  $('div#pol2').css("z-index", 2);
+      $('div#pol1').css("z-index", 1);
+      $('div#pol1 > img').css("-webkit-transform", "rotate(0deg)");
+      $('div#pol2 > img').css("-webkit-transform", "rotate(5deg)");
+      $('div#pol3 > img').css("-webkit-transform", "rotate(-3deg)");
+      
+      playing = false;
+      paused = true;
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-FormingNewSpecies').html('<audio id="FormingNewSpeciesaudio" controls preload onpause="playsAdaptingToNewWorld()" onplay="pauseAdaptingToNewWorld()"><source src="audio/Adapting_To_New_World/Forming_New_Species.mp3" type="audio/mpeg"></audio>');
+      } 
+
+      $("#sub-adapting-to-new-world-extinction-and-new-species-forming-new-species").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundAdaptingToNewWorld.pause(); bgsoundAdaptingToNewWorld.currentTime = 0;});
+    
+    function goBack() {
+      $.mobile.changePage("sub-adapting-to-new-world-extinction-and-new-species.html", {transition: "slide", reverse: true });
+    }
+    
+    $("#pol1").on('tap', function() {
+      $('#img1')[0].click();
+    });
+    $("#pol3").on('tap', function() {
+		$('#img3')[0].click();
+    });
+    
+    $("#pol2").on('tap', function() {
+		$('#img2')[0].click();
+    });
+    function playsAdaptingToNewWorld() {
+         bgsoundAdaptingToNewWorld.play();
+    }
+       
+    function pauseAdaptingToNewWorld() {
+         bgsoundAdaptingToNewWorld.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+    $("#playstopFormingNewSpecies").on('tap', function() {
+      if(!playing) {
+        FormingNewSpeciesaudio.play();
+        $('.micbtnAdaptingNewWorld').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        FormingNewSpeciesaudio.pause(); FormingNewSpeciesaudio.currentTime = 0;
+        $('.micbtnAdaptingNewWorld').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#FormingNewSpeciesaudioplbtn").on('tap', function() {
+      if(!paused) {
+        FormingNewSpeciesaudio.pause();
+        paused = true;
+      } else {
+        FormingNewSpeciesaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#FormingNewSpeciesaudiofbtn").on('tap', function() {
+      var ctime = FormingNewSpeciesaudio.currentTime;
+      FormingNewSpeciesaudio.currentTime = ctime + 10;
+    });
+    
+    $("#FormingNewSpeciesaudiobbtn").on('tap', function() {
+      var ctime = FormingNewSpeciesaudio.currentTime;
+      FormingNewSpeciesaudio.currentTime = ctime - 10;
+    });
+    
+    $("#FormingNewSpeciesaudiopsbtn").on('tap', function() {
+      FormingNewSpeciesaudio.pause();
+      //$(".audiopanel").css({"backgroundPosition":"0px 0px"});
+    });
+  </script>
+  <script src="js/threecardLogic.js"></script>  <!-- for card dragging effects -->
+</div> <!--//home-->

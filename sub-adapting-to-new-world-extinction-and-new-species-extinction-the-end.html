@@ -1,0 +1,156 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-adapting-to-new-world-extinction-and-new-species-extinction-the-end">
+  <script src="js/hammer.js"></script>
+  <script src="js/jquery.hammer.js"></script>
+  <script src="js/slidebar_Adapting_New_World.js"></script>
+  <link rel="stylesheet" href="css/style_Adapting_New_World.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnAdaptingNewWorld"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnAdaptingNewWorld"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnAdaptingNewWorld"></div></div>
+  <div class="infobtnholder"><div class="infobtnAdaptingNewWorld"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnAdaptingNewWorld"></div></div>
+  <div class="menubtnholder"><div class="menubtnAdaptingNewWorld"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:14px;"><h1>Extinction: The End</h1></div>
+  <div id="spacechar">&nbsp;
+    <div data-role="content" class="kidzcontent">
+      <div class="v-spacer"></div>
+      <div class="sidebarleft-half">
+      
+        <a id="img1" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/Animals/Adapting_To_New_Worlds/Extinctions_And_New_Species/Extinction_The_End/Dodo_Hi_Res.jpg', 'Dodos became extinct after pigs and monkeys were brought to their island by explorers.  (Courtesy: iStock)');">click here</a>
+		
+		<a id="img2" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/Animals/Adapting_To_New_Worlds/Extinctions_And_New_Species/Extinction_The_End/Gastric_Brooding_Frog_Hi_Res.jpg', 'The gastric brooding frog which gave birth through its mouth became extinct in the mid 1980s.  (Courtesy: Michael J. Tyler)');">click here</a>
+
+      
+        <div id="zoomwrapper">
+          <div id="pol1" class="pPiece" style="left:100px;top:270px;">
+             <img src="css/images/9-12/Animals/Adapting_To_New_Worlds/Extinctions_And_New_Species/Extinction_The_End/Burning_Habitats.png" alt="" />
+          </div>
+          <div id="pol2"class="pPiece" style="left:75px;top:290px;">
+             <img src="css/images/9-12/Animals/Adapting_To_New_Worlds/Extinctions_And_New_Species/Extinction_The_End/Melting_Habitats.png" alt="" />
+          </div>
+          <div id="pol3"class="pPiece" style="left:80px;top:270px;">
+            <img src="css/images/9-12/Animals/Adapting_To_New_Worlds/Extinctions_And_New_Species/Extinction_The_End/Dodo.jpg" alt="" />
+          </div>
+          <div id="pol4"class="pPiece" style="left:70px;top:270px;">
+             <img src="css/images/9-12/Animals/Adapting_To_New_Worlds/Extinctions_And_New_Species/Extinction_The_End/Gastric_Brooding_Frog.jpg" alt="" />
+          </div>
+          
+        </div><!--/zoomwrapper-->
+      </div>
+      
+      <div class="bpcontentAdaptingNewWorld">
+        <p>xtinction is a natural part of life.  99% of all animal species that have ever lived have become extinct: dinosaurs, woolly mammoths, the dodo, the gastric brooding frog and millions more.  Once an animal becomes extinct, it is gone forever.  So what causes extinction?  It occurs when animals are unable to adapt quickly enough to the changes in their world.  These changes may be natural, such as a new predator that arrives in your area or a large storm that destroys your home.  Or it can be as a result of human activities, including hunting animals for food or clearing the habitat in which they live.  Some species are more vulnerable, such as those that live in a small area, have a fussy diet, are large, or only produce a small number of babies.</p>
+
+<p>New species originate and old species become extinct continually.  Scientists have not yet managed to create new species or resurrect extinct ones.  We humans need to ensure that we don't accelerate the rate of animal extinction if we want to preserve biodiversity on our planet.</p>
+      </div>
+       
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/Animals/bottomhomeani.png"></a></div>
+    </div> <!-- end content -->  
+  </div><!--/spacechar-->        
+  
+  <!-- <div class="audiopanel"> -->
+    <!-- images are in slidebarnat.js 
+         note: change the ids to be able play the narration
+    -->
+    <div class="micbtnholder"><div class="micbtnAdaptingNewWorld" id="playstopExtinctionTheEnd"></div></div>
+    <div class="bAdaptingNewWorld"><div class="rwAdaptingNewWorld" id="ExtinctionTheEndaudiobbtn"></div></div>
+    <div class="plAdaptingNewWorld"><div class="plpsAdaptingNewWorld" id="ExtinctionTheEndaudioplbtn"></div></div>
+    <div class="fAdaptingNewWorld"><div class="fwAdaptingNewWorld" id="ExtinctionTheEndaudiofbtn"></div></div>
+    <div id="actualaudio-ExtinctionTheEnd" style="visibility:hidden;"></div>
+  <!-- </div> -->
+  
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+    var playing;
+    var paused;
+    (function() {
+      $('div#pol1').css("z-index", 3);
+      $('div#pol2').css("z-index", 2);
+      $('div#pol3').css("z-index", 1);
+      $('div#pol1 > img').css("-webkit-transform", "rotate(0deg)");
+      $('div#pol2 > img').css("-webkit-transform", "rotate(5deg)");
+      $('div#pol3 > img').css("-webkit-transform", "rotate(-3deg)");
+      $('div#pol4 > img').css("-webkit-transform", "rotate(-3deg)");
+      
+      playing = false;
+      paused = true;
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-ExtinctionTheEnd').html('<audio id="ExtinctionTheEndaudio" controls preload onpause="playsAdaptingToNewWorld()" onplay="pauseAdaptingToNewWorld()"><source src="audio/Adapting_To_New_World/Extinction_The_End.mp3" type="audio/mpeg"></audio>');
+      } 
+
+      $("#sub-adapting-to-new-world-extinction-and-new-species-extinction-the-end").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundAdaptingToNewWorld.pause(); bgsoundAdaptingToNewWorld.currentTime = 0;});
+    
+    function goBack() {
+      $.mobile.changePage("sub-adapting-to-new-world-extinction-and-new-species.html", {transition: "slide", reverse: true });
+    }
+    
+    $("#pol1").on('tap', function() {
+      $.mobile.changePage("sub-adapting-to-new-world-extinction-and-new-species-extinction-the-end-burning-habitats.html", {transition: "slide"});
+    });
+    $("#pol2").on('tap', function() {
+$.mobile.changePage("sub-adapting-to-new-world-extinction-and-new-species-extinction-the-end-melting-habitats.html", {transition: "slide"});   
+    });
+    $("#pol3").on('tap', function() {
+      $('#img1')[0].click();
+    }); 
+    $("#pol4").on('tap', function() {
+      $('#img2')[0].click();
+    });
+    
+    function playsAdaptingToNewWorld() {
+         bgsoundAdaptingToNewWorld.play();
+    }
+       
+    function pauseAdaptingToNewWorld() {
+         bgsoundAdaptingToNewWorld.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+    $("#playstopExtinctionTheEnd").on('tap', function() {
+      if(!playing) {
+        ExtinctionTheEndaudio.play();
+        $('.micbtnAdaptingNewWorld').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        ExtinctionTheEndaudio.pause(); ExtinctionTheEndaudio.currentTime = 0;
+        $('.micbtnAdaptingNewWorld').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#ExtinctionTheEndaudioplbtn").on('tap', function() {
+      if(!paused) {
+        ExtinctionTheEndaudio.pause();
+        paused = true;
+      } else {
+        ExtinctionTheEndaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#ExtinctionTheEndaudiofbtn").on('tap', function() {
+      var ctime = ExtinctionTheEndaudio.currentTime;
+      ExtinctionTheEndaudio.currentTime = ctime + 10;
+    });
+    
+    $("#ExtinctionTheEndaudiobbtn").on('tap', function() {
+      var ctime = ExtinctionTheEndaudio.currentTime;
+      ExtinctionTheEndaudio.currentTime = ctime - 10;
+    });
+    
+    $("#ExtinctionTheEndaudiopsbtn").on('tap', function() {
+      ExtinctionTheEndaudio.pause();
+      //$(".audiopanel").css({"backgroundPosition":"0px 0px"});
+    });
+  </script>
+  <script src="js/fourcardLogic.js"></script>  <!-- for card dragging effects -->
+</div> <!--//home-->

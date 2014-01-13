@@ -1,0 +1,171 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-adapting-to-new-world-safety-in-diversity-safety-in-the-food-web">
+  <script src="js/hammer.js"></script>
+  <script src="js/jquery.hammer.js"></script>
+  <script src="js/slidebar_Adapting_New_World.js"></script>
+  <link rel="stylesheet" href="css/style_Adapting_New_World.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnAdaptingNewWorld"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnAdaptingNewWorld"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnAdaptingNewWorld"></div></div>
+  <div class="infobtnholder"><div class="infobtnAdaptingNewWorld"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnAdaptingNewWorld"></div></div>
+  <div class="menubtnholder"><div class="menubtnAdaptingNewWorld"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:14px;"></div>
+  <div data-role="content" class="kidzcontent">
+  
+        <div id="f1_container" style="visibility:hidden;position:absolute;left: 461px; top: 10px;">
+          <div id="f1_card">
+            <div class="front face">
+
+            </div>
+            <div id="backofcard" class="back face center" style="background:url(css/images/9-12/Animals/Adapting_To_New_Worlds/Safety_In_Diversity/Safety_In_The_Food_Web/Jungle_Highway_Reverse.jpg) no-repeat; border:none; box-shadow:0 0 0;">
+              <div class="returncard" style="position:absolute;left:0px;top:0px;width:362px;height:170px;"></div>
+              <div id="trueans" style="position:absolute;left:90px;top:180px;width:70px;height:50px;"></div>
+              <div id="falseans" style="position:absolute;left:200px;top:180px;width:70px;height:50px;"></div>
+            </div>
+          </div><!--/f1+card-->
+        </div><!--/f1_container-->  
+		
+	<div class="navAdaptingNewWorld-safety-in-the-food-web">
+		<p>Species don't live in isolation.  They interact with other species in the same area.  Plants use the sun's energy and nutrients in the soil to grow.  They in turn get eaten by animals, which may then get eaten by other, larger animals.  These 'food webs' may be simple, involving only a handful of species, or more complex and involve dozens of species.  The larger, more complex food webs are often more stable and resilient to environmental change or the addition or removal of a species.  This is why having a large and diverse number of species in an area (or 'biodiversity') can be important for the proper functioning of our environment.  High levels of biodiversity may therefore provide safety in numbers.</p>
+      </div>
+    <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/Animals/bottomhomeani.png"></a></div>
+  </div> <!-- end content -->  
+
+  <div class="jungle_highway-bx"></div>
+  <div class="cockroach_feast-bx"></div>
+  <div class="food_web_quiz-bx"></div>
+    <!--<div class="audiopanel">-->
+    <!-- images are in slidebarnat.js 
+         note: change the ids to be able play the narration -->
+    <div class="micbtnholder"><div class="micbtnAdaptingNewWorld" id="playstopSafetyInTheFoodWeb"></div></div>
+    <div class="bAdaptingNewWorld"><div class="rwAdaptingNewWorld" id="SafetyInTheFoodWebaudiobbtn"></div></div>
+    <div class="plAdaptingNewWorld"><div class="plpsAdaptingNewWorld" id="SafetyInTheFoodWebaudioplbtn"></div></div>
+    <div class="fAdaptingNewWorld"><div class="fwAdaptingNewWorld" id="SafetyInTheFoodWebaudiofbtn"></div></div>
+    <div id="actualaudio-SafetyInTheFoodWeb" style="visibility:hidden;"></div>
+  <!--</div>-->
+  
+  <!-- ----------------------- Video embedding --------------------------- -->
+  
+	<div id="watchCockroachholder" style="width:1024px;height:748px;position:absolute;left:0px;top:0px;visibility:hidden;background:#000000;z-index:-1;">
+    <video id="watchCockroach" width="1024" height="748" preload>
+      <source src="css/images/9-12/Animals/Adapting_To_New_Worlds/Safety_In_Diversity/Safety_In_The_Food_Web/Cockroach_Video.mp4" type="video/mp4">
+    </video>
+  </div>
+  
+  <!-- ------------------------------------------------------------------ -->  
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+    var playing;
+    var paused;
+	$('#watchCockroachholder').css({"visibility":"hidden", "z-index":-10});		
+    (function() {
+      playing = false;
+      paused = true;
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-SafetyInTheFoodWeb').html('<audio id="SafetyInTheFoodWebaudio" controls preload onpause="playsAdaptingToNewWorld()" onplay="pauseAdaptingToNewWorld()"><source src="audio/Adapting_To_New_World/Safety_In_The_Food_Web.mp3" type="audio/mpeg"></audio>');
+      } 
+    
+      $("#sub-adapting-to-new-world-safety-in-diversity-safety-in-the-food-web").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundAdaptingToNewWorld.pause(); bgsoundAdaptingToNewWorld.currentTime = 0;});
+ 
+	  watchCockroach.addEventListener('ended', function() { 
+        $("#watchCockroachholder").css({"visibility":"hidden", "z-index":-1});
+        $("#watchCockroach").css({"z-index":-1});
+        bgsoundAdaptingToNewWorld.play(); 
+      });
+    
+      $("#watchCockroach").on('tap', function() {
+        $("#watchCockroachholder").css({"visibility":"hidden", "z-index":-1});
+        $("#watchCockroach").css({"z-index":-1});
+        bgsoundAdaptingToNewWorld.play();
+        watchCockroach.pause();
+        watchCockroach.currentTime = 0;
+      });
+	  
+	$(".cockroach_feast-bx").on('tap', function(){
+      $("#watchCockroachholder").css({"visibility":"visible", "z-index":10});
+      $("#watchCockroach").css({"z-index":9});
+      bgsoundAdaptingToNewWorld.pause();
+      watchCockroach.play();
+    });	  
+ 
+    function goBack() {
+      $.mobile.changePage("sub-adapting-to-new-world-safety-in-diversity.html", {transition: "slide", reverse: true });
+    }
+    
+    function playsAdaptingToNewWorld() {
+         bgsoundAdaptingToNewWorld.play();
+    }
+       
+    function pauseAdaptingToNewWorld() {
+         bgsoundAdaptingToNewWorld.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+    $("#playstopSafetyInTheFoodWeb").on('tap', function() {
+      if(!playing) {
+        SafetyInTheFoodWebaudio.play();
+        $('.micbtnAdaptingNewWorld').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        SafetyInTheFoodWebaudio.pause(); SafetyInTheFoodWebaudio.currentTime = 0;
+        $('.micbtnAdaptingNewWorld').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#SafetyInTheFoodWebaudioplbtn").on('tap', function() {
+      if(!paused) {
+        SafetyInTheFoodWebaudio.pause();
+        paused = true;
+      } else {
+        SafetyInTheFoodWebaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#SafetyInTheFoodWebaudiofbtn").on('tap', function() {
+      var ctime = SafetyInTheFoodWebaudio.currentTime;
+      SafetyInTheFoodWebaudio.currentTime = ctime + 10;
+    });
+    
+    $("#SafetyInTheFoodWebaudiobbtn").on('tap', function() {
+      var ctime = SafetyInTheFoodWebaudio.currentTime;
+      SafetyInTheFoodWebaudio.currentTime = ctime - 10;
+    });
+    
+    $("#SafetyInTheFoodWebaudiopsbtn").on('tap', function() {
+      SafetyInTheFoodWebaudio.pause();
+    });
+	
+    $(".returncard").on('tap', function() {
+      $('#f1_card').css({"-webkit-transform": "rotateY(0deg)"});
+      $('#f1_card').css({"-moz-transform": "rotateY(0deg)"});
+      $('#f1_card').css({"-o-transform": "rotateY(0deg)"});
+      $('#f1_card').css({"transform": "rotateY(0deg)"});
+      setTimeout(function() {
+        $(".jungle_highway-bx").css({"visibility":"visible", "z-index":4});
+        $('#f1_container').css({"visibility":"hidden", "z-index":0});
+      }, 1000);
+    });
+    
+    $(".jungle_highway-bx").on('tap', function() {
+      $('#f1_container').css({"visibility":"visible", "z-index":10});
+      $(this).css({"visibility":"hidden"});
+      $('#f1_card').css({"-webkit-transform": "rotateY(180deg)"});
+      $('#f1_card').css({"-moz-transform": "rotateY(180deg)"});
+      $('#f1_card').css({"-o-transform": "rotateY(180deg)"});
+      $('#f1_card').css({"transform": "rotateY(180deg)"});
+    });	
+	
+  </script>
+</div> <!--//home-->

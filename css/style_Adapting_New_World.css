@@ -1,6 +1,6 @@
 /********* Adapting To New World **********/
-
-#sub-adapting-to-new-world, #sub-adapting-to-new-world-extinction-and-new-species, #sub-adapting-to-new-world-Frogs-Bugs-and-Us, #sub-adapting-to-new-world-how-do-animals-adapt, #sub-adapting-to-new-world-safety-in-diversity, #sub-adapting-to-new-world-how-do-animals-adapt-Humans-changing-the-world, #sub-adapting-to-new-world-how-do-animals-adapt-Responding-to-change, #sub-adapting-to-new-world-safety-in-diversity-Surviving-attack, #sub-adapting-to-new-world-Frogs-Bugs-and-Us-Fruit-Flies, #sub-adapting-to-new-world-Frogs-Bugs-and-Us-Human-Babies, #sub-adapting-to-new-world-Frogs-Bugs-and-Us-Noisy-Frogs, #sub-adapting-to-new-world-Frogs-Bugs-and-Us-soapberry-Bug{
+/* Basic page common */
+#sub-adapting-to-new-world, #sub-adapting-to-new-world-extinction-and-new-species, #sub-adapting-to-new-world-Frogs-Bugs-and-Us, #sub-adapting-to-new-world-how-do-animals-adapt, #sub-adapting-to-new-world-safety-in-diversity, #sub-adapting-to-new-world-how-do-animals-adapt-Humans-changing-the-world, #sub-adapting-to-new-world-how-do-animals-adapt-Responding-to-change, #sub-adapting-to-new-world-safety-in-diversity-Surviving-attack, #sub-adapting-to-new-world-Frogs-Bugs-and-Us-Fruit-Flies, #sub-adapting-to-new-world-Frogs-Bugs-and-Us-Human-Babies, #sub-adapting-to-new-world-Frogs-Bugs-and-Us-Noisy-Frogs, #sub-adapting-to-new-world-Frogs-Bugs-and-Us-soapberry-Bug,#sub-adapting-to-new-world-extinction-and-new-species-extinction-the-end,#sub-adapting-to-new-world-extinction-and-new-species-forming-new-species,#sub-adapting-to-new-world-extinction-and-new-species-speed-breeders{
   background:url('images/9-12/Animals/Adapting_To_New_Worlds/Adapting_To_New_Worlds_BG.png') no-repeat;
   height:748px !important;
   overflow:hidden !important;
@@ -20,6 +20,30 @@
   overflow:hidden !important;
   width:1024px !important;
 }
+
+#sub-adapting-to-new-world-extinction-and-new-species-extinction-the-end-burning-habitats{
+  background:url('images/9-12/Animals/Adapting_To_New_Worlds/Extinctions_And_New_Species/Extinction_The_End/Burning_Habitats/Burning_Habitats_BG.png') no-repeat;
+  height:748px !important;
+  overflow:hidden !important;
+  width:1024px !important;
+}
+
+#sub-adapting-to-new-world-safety-in-diversity-safety-in-the-food-web{
+  background:url('images/9-12/Animals/Adapting_To_New_Worlds/Safety_In_Diversity/Safety_In_The_Food_Web/Safety_In_The_Food_Web_BG.png') no-repeat;
+  height:748px !important;
+  overflow:hidden !important;
+  width:1024px !important;
+}
+
+
+#sub-adapting-to-new-world-extinction-and-new-species-extinction-the-end-melting-habitats{
+  background:url('images/9-12/Animals/Adapting_To_New_Worlds/Extinctions_And_New_Species/Extinction_The_End/Melting_Habitats/Melting_Habitats_BG.png') no-repeat;
+  height:748px !important;
+  overflow:hidden !important;
+  width:1024px !important;
+}
+
+
 
 .plAdaptingNewWorld, .psAdaptingNewWorld, .bAdaptingNewWorld, .fAdaptingNewWorld {
   position:absolute;
@@ -169,6 +193,49 @@
   font-weight: normal;
   color: #ffffff;
 }
+.navAdaptingNewWorld-burning-habitats{
+	position: absolute;
+	left: 31px;
+	top: 204px;
+	width: 464px;
+	height: 416px;
+	overflow: auto;
+	text-align: left;
+	font-family: "comic sans ms";
+	font-size: 18px;
+	font-weight: normal;
+	color: #ffffff;
+}
+
+.navAdaptingNewWorld-melting-habitats{
+	position: absolute;
+	left: 484px;
+	top: 238px;
+	width: 464px;
+	height: 416px;
+	overflow: auto;
+	text-align: left;
+	font-family: "comic sans ms";
+	font-size: 18px;
+	font-weight: normal;
+	color: #ffffff;
+}
+
+.navAdaptingNewWorld-safety-in-the-food-web{
+	position: absolute;
+	left: 36px;
+	top: 304px;
+	width: 464px;
+	height: 416px;
+	overflow: auto;
+	text-align: left;
+	font-family: "comic sans ms";
+	font-size: 18px;
+	font-weight: normal;
+	color: #ffffff;
+}
+
+
 
 .navAdaptingNewWorld-content p {
   margin-top:0 !important;
@@ -202,7 +269,8 @@
   color:#000000;
 }
 
-#sub-adapting-to-new-world .bptitleholder h1, #sub-adapting-to-new-world-extinction-and-new-species .bptitleholder h1, #sub-adapting-to-new-world-Frogs-Bugs-and-Us .bptitleholder h1, #sub-adapting-to-new-world-how-do-animals-adapt .bptitleholder h1, #sub-adapting-to-new-world-safety-in-diversity .bptitleholder h1, #sub-adapting-to-new-world-how-do-animals-adapt-Humans-changing-the-world .bptitleholder h1, #sub-adapting-to-new-world-how-do-animals-adapt-Responding-to-change .bptitleholder h1, #sub-adapting-to-new-world-safety-in-diversity-Surviving-attack .bptitleholder h1, #sub-adapting-to-new-world-Frogs-Bugs-and-Us-Fruit-Flies .bptitleholder h1, #sub-adapting-to-new-world-Frogs-Bugs-and-Us-Human-Babies .bptitleholder h1, #sub-adapting-to-new-world-Frogs-Bugs-and-Us-Noisy-Frogs .bptitleholder h1, #sub-adapting-to-new-world-Frogs-Bugs-and-Us-soapberry-Bug .bptitleholder h1{
+/* Basic page heading design */ 
+#sub-adapting-to-new-world .bptitleholder h1, #sub-adapting-to-new-world-extinction-and-new-species .bptitleholder h1, #sub-adapting-to-new-world-Frogs-Bugs-and-Us .bptitleholder h1, #sub-adapting-to-new-world-how-do-animals-adapt .bptitleholder h1, #sub-adapting-to-new-world-safety-in-diversity .bptitleholder h1, #sub-adapting-to-new-world-how-do-animals-adapt-Humans-changing-the-world .bptitleholder h1, #sub-adapting-to-new-world-how-do-animals-adapt-Responding-to-change .bptitleholder h1, #sub-adapting-to-new-world-safety-in-diversity-Surviving-attack .bptitleholder h1, #sub-adapting-to-new-world-Frogs-Bugs-and-Us-Fruit-Flies .bptitleholder h1, #sub-adapting-to-new-world-Frogs-Bugs-and-Us-Human-Babies .bptitleholder h1, #sub-adapting-to-new-world-Frogs-Bugs-and-Us-Noisy-Frogs .bptitleholder h1, #sub-adapting-to-new-world-Frogs-Bugs-and-Us-soapberry-Bug .bptitleholder h1, #sub-adapting-to-new-world-extinction-and-new-species-extinction-the-end .bptitleholder h1,#sub-adapting-to-new-world-extinction-and-new-species-forming-new-species .bptitleholder h1,#sub-adapting-to-new-world-extinction-and-new-species-speed-breeders .bptitleholder h1{
 	text-transform: uppercase;
 	color: #ffffff !important;
 	font-family: "comic sans ms";
@@ -229,7 +297,28 @@
 	margin: 0;
 }
 
-#sub-adapting-to-new-world .bptitleholder, #sub-adapting-to-new-world-extinction-and-new-species .bptitleholder, #sub-adapting-to-new-world-Frogs-Bugs-and-Us .bptitleholder, #sub-adapting-to-new-world-how-do-animals-adapt .bptitleholder, #sub-adapting-to-new-world-safety-in-diversity .bptitleholder, #sub-adapting-to-new-world-how-do-animals-adapt-Humans-changing-the-world .bptitleholder, #sub-adapting-to-new-world-how-do-animals-adapt-Responding-to-change .bptitleholder, #sub-adapting-to-new-world-safety-in-diversity-Surviving-attack .bptitleholder, #sub-adapting-to-new-world-Frogs-Bugs-and-Us-Fruit-Flies .bptitleholder, #sub-adapting-to-new-world-Frogs-Bugs-and-Us-Human-Babies .bptitleholder, #sub-adapting-to-new-world-Frogs-Bugs-and-Us-Noisy-Frogs .bptitleholder, #sub-adapting-to-new-world-Frogs-Bugs-and-Us-soapberry-Bug .bptitleholder{
+#sub-adapting-to-new-world-extinction-and-new-species-extinction-the-end-burning-habitats .bptitleholder h1{
+	text-transform: uppercase;
+	color: #f3ac78 !important;
+	font-family: "comic sans ms";
+	font-weight: bold;
+	padding: 0;
+	margin: 0;
+}
+
+#sub-adapting-to-new-world-extinction-and-new-species-extinction-the-end-melting-habitats .bptitleholder h1{
+	text-transform: uppercase;
+	color: #f3ac78 !important;
+	font-family: "comic sans ms";
+	font-weight: bold;
+	padding: 0;
+	margin: 0;
+}
+
+
+
+/* Basic page heading position */
+#sub-adapting-to-new-world .bptitleholder, #sub-adapting-to-new-world-extinction-and-new-species .bptitleholder, #sub-adapting-to-new-world-Frogs-Bugs-and-Us .bptitleholder, #sub-adapting-to-new-world-how-do-animals-adapt .bptitleholder, #sub-adapting-to-new-world-safety-in-diversity .bptitleholder, #sub-adapting-to-new-world-how-do-animals-adapt-Humans-changing-the-world .bptitleholder, #sub-adapting-to-new-world-how-do-animals-adapt-Responding-to-change .bptitleholder, #sub-adapting-to-new-world-safety-in-diversity-Surviving-attack .bptitleholder, #sub-adapting-to-new-world-Frogs-Bugs-and-Us-Fruit-Flies .bptitleholder, #sub-adapting-to-new-world-Frogs-Bugs-and-Us-Human-Babies .bptitleholder, #sub-adapting-to-new-world-Frogs-Bugs-and-Us-Noisy-Frogs .bptitleholder, #sub-adapting-to-new-world-Frogs-Bugs-and-Us-soapberry-Bug .bptitleholder, #sub-adapting-to-new-world-extinction-and-new-species-extinction-the-end .bptitleholder,#sub-adapting-to-new-world-extinction-and-new-species-forming-new-species .bptitleholder,#sub-adapting-to-new-world-extinction-and-new-species-speed-breeders .bptitleholder{
 	width: 627px;
 	height: 68px;
 	text-align: center;
@@ -258,3 +347,65 @@
 	top: 56px;
 	left: 372px;
 }
+
+#sub-adapting-to-new-world-extinction-and-new-species-extinction-the-end-burning-habitats .bptitleholder{
+	width: 627px;
+	height: 68px;
+	text-align: center;
+	line-height: 28px;
+	position: absolute;
+	top: 56px;
+	left: 372px;
+}
+
+
+
+#sub-adapting-to-new-world-extinction-and-new-species-extinction-the-end-melting-habitats .bptitleholder{
+	width: 627px;
+	height: 68px;
+	text-align: center;
+	line-height: 28px;
+	position: absolute;
+	top: 56px;
+	left: 372px;
+}
+
+#sub-adapting-to-new-world-safety-in-diversity-safety-in-the-food-web .bptitleholder{
+	background: url('images/9-12/Animals/Adapting_To_New_Worlds/Safety_In_Diversity/Safety_In_The_Food_Web/heading.png') no-repeat;
+	width: 367px;
+	height: 219px;
+	text-align: center;
+	line-height: 28px;
+	position: absolute;
+	top: 56px;
+	left: 35px;
+	
+}
+
+
+		.jungle_highway-bx{
+			background: url('images/9-12/Animals/Adapting_To_New_Worlds/Safety_In_Diversity/Safety_In_The_Food_Web/jungle_highway.png') no-repeat;
+			width: 419px;
+			height: 203px;
+			position: absolute;
+			left: 530px;
+			top: 60px;
+			
+		}
+		.cockroach_feast-bx{
+				background: url('images/9-12/Animals/Adapting_To_New_Worlds/Safety_In_Diversity/Safety_In_The_Food_Web/cockroach_feast.png') no-repeat;
+				width: 419px;
+				height: 203px;
+				position: absolute;
+				left: 530px;
+				top: 267px;		
+		}
+		
+		.food_web_quiz-bx{ 
+				background: url('images/9-12/Animals/Adapting_To_New_Worlds/Safety_In_Diversity/Safety_In_The_Food_Web/food_web_quiz.png') no-repeat;
+				width: 419px;
+				height: 203px;
+				position: absolute;
+				left: 530px;
+				top: 480px;			
+		}

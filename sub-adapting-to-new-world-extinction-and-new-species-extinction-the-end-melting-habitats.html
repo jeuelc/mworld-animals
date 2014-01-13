@@ -1,0 +1,104 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-adapting-to-new-world-extinction-and-new-species-extinction-the-end-melting-habitats">
+  <script src="js/slidebar_Adapting_New_World.js"></script>
+  <link rel="stylesheet" href="css/style_Adapting_New_World.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnAdaptingNewWorld"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnAdaptingNewWorld"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnAdaptingNewWorld"></div></div>
+  <div class="infobtnholder"><div class="infobtnAdaptingNewWorld"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnAdaptingNewWorld"></div></div>
+  <div class="menubtnholder"><div class="menubtnAdaptingNewWorld"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:14px;"></div>
+  <div data-role="content" class="kidzcontent">
+	<div class="navAdaptingNewWorld-melting-habitats">
+      <p>The polar bear is the largest carnivore in the world.  It's about twice as big as a lion.  These bears live around the North Pole and feed on seals, especially ringed seals who live on sea ice.  Polar bears may become extinct by 2100 unless we manage to reverse global warming quickly.</p>
+
+<p>Firstly, there is less sea ice, which makes finding a ringed seal more difficult.  This has led some desperate bears to kill and eat other bears.  Secondly, some bears have started eating hooded and harp seals instead.  These seals eat fish from polluted seas north of Europe.  The toxins in the fish end up in the bodies of the seals and then in the polar bears who eat them.</p>
+
+<p>One polar bear generation takes about six years and only a couple of cubs are born at a time.  This makes polar bears slow to adapt to environmental change.</p>
+      </div>
+    <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/Animals/bottomhomeani.png"></a></div>
+  </div> <!-- end content -->  
+    
+  
+    <!--<div class="audiopanel">-->
+    <!-- images are in slidebarnat.js 
+         note: change the ids to be able play the narration -->
+    <div class="micbtnholder"><div class="micbtnAdaptingNewWorld" id="playstopMeltingHabitats"></div></div>
+    <div class="bAdaptingNewWorld"><div class="rwAdaptingNewWorld" id="MeltingHabitatsaudiobbtn"></div></div>
+    <div class="plAdaptingNewWorld"><div class="plpsAdaptingNewWorld" id="MeltingHabitatsaudioplbtn"></div></div>
+    <div class="fAdaptingNewWorld"><div class="fwAdaptingNewWorld" id="MeltingHabitatsaudiofbtn"></div></div>
+    <div id="actualaudio-MeltingHabitats" style="visibility:hidden;"></div>
+  <!--</div>-->
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+    var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-MeltingHabitats').html('<audio id="MeltingHabitatsaudio" controls preload onpause="playsAdaptingToNewWorld()" onplay="pauseAdaptingToNewWorld()"><source src="audio/Adapting_To_New_World/Melting_Habitats.mp3" type="audio/mpeg"></audio>');
+      } 
+    
+      $("#sub-adapting-to-new-world-extinction-and-new-species-extinction-the-end-melting-habitats").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundAdaptingToNewWorld.pause(); bgsoundAdaptingToNewWorld.currentTime = 0;});
+    
+    function goBack() {
+      $.mobile.changePage("sub-adapting-to-new-world-extinction-and-new-species-extinction-the-end.html", {transition: "slide", reverse: true });
+    }
+    
+    function playsAdaptingToNewWorld() {
+         bgsoundAdaptingToNewWorld.play();
+    }
+       
+    function pauseAdaptingToNewWorld() {
+         bgsoundAdaptingToNewWorld.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+    $("#playstopMeltingHabitats").on('tap', function() {
+      if(!playing) {
+        MeltingHabitatsaudio.play();
+        $('.micbtnAdaptingNewWorld').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        MeltingHabitatsaudio.pause(); MeltingHabitatsaudio.currentTime = 0;
+        $('.micbtnAdaptingNewWorld').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#MeltingHabitatsaudioplbtn").on('tap', function() {
+      if(!paused) {
+        MeltingHabitatsaudio.pause();
+        paused = true;
+      } else {
+        MeltingHabitatsaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#MeltingHabitatsaudiofbtn").on('tap', function() {
+      var ctime = MeltingHabitatsaudio.currentTime;
+      MeltingHabitatsaudio.currentTime = ctime + 10;
+    });
+    
+    $("#MeltingHabitatsaudiobbtn").on('tap', function() {
+      var ctime = MeltingHabitatsaudio.currentTime;
+      MeltingHabitatsaudio.currentTime = ctime - 10;
+    });
+    
+    $("#MeltingHabitatsaudiopsbtn").on('tap', function() {
+      MeltingHabitatsaudio.pause();
+    });
+  </script>
+</div> <!--//home-->

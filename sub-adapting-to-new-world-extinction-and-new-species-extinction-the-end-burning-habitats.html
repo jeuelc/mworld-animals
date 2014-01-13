@@ -1,0 +1,102 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-adapting-to-new-world-extinction-and-new-species-extinction-the-end-burning-habitats">
+  <script src="js/slidebar_Adapting_New_World.js"></script>
+  <link rel="stylesheet" href="css/style_Adapting_New_World.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnAdaptingNewWorld"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnAdaptingNewWorld"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnAdaptingNewWorld"></div></div>
+  <div class="infobtnholder"><div class="infobtnAdaptingNewWorld"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnAdaptingNewWorld"></div></div>
+  <div class="menubtnholder"><div class="menubtnAdaptingNewWorld"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:14px;"></div>
+  <div data-role="content" class="kidzcontent">
+	<div class="navAdaptingNewWorld-burning-habitats">
+        <p>Lizards love sun basking!  On a sunny day in most parts of the world, you'll see them out enjoying the sunshine.  But even they can get too much of a good thing.  When it gets too hot they tend to retreat back into the shade.</p>
+
+<p>Over the last few decades, Sceloporus lizards in Mexico have had a problem: it has been too hot too often and they have been spending more time hidden under their rocks.  Not able to venture out for food or to find their friends, many of these populations have perished.  While they have been trying to adapt and get used to their warmer world, the pace of change has been too fast for them.  Many other lizard species have been struggling with this same burning issue.</p>
+      </div>
+    <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/Animals/bottomhomeani.png"></a></div>
+  </div> <!-- end content -->  
+    
+  
+    <!--<div class="audiopanel">-->
+    <!-- images are in slidebarnat.js 
+         note: change the ids to be able play the narration -->
+    <div class="micbtnholder"><div class="micbtnAdaptingNewWorld" id="playstopBurningHabitats"></div></div>
+    <div class="bAdaptingNewWorld"><div class="rwAdaptingNewWorld" id="BurningHabitatsaudiobbtn"></div></div>
+    <div class="plAdaptingNewWorld"><div class="plpsAdaptingNewWorld" id="BurningHabitatsaudioplbtn"></div></div>
+    <div class="fAdaptingNewWorld"><div class="fwAdaptingNewWorld" id="BurningHabitatsaudiofbtn"></div></div>
+    <div id="actualaudio-BurningHabitats" style="visibility:hidden;"></div>
+  <!--</div>-->
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+    var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-BurningHabitats').html('<audio id="BurningHabitatsaudio" controls preload onpause="playsAdaptingToNewWorld()" onplay="pauseAdaptingToNewWorld()"><source src="audio/Adapting_To_New_World/Burning_Habitats.mp3" type="audio/mpeg"></audio>');
+      } 
+    
+      $("#sub-adapting-to-new-world-extinction-and-new-species-extinction-the-end-burning-habitats").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundAdaptingToNewWorld.pause(); bgsoundAdaptingToNewWorld.currentTime = 0;});
+    
+    function goBack() {
+      $.mobile.changePage("sub-adapting-to-new-world-extinction-and-new-species-extinction-the-end.html", {transition: "slide", reverse: true });
+    }
+    
+    function playsAdaptingToNewWorld() {
+         bgsoundAdaptingToNewWorld.play();
+    }
+       
+    function pauseAdaptingToNewWorld() {
+         bgsoundAdaptingToNewWorld.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+    $("#playstopBurningHabitats").on('tap', function() {
+      if(!playing) {
+        BurningHabitatsaudio.play();
+        $('.micbtnAdaptingNewWorld').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        BurningHabitatsaudio.pause(); BurningHabitatsaudio.currentTime = 0;
+        $('.micbtnAdaptingNewWorld').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#BurningHabitatsaudioplbtn").on('tap', function() {
+      if(!paused) {
+        BurningHabitatsaudio.pause();
+        paused = true;
+      } else {
+        BurningHabitatsaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#BurningHabitatsaudiofbtn").on('tap', function() {
+      var ctime = BurningHabitatsaudio.currentTime;
+      BurningHabitatsaudio.currentTime = ctime + 10;
+    });
+    
+    $("#BurningHabitatsaudiobbtn").on('tap', function() {
+      var ctime = BurningHabitatsaudio.currentTime;
+      BurningHabitatsaudio.currentTime = ctime - 10;
+    });
+    
+    $("#BurningHabitatsaudiopsbtn").on('tap', function() {
+      BurningHabitatsaudio.pause();
+    });
+  </script>
+</div> <!--//home-->
