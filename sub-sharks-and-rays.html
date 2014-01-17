@@ -1,0 +1,139 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-sharks-and-rays">
+  <!-- <script src="js/slidebarnat.js"></script> -->
+  <script src="js/slidebar_shark_and_rays.js"></script>
+  <link rel="stylesheet" href="css/style_shark_and_rays.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnSharkAndRays"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnSharkAndRays"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnSharkAndRays"></div></div>
+  <div class="infobtnholder"><div class="infobtnSharkAndRays"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnSharkAndRays"></div></div>
+  <div class="menubtnholder"><div class="menubtnSharkAndRays"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:14px;"><h1>Sharks and Rays</h1></div>
+  
+    <div data-role="content" class="kidzcontent">
+      <div class="navSharkAndRays-content">
+        <p>Sharks and rays may look completely different but they belong to the same group
+of fish called 'elasmobranchs'.  These fish are unique in that they have no bones but instead have a skeleton of flexible cartilage, just like your ears and nose!</p>
+		<p>Sharks and rays trace their evolution back 400 million years.  Their biology is astounding and they can live long lives.  They use incredible abilities to find prey and also play a crucial role in keeping our oceans healthy.  You may already know of famous faces such as the great white or the whale shark, but you may not realise just how special each one is.</p>
+		<p>Humans, sharks and rays haven't always had the best relationship but they form an incredible part of our culture and have shaped the lives of nations around the world.</p>
+		<p>Let's jump in and find out more... tap the buttons if you dare!</p>
+      </div>
+      <div class="navbtn1">
+        <p><a href="sub-sharks-and-rays-biology-and-ecology.html" data-transition="slide"><img src="css/images/9-12/Animals/Shark_And_Rays/Biology_Ecology.png"></a></p>
+      </div>
+      <div class="navbtn2">
+        <p><a href="sub-sharks-and-rays-Elasmobranch-Evolution.html" data-transition="slide"><img src="css/images/9-12/Animals/Shark_And_Rays/Elasmobranch.png"></a></p>
+      </div>
+      <div class="navbtn3">
+        <p><a href="sub-sharks-and-rays-famous-faces.html" data-transition="slide"><img src="css/images/9-12/Animals/Shark_And_Rays/Famous_Faces.png"></a></p>
+      </div>
+      <div class="navbtn4">
+        <p><a href="sub-sharks-and-rays-sharks-rays-and-us.html" data-transition="slide"><img src="css/images/9-12/Animals/Shark_And_Rays/Sharks_Rays.png"></a></p>
+      </div>
+        
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/Animals/bottomhomeani.png"></a></div>
+    </div> <!-- end content -->  
+    
+  
+  <!--<div class="audiopanel">-->
+    <!-- images are in slidebarnat.js -->
+    <div class="micbtnholder"><div class="micbtnSharkAndRays" id="playstopSharkRays"></div></div>
+    <div class="bSharkAndRays"><div class="rwSharkAndRays" id="SharkRaysaudiobbtn"></div></div>
+    <div class="plSharkAndRays"><div class="plpsSharkAndRays" id="SharkRaysaudioplbtn"></div></div>
+    <div class="fSharkAndRays"><div class="fwSharkAndRays" id="SharkRaysaudiofbtn"></div></div>
+    <div id="actualaudio-SharkRays" style="visibility:hidden;"></div>
+  <!--</div>-->
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+    var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-SharkRays').html('<audio id="SharkRaysaudio" controls preload onpause="playsSharkAndRays()" onplay="pauseSharkAndRays()"><source src="audio/Shark_And_Rays/Shark_And_Rays.mp3" type="audio/mpeg"></audio>');
+      } 
+    
+      $("#sub-sharks-and-rays").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { bgsoundSharkAndRays.pause(); bgsoundSharkAndRays.currentTime = 0; mainaudiobg.play(); });
+    
+    function goBack() {
+      $.mobile.changePage("sub-animals.html", {transition: "slide", reverse: true });
+      bgsoundSharkAndRays.pause(); 
+      bgsoundSharkAndRays.currentTime = 0;
+      animalsoundbg.play();
+    }
+    
+    function playsSharkAndRays() {
+         bgsoundSharkAndRays.play();
+    }
+       
+    function pauseSharkAndRays() {
+         bgsoundSharkAndRays.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+	
+    $("#playstopSharkRays").on('tap', function() {
+      if(!playing) {
+        SharkRaysaudio.play();
+        $('.micbtnSharkAndRays').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        SharkRaysaudio.pause(); SharkRaysaudio.currentTime = 0;
+        $('.micbtnSharkAndRays').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#SharkRaysaudioplbtn").on('tap', function() {
+      if(!paused) {
+        SharkRaysaudio.pause();
+        paused = true;
+      } else {
+        SharkRaysaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#SharkRaysaudiofbtn").on('tap', function() {
+      var ctime = SharkRaysaudio.currentTime;
+      SharkRaysaudio.currentTime = ctime + 10;
+    });
+    
+    $("#SharkRaysaudiobbtn").on('tap', function() {
+      var ctime = SharkRaysaudio.currentTime;
+      SharkRaysaudio.currentTime = ctime - 10;
+    });
+    
+    $("#SharkRaysaudiopsbtn").on('tap', function() {
+      SharkRaysaudio.pause();
+      //$(".audiopanel").css({"backgroundPosition":"0px 0px"});
+    });
+    
+    $('.navbtn1').on('tap', function() { 
+      nav1Effects(); 
+    });
+    
+    $('.navbtn2').on('tap', function() { 
+      nav2Effects(); 
+    });
+    
+    $('.navbtn3').on('tap', function() { 
+      nav3Effects(); 
+    });
+    
+    $('.navbtn4').on('tap', function() { 
+      nav4Effects(); 
+    });
+  </script>
+</div> <!--//home-->

@@ -1,0 +1,132 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-sharks-and-rays-biology-and-ecology-amazing-abilities">
+  <script src="js/hammer.js"></script>
+  <script src="js/jquery.hammer.js"></script>
+  <script src="js/slidebar_shark_and_rays.js"></script>
+  <link rel="stylesheet" href="css/style_shark_and_rays.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnSharkAndRays"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnSharkAndRays"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnSharkAndRays"></div></div>
+  <div class="infobtnholder"><div class="infobtnSharkAndRays"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnSharkAndRays"></div></div>
+  <div class="menubtnholder"><div class="menubtnSharkAndRays"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:0px;"><h1>Amazing Abilities</h1></div>
+  <div id="spacechar">&nbsp;
+    <div data-role="content" class="kidzcontent">
+      <div class="v-spacer"></div>
+      <div class="sidebarleft-half">
+        <a id="moneytrainlink" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/Animals/Shark_And_Rays/Biology_And_Ecology/Amazing_Abilities/Sensors_Hi_Res.jpg', 'This generalised diagram shows shark senses, imagine being able to smell things 100 metres in front of you!');">click here</a>
+        
+        <div id="zoomwrapper">
+          <div id="pol1" class="pPiece" style="left:100px;top:270px;">
+             <img src="css/images/9-12/Animals/Shark_And_Rays/Biology_And_Ecology/Amazing_Abilities/Sensors.png" alt="" />
+          </div>
+        </div><!--/zoomwrapper-->
+      </div>
+      
+      <div class="bpcontentSharkAndRays">
+        <p>Imagine having super powers like being able to smell or 'feel' someone from hundreds of metres away.  These super powers are the norm for sharks and rays as they navigate their way through the oceans looking for prey.</p>
+		<p>Sharks and rays possess an incredible sense of smell.  They are able to detect one drop of blood in the equivalent of a household swimming pool!  Not to worry though, detecting a drop of blood from kilometres away is a popular myth...busted!</p>
+		<p>'Feeling' prey is crucial, especially when you can't see them and they're not bleeding.  By using what's called a 'lateral-line' system, sharks can detect pressure changes and vibrations from struggling animals in the water within 100 metres.</p>
+		<p>Even cooler is that sharks and rays can detect electrical signals, like those from your heartbeat!  This is particularly useful, especially if your food is hiding in the seagrass or buried under sand.</p>
+      </div>
+       
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/Animals/bottomhomeani.png"></a></div>
+    </div> <!-- end content -->  
+  </div><!--/spacechar-->        
+  
+    <div class="micbtnholder"><div class="micbtnSharkAndRays" id="playstopAmazingAbilities"></div></div>
+    <div class="bSharkAndRays"><div class="rwSharkAndRays" id="AmazingAbilitiesaudiobbtn"></div></div>
+    <div class="plSharkAndRays"><div class="plpsSharkAndRays" id="AmazingAbilitiesaudioplbtn"></div></div>
+    <div class="fSharkAndRays"><div class="fwSharkAndRays" id="AmazingAbilitiesaudiofbtn"></div></div>
+    <div id="actualaudio-AmazingAbilities" style="visibility:hidden;"></div>
+  <!-- </div> -->
+  
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+ 
+	var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      $('div#pol1').css("z-index", 2);
+      $('div#pol2').css("z-index", 1);
+      $('div#pol1 > img').css("-webkit-transform", "rotate(0deg)");
+      $('div#pol2 > img').css("-webkit-transform", "rotate(5deg)");
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-AmazingAbilities').html('<audio id="AmazingAbilitiesaudio" controls preload onpause="playsSharkAndRays()" onplay="pauseSharkAndRays()"><source src="audio/Shark_And_Rays/Amazing_Abilities.mp3" type="audio/mpeg"></audio>');
+      }             
+      $("#sub-sharks-and-rays-biology-and-ecology-amazing-abilities").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundSharkAndRays.pause(); bgsoundSharkAndRays.currentTime = 0;});
+	
+    $('#falseans').on('tap', function() {
+      alert("Wrong answer");
+    });
+    $('#trueans').on('tap', function() {
+      alert("Correct answer");
+    });
+    
+    $("#pol1").on('tap', function() {
+      $('#moneytrainlink')[0].click();
+    });
+    
+    function goBack() {
+      $.mobile.changePage("sub-sharks-and-rays-biology-and-ecology.html", {transition: "slide", reverse: true });
+    }
+    
+    function playsSharkAndRays() {
+         bgsoundSharkAndRays.play();
+    }
+       
+    function pauseSharkAndRays() {
+         bgsoundSharkAndRays.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+    $("#playstopAmazingAbilities").on('tap', function() {
+      if(!playing) {
+        AmazingAbilitiesaudio.play();
+        $('.micbtnSharkAndRays').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        AmazingAbilitiesaudio.pause(); AmazingAbilitiesaudio.currentTime = 0;
+        $('.micbtnSharkAndRays').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#AmazingAbilitiesaudioplbtn").on('tap', function() {
+      if(!paused) {
+        AmazingAbilitiesaudio.pause();
+        paused = true;
+      } else {
+        AmazingAbilitiesaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#AmazingAbilitiesaudiofbtn").on('tap', function() {
+      var ctime = AmazingAbilitiesaudio.currentTime;
+      AmazingAbilitiesaudio.currentTime = ctime + 10;
+    });
+    
+    $("#AmazingAbilitiesaudiobbtn").on('tap', function() {
+      var ctime = AmazingAbilitiesaudio.currentTime;
+      AmazingAbilitiesaudio.currentTime = ctime - 10;
+    });
+    
+    $("#AmazingAbilitiesaudiopsbtn").on('tap', function() {
+      AmazingAbilitiesaudio.pause();
+    });
+  </script>
+  <script src="js/onecardLogic.js"></script>  <!-- for card dragging effects -->
+</div> <!--//home-->

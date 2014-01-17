@@ -10,7 +10,7 @@
       <div class="aclink"><a href="#" data-transition="slide"><img src="css/images/9-12/Animals/minibeastsbtn.png"></a></div>
       <div class="aclink"><a href="#" data-transition="slide"><img src="css/images/9-12/Animals/farmabtn.png"></a></div><br>
       <div class="aclink"><a href="#" data-transition="slide"><img src="css/images/9-12/Animals/bandbbtn.png"></a></div>
-      <div class="aclink"><a href="#" data-transition="slide"><img src="css/images/9-12/Animals/dinootsbtn.png"></a></div>
+      <div class="aclink"><a href="sub-sharks-and-rays.html" data-transition="slide" id="sharkrays"><img src="css/images/9-12/Animals/dinootsbtn.png"></a></div>
       <div class="aclink"><a href="#" data-transition="slide"><img src="css/images/9-12/Animals/raptorsbtn.png"></a></div>
       <div class="aclink"><a href="#" data-transition="slide"><img src="css/images/9-12/Animals/livingwhbtn.png"></a></div>
     </div>
@@ -42,6 +42,11 @@
 			}
 			if(subjectId == "adaptingnewworld") {
 				bgsoundAdaptingToNewWorld.play();
+				animalsoundbg.pause();
+				animalsoundbg.currentTime = 0;
+			}
+			if(subjectId == "sharkrays") {
+				bgsoundSharkAndRays.play();
 				animalsoundbg.pause();
 				animalsoundbg.currentTime = 0;
 			}

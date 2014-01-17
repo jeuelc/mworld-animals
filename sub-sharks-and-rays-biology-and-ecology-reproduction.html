@@ -1,0 +1,133 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-sharks-and-rays-biology-and-ecology-reproduction">
+  <script src="js/hammer.js"></script>
+  <script src="js/jquery.hammer.js"></script>
+  <script src="js/slidebar_shark_and_rays.js"></script>
+  <link rel="stylesheet" href="css/style_shark_and_rays.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnSharkAndRays"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnSharkAndRays"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnSharkAndRays"></div></div>
+  <div class="infobtnholder"><div class="infobtnSharkAndRays"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnSharkAndRays"></div></div>
+  <div class="menubtnholder"><div class="menubtnSharkAndRays"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:0px;"><h1>Reproduction</h1></div>
+  <div id="spacechar">&nbsp;
+    <div data-role="content" class="kidzcontent">
+      <div class="v-spacer"></div>
+      <div class="sidebarleft-half">
+        <a id="sharkfamilylink" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/Animals/Shark_And_Rays/Biology_And_Ecology/Reproduction/Shark_Family_Hi_Res.jpg', 'A shark family out for the day, Hawaii');">click here</a>
+		
+		<a id="sharklink" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/Animals/Shark_And_Rays/Biology_And_Ecology/Reproduction/Shark_Egg_Hi_Res.jpg', 'A shark egg, can you see the baby shark?');">click here</a>
+        
+		<div id="zoomwrapper">
+          <div id="pol1" class="pPiece" style="left:100px;top:270px;">
+             <img src="css/images/9-12/Animals/Shark_And_Rays/Biology_And_Ecology/Reproduction/Shark_Family.png" alt="" />
+          </div>
+		  <div id="pol2"class="pPiece" style="left:75px;top:290px;">
+             <img src="css/images/9-12/Animals/Shark_And_Rays/Biology_And_Ecology/Reproduction/Shark_Egg.png" alt="" />
+          </div>
+		</div><!--/zoomwrapper-->
+      </div>
+      
+      <div class="bpcontentSharkAndRays">
+        <p>About 70% of shark and ray species are 'viviparous', meaning they give birth to live young.  The rest are 'oviparous', meaning they lay eggs.  Did you know shark and ray babies are called pups?  Sharks and rays give birth to only a few pups and in some cases their reproductive cycles can last two to three years!</p>
+		<p>In viviparous species, pups grow inside the mother, feeding from a yolk sac or even a placenta like mammals.  When they're born, they're able to hunt and live on their own immediately.  In some species, pups eat each other inside their mum, so only the really strong survive!</p>
+		<p>The eggs of oviparous species are known as 'mermaid's purses' and they can sometimes be found on beaches.  They are hard leathery shells about the size of a wallet.  To protect their eggs from other animals, mothers hide them in rocky crevices and cracks.  Once the eggs hatch, the pups are ready to fend for themselves.</p>
+      </div>
+       
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/Animals/bottomhomeani.png"></a></div>
+    </div> <!-- end content -->  
+  </div><!--/spacechar-->        
+  
+    <div class="micbtnholder"><div class="micbtnSharkAndRays" id="playstopReproduction"></div></div>
+    <div class="bSharkAndRays"><div class="rwSharkAndRays" id="Reproductionaudiobbtn"></div></div>
+    <div class="plSharkAndRays"><div class="plpsSharkAndRays" id="Reproductionaudioplbtn"></div></div>
+    <div class="fSharkAndRays"><div class="fwSharkAndRays" id="Reproductionaudiofbtn"></div></div>
+    <div id="actualaudio-Reproduction" style="visibility:hidden;"></div>
+  <!-- </div> -->
+  
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+ 
+	var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      $('div#pol1').css("z-index", 1);
+      $('div#pol2').css("z-index", 2);
+      $('div#pol1 > img').css("-webkit-transform", "rotate(0deg)");
+      $('div#pol2 > img').css("-webkit-transform", "rotate(5deg)");
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-Reproduction').html('<audio id="Reproductionaudio" controls preload onpause="playsSharkAndRays()" onplay="pauseSharkAndRays()"><source src="audio/Shark_And_Rays/Reproduction.mp3" type="audio/mpeg"></audio>');
+      }             
+      $("#sub-sharks-and-rays-biology-and-ecology-reproduction").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundSharkAndRays.pause(); bgsoundSharkAndRays.currentTime = 0;});
+	
+    $("#pol1").on('tap', function() {
+      $('#sharkfamilylink')[0].click();
+    });
+	
+	$("#pol2").on('tap', function() {
+      $('#sharklink')[0].click();
+    });
+    
+    function goBack() {
+      $.mobile.changePage("sub-sharks-and-rays-biology-and-ecology.html", {transition: "slide", reverse: true });
+    }
+    
+    function playsSharkAndRays() {
+         bgsoundSharkAndRays.play();
+    }
+       
+    function pauseSharkAndRays() {
+         bgsoundSharkAndRays.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+    $("#playstopReproduction").on('tap', function() {
+      if(!playing) {
+        Reproductionaudio.play();
+        $('.micbtnSharkAndRays').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        Reproductionaudio.pause(); Reproductionaudio.currentTime = 0;
+        $('.micbtnSharkAndRays').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#Reproductionaudioplbtn").on('tap', function() {
+      if(!paused) {
+        Reproductionaudio.pause();
+        paused = true;
+      } else {
+        Reproductionaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#Reproductionaudiofbtn").on('tap', function() {
+      var ctime = Reproductionaudio.currentTime;
+      Reproductionaudio.currentTime = ctime + 10;
+    });
+    
+    $("#Reproductionaudiobbtn").on('tap', function() {
+      var ctime = Reproductionaudio.currentTime;
+      Reproductionaudio.currentTime = ctime - 10;
+    });
+    
+    $("#Reproductionaudiopsbtn").on('tap', function() {
+      Reproductionaudio.pause();
+    });
+  </script>
+  <script src="js/twocardLogic.js"></script>  <!-- for card dragging effects -->
+</div> <!--//home-->

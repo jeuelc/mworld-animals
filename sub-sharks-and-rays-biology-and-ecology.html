@@ -1,0 +1,134 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-sharks-and-rays-biology-and-ecology">
+  <!-- <script src="js/slidebarnat.js"></script> -->
+  <script src="js/slidebar_shark_and_rays.js"></script>
+  <link rel="stylesheet" href="css/style_shark_and_rays.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnSharkAndRays"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnSharkAndRays"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnSharkAndRays"></div></div>
+  <div class="infobtnholder"><div class="infobtnSharkAndRays"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnSharkAndRays"></div></div>
+  <div class="menubtnholder"><div class="menubtnSharkAndRays"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:14px;"><h1>Biology and Ecology</h1></div>
+  
+    <div data-role="content" class="kidzcontent">
+      <div class="navSharkAndRays-content">
+        <p>Sharks and rays occupy all the oceans of the world, from the ice-cold depths to the balmy waters of the tropics.  As top predators, they help maintain healthy oceans by regulating the marine food web.  Despite their importance, they are mysterious creatures and we still know very little about them.</p>
+		<p>What we do know about sharks and rays is that they are highly specialised animals displaying a range of strategies that have made them successful over millions of years.  Sharks and rays vary in how they give birth.  Some species lay eggs and others give birth to live young.</p>
+		<p>Each species can often be identified by their teeth alone, as these are highly modified instruments that help them eat their prey.  Sharks and rays also have some amazing abilities: did you know they can detect the faintest of smells in the water and also use electrical signals to find prey?  Tap the buttons to find out more!</p>
+      </div>
+      <div class="navbtn1">
+        <p><a href="sub-sharks-and-rays-biology-and-ecology-amazing-abilities.html" data-transition="slide"><img src="css/images/9-12/Animals/Shark_And_Rays/Biology_And_Ecology/Amazing_Abilities.png"></a></p>
+      </div>
+      <div class="navbtn2">
+        <p><a href="sub-sharks-and-rays-biology-and-ecology-importance-of-food-web.html" data-transition="slide"><img src="css/images/9-12/Animals/Shark_And_Rays/Biology_And_Ecology/Importance_Of_Food_Web.png"></a></p>
+      </div>
+      <div class="navbtn3">
+        <p><a href="sub-sharks-and-rays-biology-and-ecology-reproduction.html" data-transition="slide"><img src="css/images/9-12/Animals/Shark_And_Rays/Biology_And_Ecology/Reproduction.png"></a></p>
+      </div>
+      <div class="navbtn4">
+        <p><a href="sub-sharks-and-rays-biology-and-ecology-teeth-and-diet.html" data-transition="slide"><img src="css/images/9-12/Animals/Shark_And_Rays/Biology_And_Ecology/Teeth_And_Diet.png"></a></p>
+      </div>
+        
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/Animals/bottomhomeani.png"></a></div>
+    </div> <!-- end content -->  
+    
+  
+  <!--<div class="audiopanel">-->
+    <!-- images are in slidebarnat.js -->
+    <div class="micbtnholder"><div class="micbtnSharkAndRays" id="playstopBiologyEcology"></div></div>
+    <div class="bSharkAndRays"><div class="rwSharkAndRays" id="BiologyEcologyaudiobbtn"></div></div>
+    <div class="plSharkAndRays"><div class="plpsSharkAndRays" id="BiologyEcologyaudioplbtn"></div></div>
+    <div class="fSharkAndRays"><div class="fwSharkAndRays" id="BiologyEcologyaudiofbtn"></div></div>
+    <div id="actualaudio-BiologyEcology" style="visibility:hidden;"></div>
+  <!--</div>-->
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+    var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-BiologyEcology').html('<audio id="BiologyEcologyaudio" controls preload onpause="playsSharkAndRays()" onplay="pauseSharkAndRays()"><source src="audio/Shark_And_Rays/Biology_And_Ecology.mp3" type="audio/mpeg"></audio>');
+      } 
+    
+      $("#sub-sharks-and-rays-biology-and-ecology").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { bgsoundSharkAndRays.pause(); bgsoundSharkAndRays.currentTime = 0; mainaudiobg.play(); });
+    
+    function goBack() {
+      $.mobile.changePage("sub-sharks-and-rays.html", {transition: "slide", reverse: true });
+    }
+    
+    function playsSharkAndRays() {
+         bgsoundSharkAndRays.play();
+    }
+       
+    function pauseSharkAndRays() {
+         bgsoundSharkAndRays.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+	
+    $("#playstopBiologyEcology").on('tap', function() {
+      if(!playing) {
+        BiologyEcologyaudio.play();
+        $('.micbtnSharkAndRays').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        BiologyEcologyaudio.pause(); BiologyEcologyaudio.currentTime = 0;
+        $('.micbtnSharkAndRays').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#BiologyEcologyaudioplbtn").on('tap', function() {
+      if(!paused) {
+        BiologyEcologyaudio.pause();
+        paused = true;
+      } else {
+        BiologyEcologyaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#BiologyEcologyaudiofbtn").on('tap', function() {
+      var ctime = BiologyEcologyaudio.currentTime;
+      BiologyEcologyaudio.currentTime = ctime + 10;
+    });
+    
+    $("#BiologyEcologyaudiobbtn").on('tap', function() {
+      var ctime = BiologyEcologyaudio.currentTime;
+      BiologyEcologyaudio.currentTime = ctime - 10;
+    });
+    
+    $("#BiologyEcologyaudiopsbtn").on('tap', function() {
+      BiologyEcologyaudio.pause();
+      //$(".audiopanel").css({"backgroundPosition":"0px 0px"});
+    });
+    
+    $('.navbtn1').on('tap', function() { 
+      nav1Effects(); 
+    });
+    
+    $('.navbtn2').on('tap', function() { 
+      nav2Effects(); 
+    });
+    
+    $('.navbtn3').on('tap', function() { 
+      nav3Effects(); 
+    });
+    
+    $('.navbtn4').on('tap', function() { 
+      nav4Effects(); 
+    });
+  </script>
+</div> <!--//home-->

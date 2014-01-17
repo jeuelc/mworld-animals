@@ -1,0 +1,212 @@
+/********* Fang How Animals Eat **********/
+
+#sub-sharks-and-rays, #sub-sharks-and-rays-biology-and-ecology, #sub-sharks-and-rays-biology-and-ecology-amazing-abilities, #sub-sharks-and-rays-biology-and-ecology-importance-of-food-web, #sub-sharks-and-rays-biology-and-ecology-reproduction{
+  background:url('images/9-12/Animals/Shark_And_Rays/Shark_And_Rays.jpg') no-repeat;
+  height:748px !important;
+  overflow:hidden !important;
+  width:1024px !important;
+}
+
+#sub-sharks-and-rays-biology-and-ecology-teeth-and-diet{
+  background:url('images/9-12/Animals/Shark_And_Rays/Biology_And_Ecology/Teeth_And_Diet/Teeth_And_Diet_BG.jpg') no-repeat;
+  height:748px !important;
+  overflow:hidden !important;
+  width:1024px !important;
+}
+
+.plSharkAndRays, .psSharkAndRays, .bSharkAndRays, .fSharkAndRays {
+  position:absolute;
+  top:670px;
+  left:1024px;
+  z-index:20;
+}
+
+.micbtnSharkAndRays {
+  background:url('images/9-12/Animals/micani.png') no-repeat 0 -81px;
+  height:81px;
+  width:81px;
+}
+
+.rwSharkAndRays {
+  background:url('images/9-12/Animals/rwani.png') no-repeat 0 -73px;
+  height:73px;
+  width:73px;
+}
+
+.plpsSharkAndRays {
+  background:url('images/9-12/Animals/playani.png') no-repeat 0 -73px;
+  height:73px;
+  width:73px;
+}
+
+.fwSharkAndRays {
+  background:url('images/9-12/Animals/fwani.png') no-repeat 0 -73px;
+  height:73px;
+  width:73px;
+}
+
+.menubtnSharkAndRays {
+  background:url('images/9-12/Animals/menuani.png') no-repeat 0 -90px;
+  height:90px;
+  width:90px;
+}
+
+
+.homebtnSharkAndRays {
+  background:url('images/9-12/Animals/mapani.png') no-repeat 0 -74px;
+  height:74px;
+  width:80px;
+}
+
+.mpbtnSharkAndRays {
+  background:url('images/9-12/Animals/mpointsani.png') no-repeat 0 -84px;
+  height:79px;
+  width:80px;
+}
+
+.cpbtnSharkAndRays {
+  background:url('images/9-12/Animals/ctrlpnlani.png') no-repeat 0 -74px;
+  height:74px;
+  width:74px;
+}
+
+.infobtnSharkAndRays {
+  background:url('images/9-12/Animals/infoani.png') no-repeat 0 -74px;
+  height:74px;
+  width:74px;
+}
+
+.credsbtnSharkAndRays {
+  background:url('images/9-12/Animals/creditsani.png') no-repeat 0 -74px;
+  height:74px;
+  width:74px;
+}
+
+.navtitleholderSharkAndRays{
+	width: 435px;
+	height: 68px;
+	position: absolute;
+	top: 169px;
+	left: 295px;
+	text-align: center;
+	line-height: 32px;
+}
+
+.navtitleholderSharkAndRays h1{
+	text-transform: uppercase;
+	color: #FFF;
+	font-family: comic sans ms;
+	padding: 0;
+	margin: 0;
+	font-weight: bold;
+}
+
+.bptitleholderSharkAndRays {
+  width:627px;
+  height:68px;
+  text-align:center;
+  line-height:28px;
+  position:absolute;
+  top:169px;
+  left:194px;
+}
+
+.bptitleholderSharkAndRays h1
+ {
+  text-transform:uppercase;
+  color: #FFFFFF;
+  font-family:"comic sans ms";
+  font-weight:bold;
+  padding:0;
+  margin:0;
+}
+
+.navSharkAndRays-content{
+  position:absolute;
+  left:305px;
+  top:263px;
+  width:410px;
+  height:359px;
+  /*overflow-y:scroll;*/
+  overflow:auto;
+  text-align:center;
+  font-family:"comic sans ms";
+  font-size:18px;
+  font-weight:normal;
+  color:#000000;
+}
+.navSharkAndRays-content p {
+  margin-top:0 !important;
+}
+
+.navSharkAndRays-content3 {
+  position:absolute;
+  left:59px;
+  top:263px;
+  width:920px;
+  height:160px;
+  overflow-y:scroll;
+  text-align:left;
+  font-family:"comic sans ms";
+  font-size:18px;
+  font-weight:normal;
+  color:#000000;
+}
+
+.bpcontentSharkAndRays{
+  width:413px;
+  height:356px;
+  position:absolute;
+  left:550px;
+  top:266px;
+  overflow:auto;
+  font-family:"comic sans ms";
+  font-size:18px;
+  font-weight:normal;
+  text-align:left;
+  color:#000000;
+}
+
+.bpcontentSharkAndRays-teethanddiet{
+  width: 506px;
+  height: 550px;
+  position: absolute;
+  left: 495px;
+  top: 52px;
+  overflow: auto;
+  font-family: "comic sans ms";
+  font-size: 18px;
+  font-weight: normal;
+  text-align: left;
+  color: #ffffff;
+}
+
+#sub-sharks-and-rays .bptitleholder h1, #sub-sharks-and-rays-biology-and-ecology .bptitleholder h1, #sub-sharks-and-rays-biology-and-ecology-amazing-abilities .bptitleholder h1, #sub-sharks-and-rays-biology-and-ecology-importance-of-food-web .bptitleholder h1, #sub-sharks-and-rays-biology-and-ecology-reproduction .bptitleholder h1,#sub-sharks-and-rays-biology-and-ecology-teeth-and-diet .bptitleholder h1{
+	text-transform: uppercase;
+	color: #ffffff !important;
+	font-family: "comic sans ms";
+	font-weight: bold;
+	padding: 0;
+	margin: 0;
+}
+
+#sub-sharks-and-rays .bptitleholder, #sub-sharks-and-rays-biology-and-ecology .bptitleholder, #sub-sharks-and-rays-biology-and-ecology-amazing-abilities .bptitleholder, #sub-sharks-and-rays-biology-and-ecology-importance-of-food-web .bptitleholder, #sub-sharks-and-rays-biology-and-ecology-reproduction .bptitleholder{
+	width: 627px;
+	height: 68px;
+	text-align: center;
+	line-height: 28px;
+	position: absolute;
+	top: 169px;
+	left: 194px;
+}
+
+#sub-sharks-and-rays-biology-and-ecology-teeth-and-diet .bptitleholder{
+	width: 627px;
+	height: 68px;
+	text-align: center;
+	line-height: 28px;
+	position: absolute;
+	top: 19px;
+	left: 308px;
+	font-size: 14px;
+}

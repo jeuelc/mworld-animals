@@ -1,0 +1,112 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-sharks-and-rays-biology-and-ecology-teeth-and-diet">
+  <script src="js/slidebar_shark_and_rays.js"></script>
+  <link rel="stylesheet" href="css/style_shark_and_rays.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnSharkAndRays"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnSharkAndRays"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnSharkAndRays"></div></div>
+  <div class="infobtnholder"><div class="infobtnSharkAndRays"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnSharkAndRays"></div></div>
+  <div class="menubtnholder"><div class="menubtnSharkAndRays"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:14px;"><h1>Teeth and Diet</h1></div>
+  <div id="batlink" style="position: absolute;left: 40px;top: 149px;width: 110px;height: 105px;"></div>
+  <div id="mozzielink" style="position: absolute;left: 48px;top: 340px;width: 115px;height: 100px;"></div>
+  <div id="butterflylink" style="position: absolute;left: 320px;top: 540px;width: 120px;height: 112px;"></div>
+  <div data-role="content" class="kidzcontent">
+	<div class="bpcontentSharkAndRays-teethanddiet">
+        <p>If you were a shark or ray, you'd never have to go to the dentist and wouldn't even have a problem crushing the hardest of sweets!  Sharks and rays have teeth that never run out; they grow and replace themselves constantly over their lifetimes.  Some are replaced every 14 days!</p>
+		<p>The shape of their teeth is distinctive and is often used to identify one species from another.  They can even differ between a male and female!  The shape of teeth fall into three main types and they are especially designed for their diet;</p>
+		<p>- Grinding plates: most rays and some sharks use these to help grind the hard shells of invertebrates like crabs and shellfish.</p>
+		<p>- Triangular/blade-cutting: these are used for shearing and cutting large chunks of flesh from large prey, like mammals and turtles.</p>
+		<p>- Long, fang-like: these are used to seize and hold prey, such as fish, so that they can be swallowed whole.</p>
+	</div>
+    <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/Animals/bottomhomeani.png"></a></div>
+  </div> <!-- end content -->  
+    
+  
+  <!--<div class="audiopanel">-->
+    <!-- images are in slidebarnat.js 
+         note: change the ids to be able play the narration
+    -->
+    <div class="micbtnholder"><div class="micbtnSharkAndRays" id="playstopTeethAndDiet"></div></div>
+    <div class="bSharkAndRays"><div class="rwSharkAndRays" id="TeethAndDietaudiobbtn"></div></div>
+    <div class="plSharkAndRays"><div class="plpsSharkAndRays" id="TeethAndDietaudioplbtn"></div></div>
+    <div class="fSharkAndRays"><div class="fwSharkAndRays" id="TeethAndDietaudiofbtn"></div></div>
+    <div id="actualaudio-TeethAndDiet" style="visibility:hidden;"></div>
+  <!--</div>-->
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+    var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+	  $('#watchBatVideo').css({"visibility":"hidden", "z-index":-10});
+	  $('#watchMozzieVideo').css({"visibility":"hidden", "z-index":-10});
+	  $('#watchButterflyVideo').css({"visibility":"hidden", "z-index":-10});
+	  
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-TeethAndDiet').html('<audio id="TeethAndDietaudio" controls preload onpause="playsSharkAndRays()" onplay="pauseSharkAndRays()"><source src="audio/Shark_And_Rays/Teeth_And_Diet.mp3" type="audio/mpeg"></audio>');
+      } 
+    
+      $("#sub-sharks-and-rays-biology-and-ecology-teeth-and-diet").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+	$('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundSharkAndRays.pause(); bgsoundSharkAndRays.currentTime = 0;});
+    
+    function goBack() {
+      $.mobile.changePage("sub-sharks-and-rays-biology-and-ecology.html", {transition: "slide", reverse: true });
+    }
+    
+    function playsSharkAndRays() {
+         bgsoundSharkAndRays.play();
+    }
+       
+    function pauseSharkAndRays() {
+         bgsoundSharkAndRays.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+    $("#playstopTeethAndDiet").on('tap', function() {
+      if(!playing) {
+        TeethAndDietaudio.play();
+        $('.micbtnSharkAndRays').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        TeethAndDietaudio.pause(); TeethAndDietaudio.currentTime = 0;
+        $('.micbtnSharkAndRays').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#TeethAndDietaudioplbtn").on('tap', function() {
+      if(!paused) {
+        TeethAndDietaudio.pause();
+        paused = true;
+      } else {
+        TeethAndDietaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#TeethAndDietaudiofbtn").on('tap', function() {
+      var ctime = TeethAndDietaudio.currentTime;
+      TeethAndDietaudio.currentTime = ctime + 10;
+    });
+    
+    $("#TeethAndDietaudiobbtn").on('tap', function() {
+      var ctime = TeethAndDietaudio.currentTime;
+      TeethAndDietaudio.currentTime = ctime - 10;
+    });
+    
+    $("#TeethAndDietaudiopsbtn").on('tap', function() {
+      TeethAndDietaudio.pause();
+    });
+  </script>
+</div> <!--//home-->
