@@ -1,0 +1,129 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-sharks-and-rays-sharks-rays-and-us">
+  <script src="js/slidebar_shark_and_rays.js"></script>
+  <link rel="stylesheet" href="css/style_shark_and_rays.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnSharkAndRays"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnSharkAndRays"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnSharkAndRays"></div></div>
+  <div class="infobtnholder"><div class="infobtnSharkAndRays"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnSharkAndRays"></div></div>
+  <div class="menubtnholder"><div class="menubtnSharkAndRays"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:14px;"><h1>Sharks, Rays and Us</h1></div>
+  
+    <div data-role="content" class="kidzcontent">
+      <div class="navSharkAndRays-content3">
+        <p>Humans have travelled across oceans and relied on them for food for thousands of years.  Sharks and rays are an integral part of the ocean, keeping food webs in check and in turn helping many civilisations to prosper.</p>
+		<p>Many island cultures that rely almost entirely on the ocean for food have a great respect for the shark and recognise their importance. Sharks are worshipped as gods and form a big part of their culture and way of life.</p>
+		<p>In other cultures, sharks are popularised as cold killing machines.  Examples of this can be seen in Hollywood films like 'Jaws' and in news reports of shark attacks.  In the modern era, our demand on the ocean for food has increased enormously and as a consequence, fishing has caused population crashes in about 90% of shark and rays globally!</p>
+      </div>
+        
+      <div class="navbtn1" style="top:420px;">
+        <p><a href="sub-sharks-and-rays-sharks-rays-and-us-attack.html" data-transition="slide"><img src="css/images/9-12/Animals/Shark_And_Rays/Sharks_Rays_And_Us/Button_2.png"></a></p>
+      </div>
+      <div class="navbtn2" style="left:400px;">
+        <p><a href="sub-sharks-and-rays-sharks-rays-and-us-fishing-fining-and-future.html" data-transition="slide"><img src="css/images/9-12/Animals/Shark_And_Rays/Sharks_Rays_And_Us/Button_3.png"></a></p>
+      </div>
+      <div class="navbtn3" style="top:420px;">
+        <p><a href="sub-sharks-and-rays-sharks-rays-and-us-sharks-and-human-cultures.html" data-transition="slide"><img src="css/images/9-12/Animals/Shark_And_Rays/Sharks_Rays_And_Us/Button_1.png"></a></p>
+      </div>
+        
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/Animals/bottomhomeani.png"></a></div>
+    </div> <!-- end content -->  
+    
+  
+  <!--<div class="audiopanel">-->
+    <!-- images are in slidebarnat.js 
+         note: change the ids to be able play the narration
+    -->
+    <div class="micbtnholder"><div class="micbtnSharkAndRays" id="playstopRaysAndUs"></div></div>
+    <div class="bSharkAndRays"><div class="rwSharkAndRays" id="RaysAndUsaudiobbtn"></div></div>
+    <div class="plSharkAndRays"><div class="plpsSharkAndRays" id="RaysAndUsaudioplbtn"></div></div>
+    <div class="fSharkAndRays"><div class="fwSharkAndRays" id="RaysAndUsaudiofbtn"></div></div>
+    <div id="actualaudio-RaysAndUs" style="visibility:hidden;"></div>
+  <!--</div>-->
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+    var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-RaysAndUs').html('<audio id="RaysAndUsaudio" controls preload onpause="playsSharkAndRays()" onplay="pauseSharkAndRays()"><source src="audio/Shark_And_Rays/Rays_And_Us.mp3" type="audio/mpeg"></audio>');
+      } 
+    
+      $("#sub-sharks-and-rays-sharks-rays-and-us").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { bgsoundSharkAndRays.pause(); bgsoundSharkAndRays.currentTime = 0; mainaudiobg.play(); });
+    
+    function goBack() {
+      $.mobile.changePage("sub-sharks-and-rays.html", {transition: "slide", reverse: true });
+    }
+    
+    function playsSharkAndRays() {
+         bgsoundSharkAndRays.play();
+    }
+       
+    function pauseSharkAndRays() {
+         bgsoundSharkAndRays.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+    $("#playstopRaysAndUs").on('tap', function() {
+      if(!playing) {
+        RaysAndUsaudio.play();
+        $('.micbtnSharkAndRays').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        RaysAndUsaudio.pause(); RaysAndUsaudio.currentTime = 0;
+        $('.micbtnSharkAndRays').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#RaysAndUsaudioplbtn").on('tap', function() {
+      if(!paused) {
+        RaysAndUsaudio.pause();
+        paused = true;
+      } else {
+        RaysAndUsaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#RaysAndUsaudiofbtn").on('tap', function() {
+      var ctime = RaysAndUsaudio.currentTime;
+      RaysAndUsaudio.currentTime = ctime + 10;
+    });
+    
+    $("#RaysAndUsaudiobbtn").on('tap', function() {
+      var ctime = RaysAndUsaudio.currentTime;
+      RaysAndUsaudio.currentTime = ctime - 10;
+    });
+    
+    $("#RaysAndUsaudiopsbtn").on('tap', function() {
+      RaysAndUsaudio.pause();
+      //$(".audiopanel").css({"backgroundPosition":"0px 0px"});
+    });
+    
+    $('.navbtn1').on('tap', function() { 
+      nav1Effects(); 
+    });
+    
+    $('.navbtn2').on('tap', function() { 
+      nav2Effects(); 
+    });
+    
+    $('.navbtn3').on('tap', function() { 
+      nav3Effects(); 
+    });
+    
+  </script>
+</div> <!--//home-->

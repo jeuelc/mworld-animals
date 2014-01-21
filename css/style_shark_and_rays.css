@@ -1,6 +1,6 @@
-/********* Fang How Animals Eat **********/
+/********* Shark And Rays **********/
 
-#sub-sharks-and-rays, #sub-sharks-and-rays-biology-and-ecology, #sub-sharks-and-rays-biology-and-ecology-amazing-abilities, #sub-sharks-and-rays-biology-and-ecology-importance-of-food-web, #sub-sharks-and-rays-biology-and-ecology-reproduction{
+#sub-sharks-and-rays, #sub-sharks-and-rays-biology-and-ecology, #sub-sharks-and-rays-biology-and-ecology-amazing-abilities, #sub-sharks-and-rays-biology-and-ecology-importance-of-food-web, #sub-sharks-and-rays-biology-and-ecology-reproduction,#sub-sharks-and-rays-Elasmobranch-Evolution-the-dawn-of-modern-sharks, #sub-sharks-and-rays-Elasmobranch-Evolution-the-first-rays, #sub-sharks-and-rays-Elasmobranch-Evolution-the-first-sharks, #sub-sharks-and-rays-famous-faces-great-white-shark, #sub-sharks-and-rays-famous-faces-thresher-shark, #sub-sharks-and-rays-famous-faces-tiger-shark, #sub-sharks-and-rays-sharks-rays-and-us, #sub-sharks-and-rays-sharks-rays-and-us-attack, #sub-sharks-and-rays-sharks-rays-and-us-sharks-and-human-cultures{
   background:url('images/9-12/Animals/Shark_And_Rays/Shark_And_Rays.jpg') no-repeat;
   height:748px !important;
   overflow:hidden !important;
@@ -8,7 +8,49 @@
 }
 
 #sub-sharks-and-rays-biology-and-ecology-teeth-and-diet{
-  background:url('images/9-12/Animals/Shark_And_Rays/Biology_And_Ecology/Teeth_And_Diet/Teeth_And_Diet_BG.jpg') no-repeat;
+  background:url('images/9-12/Animals/Shark_And_Rays/Biology_And_Ecology/Teeth_And_Diet/Teeth_And_Diet_BG_New.jpg') no-repeat;
+  height:748px !important;
+  overflow:hidden !important;
+  width:1024px !important;
+}
+
+#sub-sharks-and-rays-Elasmobranch-Evolution{
+  background:url('images/9-12/Animals/Shark_And_Rays/Elasmobranch_Evolution/Elasmobranch_Evolution_BG_New.jpg') no-repeat;
+  height:748px !important;
+  overflow:hidden !important;
+  width:1024px !important;
+}
+
+#sub-sharks-and-rays-Elasmobranch-Evolution-the-dawn-of-modern-sharks-megalodon{
+  background:url('images/9-12/Animals/Shark_And_Rays/Elasmobranch_Evolution/Dawn_Of_Modern_Shark/Megalodon/Megalodong_BG_New.jpg') no-repeat;
+  height:748px !important;
+  overflow:hidden !important;
+  width:1024px !important;
+}
+
+#sub-sharks-and-rays-famous-faces{
+  background:url('images/9-12/Animals/Shark_And_Rays/Famous_Faces/Famous_Faces.jpg') no-repeat;
+  height:748px !important;
+  overflow:hidden !important;
+  width:1024px !important;
+}
+
+#sub-sharks-and-rays-famous-faces-manta-ray {
+  background:url('images/9-12/Animals/Shark_And_Rays/Famous_Faces/Manta_Ray/Manta_Ray_BG_New.png') no-repeat;
+  height:748px !important;
+  overflow:hidden !important;
+  width:1024px !important;
+}
+
+#sub-sharks-and-rays-famous-faces-whale-shark{
+  background:url('images/9-12/Animals/Shark_And_Rays/Famous_Faces/Whale_Shark/Whale_Shark_BG.jpg') no-repeat;
+  height:748px !important;
+  overflow:hidden !important;
+  width:1024px !important;
+}
+
+#sub-sharks-and-rays-sharks-rays-and-us-fishing-fining-and-future{
+  background:url('images/9-12/Animals/Shark_And_Rays/Sharks_Rays_And_Us/Fishing_Finning_And_The_Future/Fff_BG.jpg') no-repeat;
   height:748px !important;
   overflow:hidden !important;
   width:1024px !important;
@@ -181,7 +223,119 @@
   color: #ffffff;
 }
 
-#sub-sharks-and-rays .bptitleholder h1, #sub-sharks-and-rays-biology-and-ecology .bptitleholder h1, #sub-sharks-and-rays-biology-and-ecology-amazing-abilities .bptitleholder h1, #sub-sharks-and-rays-biology-and-ecology-importance-of-food-web .bptitleholder h1, #sub-sharks-and-rays-biology-and-ecology-reproduction .bptitleholder h1,#sub-sharks-and-rays-biology-and-ecology-teeth-and-diet .bptitleholder h1{
+.bpcontentSharkAndRays-ElasmobranchEvolution{
+  width: 482px;
+  height: 550px;
+  position: absolute;
+  left: 60px;
+  top: 92px;
+  overflow: auto;
+  font-family: "comic sans ms";
+  font-size: 18px;
+  font-weight: normal;
+  text-align: left;
+  color: #ffffff;
+}
+
+.bpcontentSharkAndRays-Megalodon-left{
+	width: 466px;
+	height: 250px;
+	position: absolute;
+	left: 49px;
+	top: 65px;
+	overflow: auto;
+	font-family: "comic sans ms";
+	font-size: 18px;
+	font-weight: normal;
+	text-align: left;
+	color: #ffffff;
+	float: left;
+}
+
+.bpcontentSharkAndRays-Megalodon-right{
+	width: 446px;
+	height: 283px;
+	position: absolute;
+	left: 530px;
+	top: 62px;
+	overflow: auto;
+	font-family: "comic sans ms";
+	font-size: 18px;
+	font-weight: normal;
+	text-align: left;
+	color: #ffffff;
+}
+
+.bpcontentSharkAndRays-FamousFaces{
+    width: 245px;
+	height: 350px;
+	position: absolute;
+	left: 61px;
+	top: 90px;
+	overflow: auto;
+	font-family: "comic sans ms";
+	font-size: 18px;
+	font-weight: normal;
+	text-align: left;
+	color: #ffffff;
+}
+
+.bpcontentSharkAndRays-MantaRay-top{
+	width: 405px;
+	height: 408px;
+	position: absolute;
+	left: 82px;
+	top: 90px;
+	overflow: auto;
+	font-family: "comic sans ms";
+	font-size: 18px;
+	font-weight: normal;
+	text-align: left;
+	color: #ffffff;
+}
+.bpcontentSharkAndRays-MantaRay-down{
+	width: 258px;
+	height: 228px;
+	position: absolute;
+	left: 82px;
+	top: 458px;
+	overflow: auto;
+	font-family: "comic sans ms";
+	font-size: 18px;
+	font-weight: normal;
+	text-align: left;
+	color: #ffffff;
+}
+
+.bpcontentSharkAndRays-WhaleShark{
+	width: 405px;
+	height: 480px;
+	position: absolute;
+	left: 55px;
+	top: 90px;
+	overflow: auto;
+	font-family: "comic sans ms";
+	font-size: 18px;
+	font-weight: normal;
+	text-align: left;
+	color: #ffffff;
+}
+
+.bpcontentSharkAndRays-FishingFiningAndFuture{
+	width: 460px;
+	height: 247px;
+	position: absolute;
+	left: 56px;
+	top: 83px;
+	overflow: auto;
+	font-family: "comic sans ms";
+	font-size: 18px;
+	font-weight: normal;
+	text-align: left;
+	color: #ffffff;
+}
+
+#sub-sharks-and-rays .bptitleholder h1, #sub-sharks-and-rays-biology-and-ecology .bptitleholder h1, #sub-sharks-and-rays-biology-and-ecology-amazing-abilities .bptitleholder h1, #sub-sharks-and-rays-biology-and-ecology-importance-of-food-web .bptitleholder h1, #sub-sharks-and-rays-biology-and-ecology-reproduction .bptitleholder h1,#sub-sharks-and-rays-biology-and-ecology-teeth-and-diet .bptitleholder h1, #sub-sharks-and-rays-Elasmobranch-Evolution .bptitleholder h1, #sub-sharks-and-rays-Elasmobranch-Evolution-the-dawn-of-modern-sharks .bptitleholder h1, #sub-sharks-and-rays-Elasmobranch-Evolution-the-dawn-of-modern-sharks-megalodon .bptitleholder h1, #sub-sharks-and-rays-Elasmobranch-Evolution-the-first-rays .bptitleholder h1, #sub-sharks-and-rays-Elasmobranch-Evolution-the-first-sharks .bptitleholder h1, #sub-sharks-and-rays-famous-faces .bptitleholder h1, #sub-sharks-and-rays-famous-faces-great-white-shark .bptitleholder h1, #sub-sharks-and-rays-famous-faces-manta-ray .bptitleholder h1, #sub-sharks-and-rays-famous-faces-thresher-shark .bptitleholder h1, #sub-sharks-and-rays-famous-faces-tiger-shark .bptitleholder h1, #sub-sharks-and-rays-famous-faces-whale-shark .bptitleholder h1, #sub-sharks-and-rays-sharks-rays-and-us .bptitleholder h1, #sub-sharks-and-rays-sharks-rays-and-us-attack .bptitleholder h1, #sub-sharks-and-rays-sharks-rays-and-us-sharks-and-human-cultures .bptitleholder h1, #sub-sharks-and-rays-sharks-rays-and-us-fishing-fining-and-future .bptitleholder h1{
 	text-transform: uppercase;
 	color: #ffffff !important;
 	font-family: "comic sans ms";
@@ -190,7 +344,7 @@
 	margin: 0;
 }
 
-#sub-sharks-and-rays .bptitleholder, #sub-sharks-and-rays-biology-and-ecology .bptitleholder, #sub-sharks-and-rays-biology-and-ecology-amazing-abilities .bptitleholder, #sub-sharks-and-rays-biology-and-ecology-importance-of-food-web .bptitleholder, #sub-sharks-and-rays-biology-and-ecology-reproduction .bptitleholder{
+#sub-sharks-and-rays .bptitleholder, #sub-sharks-and-rays-biology-and-ecology .bptitleholder, #sub-sharks-and-rays-biology-and-ecology-amazing-abilities .bptitleholder, #sub-sharks-and-rays-biology-and-ecology-importance-of-food-web .bptitleholder, #sub-sharks-and-rays-biology-and-ecology-reproduction .bptitleholder, #sub-sharks-and-rays-Elasmobranch-Evolution-the-first-rays .bptitleholder, #sub-sharks-and-rays-Elasmobranch-Evolution-the-first-sharks .bptitleholder, #sub-sharks-and-rays-famous-faces-great-white-shark .bptitleholder, #sub-sharks-and-rays-famous-faces-thresher-shark .bptitleholder, #sub-sharks-and-rays-famous-faces-tiger-shark .bptitleholder, #sub-sharks-and-rays-sharks-rays-and-us .bptitleholder, #sub-sharks-and-rays-sharks-rays-and-us-attack .bptitleholder, #sub-sharks-and-rays-sharks-rays-and-us-sharks-and-human-cultures .bptitleholder{
 	width: 627px;
 	height: 68px;
 	text-align: center;
@@ -200,6 +354,17 @@
 	left: 194px;
 }
 
+#sub-sharks-and-rays-famous-faces .bptitleholder{
+	width: 285px;
+	height: 68px;
+	text-align: center;
+	line-height: 28px;
+	position: absolute;
+	top: 50px;
+	left: 13px;
+	font-size: 11px;
+}
+	
 #sub-sharks-and-rays-biology-and-ecology-teeth-and-diet .bptitleholder{
 	width: 627px;
 	height: 68px;
@@ -209,4 +374,69 @@
 	top: 19px;
 	left: 308px;
 	font-size: 14px;
+}
+
+#sub-sharks-and-rays-Elasmobranch-Evolution .bptitleholder{
+	width: 550px;
+	height: 68px;
+	text-align: center;
+	line-height: 28px;
+	position: absolute;
+	top: 53px;
+	left: 12px;
+	font-size: 15px;
+}
+
+#sub-sharks-and-rays-Elasmobranch-Evolution-the-dawn-of-modern-sharks .bptitleholder{
+	width: 627px;
+	height: 68px;
+	text-align: center;
+	line-height: 36px;
+	position: absolute;
+	top: 163px;
+	left: 194px;
+}
+
+#sub-sharks-and-rays-Elasmobranch-Evolution-the-dawn-of-modern-sharks-megalodon .bptitleholder{
+	width: 195px;
+	height: 68px;
+	text-align: center;
+	line-height: 36px;
+	position: absolute;
+	left: 41px;
+	font-size: 14px;
+	top: 20px;
+}
+
+#sub-sharks-and-rays-famous-faces-manta-ray .bptitleholder{
+	width: 245px;
+	height: 68px;
+	text-align: center;
+	line-height: 28px;
+	position: absolute;
+	top: 56px;
+	left: 42px;
+	font-size: 13px;
+}
+
+#sub-sharks-and-rays-famous-faces-whale-shark .bptitleholder{
+	width: 245px;
+	height: 68px;
+	text-align: center;
+	line-height: 28px;
+	position: absolute;
+	top: 37px;
+	left: 32px;
+	font-size: 13px;
+}
+
+#sub-sharks-and-rays-sharks-rays-and-us-fishing-fining-and-future .bptitleholder{
+	width: 450px;
+	height: 68px;
+	text-align: center;
+	line-height: 28px;
+	position: absolute;
+	top: 40px;
+	left: 55px;
+	font-size: 11px;
 }

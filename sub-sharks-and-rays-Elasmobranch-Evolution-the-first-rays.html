@@ -1,0 +1,189 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-sharks-and-rays-Elasmobranch-Evolution-the-first-rays">
+  <script src="js/hammer.js"></script>
+  <script src="js/jquery.hammer.js"></script>
+  <script src="js/slidebar_shark_and_rays.js"></script>
+  <link rel="stylesheet" href="css/style_shark_and_rays.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnSharkAndRays"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnSharkAndRays"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnSharkAndRays"></div></div>
+  <div class="infobtnholder"><div class="infobtnSharkAndRays"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnSharkAndRays"></div></div>
+  <div class="menubtnholder"><div class="menubtnSharkAndRays"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:0px;"><h1>The First Rays</h1></div>
+  <div id="spacechar">&nbsp;
+    <div data-role="content" class="kidzcontent">
+      <div class="v-spacer"></div>
+      <div class="sidebarleft-half">
+        <a id="sawfishlink" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/Animals/Shark_And_Rays/Elasmobranch_Evolution/The_First_Rays/Sawfish_Hi_Res.jpg', 'Sawfish - check out that snout!');">click here</a>
+		
+		<a id="electriclink" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/Animals/Shark_And_Rays/Elasmobranch_Evolution/The_First_Rays/Electric_Ray_Hi_Res.jpg', 'An electric ray cruising the shallows');">click here</a>
+		
+		<a id="guitarfishlink" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/Animals/Shark_And_Rays/Elasmobranch_Evolution/The_First_Rays/Guitarfish_Hi_Res.jpg', 'A guitarfish out and about');">click here</a>
+        
+		<div id="f1_container" style="visibility:hidden;position:absolute;left:100px;top:270px;">
+          <div id="f1_card">
+            <div class="front face">
+              <img id="dopple" src="css/images/9-12/Animals/Shark_And_Rays/Elasmobranch_Evolution/The_First_Rays/Toothy_Grin.png">
+            </div>
+            <div id="backofcard" class="back face center" style="background:url(css/images/9-12/Animals/Shark_And_Rays/Elasmobranch_Evolution/The_First_Rays/Toothy_Grin_Reverse.png) no-repeat;">
+              <div class="returncard" style="position:absolute;left:0px;top:0px;width:362px;height:170px;"></div>
+              <div id="trueans" style="position:absolute;left:90px;top:180px;width:70px;height:50px;"></div>
+              <div id="falseans" style="position:absolute;left:200px;top:180px;width:70px;height:50px;"></div>
+            </div>
+          </div><!--/f1+card-->
+        </div><!--/f1_container-->
+		
+        <div id="zoomwrapper">
+          <div id="pol1" class="pPiece" style="left:100px;top:270px;">
+             <img src="css/images/9-12/Animals/Shark_And_Rays/Elasmobranch_Evolution/The_First_Rays/Toothy_Grin.png" alt="" />
+          </div>
+		  <div id="pol2"class="pPiece" style="left:75px;top:290px;">
+             <img src="css/images/9-12/Animals/Shark_And_Rays/Elasmobranch_Evolution/The_First_Rays/Sawfish.png" alt="" />
+          </div>
+		  <div id="pol3"class="pPiece" style="left:80px;top:270px;">
+             <img src="css/images/9-12/Animals/Shark_And_Rays/Elasmobranch_Evolution/The_First_Rays/Electric_Ray.png" alt="" />
+          </div>
+		  <div id="pol4"class="pPiece" style="left:70px;top:270px;">
+             <img src="css/images/9-12/Animals/Shark_And_Rays/Elasmobranch_Evolution/The_First_Rays/Guitarfish.png" alt="" />
+          </div>
+        </div><!--/zoomwrapper-->
+      </div>
+      
+      <div class="bpcontentSharkAndRays">
+        <p>150 million years ago, in the late Jurassic Period, some sharks started to live mostly on the sea floor and evolved into some of the modern rays we see today.  Most rays have flattened, disc-like bodies with pectoral fins that are fused to the head, making them look like wings.  There are some exceptions to the general shape of a ray such as the guitarfish family which look half-shark and half-ray!</p>
+		<p>Among the rays, we have some strange-looking and electrifying species...</p>
+		<p>The electric rays have an organ near their pectoral fins that is able to produce an electric shock to stun their prey!</p>
+		<p>The sawfish have a long nose-like projection that looks exactly like a chainsaw!  They thrash this around in the water to literally dice up fish to eat.  Their saw is so effective that some island tribes have used their long 'nose' as a sword!</p>
+      </div>
+       
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/Animals/bottomhomeani.png"></a></div>
+    </div> <!-- end content -->  
+  </div><!--/spacechar-->        
+  
+    <div class="micbtnholder"><div class="micbtnSharkAndRays" id="playstopFirstRays"></div></div>
+    <div class="bSharkAndRays"><div class="rwSharkAndRays" id="FirstRaysaudiobbtn"></div></div>
+    <div class="plSharkAndRays"><div class="plpsSharkAndRays" id="FirstRaysaudioplbtn"></div></div>
+    <div class="fSharkAndRays"><div class="fwSharkAndRays" id="FirstRaysaudiofbtn"></div></div>
+    <div id="actualaudio-FirstRays" style="visibility:hidden;"></div>
+  <!-- </div> -->
+  
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+ 
+	var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      $('div#pol1').css("z-index", 3);
+      $('div#pol2').css("z-index", 2);
+      $('div#pol3').css("z-index", 1);
+      $('div#pol1 > img').css("-webkit-transform", "rotate(0deg)");
+      $('div#pol2 > img').css("-webkit-transform", "rotate(5deg)");
+      $('div#pol3 > img').css("-webkit-transform", "rotate(-3deg)");
+      $('div#pol4 > img').css("-webkit-transform", "rotate(-3deg)");
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-FirstRays').html('<audio id="FirstRaysaudio" controls preload onpause="playsSharkAndRays()" onplay="pauseSharkAndRays()"><source src="audio/Shark_And_Rays/First_Rays.mp3" type="audio/mpeg"></audio>');
+      }             
+      $("#sub-sharks-and-rays-Elasmobranch-Evolution-the-first-rays").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundSharkAndRays.pause(); bgsoundSharkAndRays.currentTime = 0;});
+	
+    $('#falseans').on('tap', function() {
+      alert("Wrong answer");
+    });
+    $('#trueans').on('tap', function() {
+      alert("Correct answer");
+    });
+	
+    $(".returncard").on('tap', function() {
+      $('#f1_card').css({"-webkit-transform": "rotateY(0deg)"});
+      $('#f1_card').css({"-moz-transform": "rotateY(0deg)"});
+      $('#f1_card').css({"-o-transform": "rotateY(0deg)"});
+      $('#f1_card').css({"transform": "rotateY(0deg)"});
+      setTimeout(function() {
+        $("#pol1").css({"visibility":"visible", "z-index":4});
+        $('#f1_container').css({"visibility":"hidden", "z-index":0});
+      }, 1000);
+    });
+    
+    $("#pol1").on('tap', function() {
+      $('#f1_container').css({"visibility":"visible", "z-index":10});
+      $(this).css({"visibility":"hidden"});
+      $('#f1_card').css({"-webkit-transform": "rotateY(180deg)"});
+      $('#f1_card').css({"-moz-transform": "rotateY(180deg)"});
+      $('#f1_card').css({"-o-transform": "rotateY(180deg)"});
+      $('#f1_card').css({"transform": "rotateY(180deg)"});
+    });
+	
+    $("#pol2").on('tap', function() {
+      $('#sawfishlink')[0].click();
+    });
+	
+	$("#pol3").on('tap', function() {
+      $('#electriclink')[0].click();
+    });
+	
+	$("#pol4").on('tap', function() {
+      $('#guitarfishlink')[0].click();
+    });
+    
+    function goBack() {
+      $.mobile.changePage("sub-sharks-and-rays-Elasmobranch-Evolution.html", {transition: "slide", reverse: true });
+    }
+    
+    function playsSharkAndRays() {
+         bgsoundSharkAndRays.play();
+    }
+       
+    function pauseSharkAndRays() {
+         bgsoundSharkAndRays.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+    $("#playstopFirstRays").on('tap', function() {
+      if(!playing) {
+        FirstRaysaudio.play();
+        $('.micbtnSharkAndRays').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        FirstRaysaudio.pause(); FirstRaysaudio.currentTime = 0;
+        $('.micbtnSharkAndRays').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#FirstRaysaudioplbtn").on('tap', function() {
+      if(!paused) {
+        FirstRaysaudio.pause();
+        paused = true;
+      } else {
+        FirstRaysaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#FirstRaysaudiofbtn").on('tap', function() {
+      var ctime = FirstRaysaudio.currentTime;
+      FirstRaysaudio.currentTime = ctime + 10;
+    });
+    
+    $("#FirstRaysaudiobbtn").on('tap', function() {
+      var ctime = FirstRaysaudio.currentTime;
+      FirstRaysaudio.currentTime = ctime - 10;
+    });
+    
+    $("#FirstRaysaudiopsbtn").on('tap', function() {
+      FirstRaysaudio.pause();
+    });
+  </script>
+  <script src="js/fourcardLogic.js"></script>  <!-- for card dragging effects -->
+</div> <!--//home-->

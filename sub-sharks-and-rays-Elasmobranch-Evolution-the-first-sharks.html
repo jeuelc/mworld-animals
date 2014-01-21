@@ -1,0 +1,132 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-sharks-and-rays-Elasmobranch-Evolution-the-first-sharks">
+  <script src="js/hammer.js"></script>
+  <script src="js/jquery.hammer.js"></script>
+  <script src="js/slidebar_shark_and_rays.js"></script>
+  <link rel="stylesheet" href="css/style_shark_and_rays.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnSharkAndRays"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnSharkAndRays"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnSharkAndRays"></div></div>
+  <div class="infobtnholder"><div class="infobtnSharkAndRays"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnSharkAndRays"></div></div>
+  <div class="menubtnholder"><div class="menubtnSharkAndRays"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:0px;"><h1>The First Sharks</h1></div>
+  <div id="spacechar">&nbsp;
+    <div data-role="content" class="kidzcontent">
+      <div class="v-spacer"></div>
+      <div class="sidebarleft-half">
+        <a id="stethacanthuslink" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/Animals/Shark_And_Rays/Elasmobranch_Evolution/The_First_Sharks/Stethacanthus_Hi_Res.jpg', 'This artist\'s impression shows two <i>Stethacanthus</i>, can you see the hammer-like  dorsal fins? These are thought to have been used by males for courtship displays');">click here</a>
+		
+		<a id="helicoprionlink" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/Animals/Shark_And_Rays/Elasmobranch_Evolution/The_First_Sharks/Helicoprion_Hi_Res.jpg', 'This is an artist\'s impression of what a <i>Helicoprion</i> might have looked like.  Fossil teeth were found in circular coils, giving scientists clues to its morphology. ');">click here</a>
+        
+		<div id="zoomwrapper">
+          <div id="pol1" class="pPiece" style="left:100px;top:270px;">
+             <img src="css/images/9-12/Animals/Shark_And_Rays/Elasmobranch_Evolution/The_First_Sharks/Stethacanthus.png" alt="" />
+          </div>
+		  <div id="pol2"class="pPiece" style="left:75px;top:290px;">
+             <img src="css/images/9-12/Animals/Shark_And_Rays/Elasmobranch_Evolution/The_First_Sharks/Helicoprion.png" alt="" />
+          </div>
+		</div><!--/zoomwrapper-->
+      </div>
+      
+      <div class="bpcontentSharkAndRays">
+        <p>The oldest known shark fossil is that of <i>'Cladoselace'</i> and it was so well preserved that there were traces of skin, muscle and kidneys!  It had a streamlined body, seven gills, two dorsal fins with spines, a pair of broad pectoral fins on its sides, forward-facing eyes and a mouth at the front of the head, instead of underneath like modern sharks.  Over the next 200 million years, shark evolution exploded into a variety of weird and wonderful forms.  Here are some of the stranger ones...</p>
+		<p><i>Stethacanthus</i>  with a flattened forehead and a modified fin that looked like an ironing board.  <i>Helicoprion</i>  with a row of teeth that curled out of the bottom of its mouth and extended as the shark grew.  <i>Falcatus</i>  with a forward-facing spike on top of its head!</p>
+      </div>
+       
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/Animals/bottomhomeani.png"></a></div>
+    </div> <!-- end content -->  
+  </div><!--/spacechar-->        
+  
+    <div class="micbtnholder"><div class="micbtnSharkAndRays" id="playstopFirstSharks"></div></div>
+    <div class="bSharkAndRays"><div class="rwSharkAndRays" id="FirstSharksaudiobbtn"></div></div>
+    <div class="plSharkAndRays"><div class="plpsSharkAndRays" id="FirstSharksaudioplbtn"></div></div>
+    <div class="fSharkAndRays"><div class="fwSharkAndRays" id="FirstSharksaudiofbtn"></div></div>
+    <div id="actualaudio-FirstSharks" style="visibility:hidden;"></div>
+  <!-- </div> -->
+  
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+ 
+	var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      $('div#pol1').css("z-index", 2);
+      $('div#pol2').css("z-index", 1);
+      $('div#pol1 > img').css("-webkit-transform", "rotate(0deg)");
+      $('div#pol2 > img').css("-webkit-transform", "rotate(5deg)");
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-FirstSharks').html('<audio id="FirstSharksaudio" controls preload onpause="playsSharkAndRays()" onplay="pauseSharkAndRays()"><source src="audio/Shark_And_Rays/First_Sharks.mp3" type="audio/mpeg"></audio>');
+      }             
+      $("#sub-sharks-and-rays-Elasmobranch-Evolution-the-first-sharks").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundSharkAndRays.pause(); bgsoundSharkAndRays.currentTime = 0;});
+	
+    $("#pol1").on('tap', function() {
+      $('#stethacanthuslink')[0].click();
+    });
+	
+	$("#pol2").on('tap', function() {
+      $('#helicoprionlink')[0].click();
+    });
+    
+    function goBack() {
+      $.mobile.changePage("sub-sharks-and-rays-Elasmobranch-Evolution.html", {transition: "slide", reverse: true });
+    }
+    
+    function playsSharkAndRays() {
+         bgsoundSharkAndRays.play();
+    }
+       
+    function pauseSharkAndRays() {
+         bgsoundSharkAndRays.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+    $("#playstopFirstSharks").on('tap', function() {
+      if(!playing) {
+        FirstSharksaudio.play();
+        $('.micbtnSharkAndRays').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        FirstSharksaudio.pause(); FirstSharksaudio.currentTime = 0;
+        $('.micbtnSharkAndRays').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#FirstSharksaudioplbtn").on('tap', function() {
+      if(!paused) {
+        FirstSharksaudio.pause();
+        paused = true;
+      } else {
+        FirstSharksaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#FirstSharksaudiofbtn").on('tap', function() {
+      var ctime = FirstSharksaudio.currentTime;
+      FirstSharksaudio.currentTime = ctime + 10;
+    });
+    
+    $("#FirstSharksaudiobbtn").on('tap', function() {
+      var ctime = FirstSharksaudio.currentTime;
+      FirstSharksaudio.currentTime = ctime - 10;
+    });
+    
+    $("#FirstSharksaudiopsbtn").on('tap', function() {
+      FirstSharksaudio.pause();
+    });
+  </script>
+  <script src="js/twocardLogic.js"></script>  <!-- for card dragging effects -->
+</div> <!--//home-->

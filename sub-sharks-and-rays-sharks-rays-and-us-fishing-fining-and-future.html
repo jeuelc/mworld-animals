@@ -1,0 +1,105 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-sharks-and-rays-sharks-rays-and-us-fishing-fining-and-future">
+  <script src="js/slidebar_shark_and_rays.js"></script>
+  <link rel="stylesheet" href="css/style_shark_and_rays.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnSharkAndRays"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnSharkAndRays"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnSharkAndRays"></div></div>
+  <div class="infobtnholder"><div class="infobtnSharkAndRays"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnSharkAndRays"></div></div>
+  <div class="menubtnholder"><div class="menubtnSharkAndRays"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:14px;"><h1>Fishing, Finning and the Future</h1></div>
+  
+  <div data-role="content" class="kidzcontent">
+	<div class="bpcontentSharkAndRays-FishingFiningAndFuture">
+        <p>There are seven billion people on Earth and our demand on the ocean for food has never been greater.  Our current rate of fishing exceeds the abilities of sharks and rays to reproduce and consequently, their populations have fallen on average by 90%!</p>
+		<p>Sharks and rays are often caught accidentally.  Alive or dead, they are usually released because their flesh is worth little money.  However, their fins have enormous value in the Asian markets.  In some cases the fins are chopped off while the animals are still alive before they're thrown back to die in the sea.  'Finning' is threatening shark populations and several countries have made finning illegal.</p>
+		<p>Many countries have invested in research, adopted methods and made laws to reduce the numbers of sharks and rays caught in commercial fisheries.  While these animals can pose a threat to humans in some circumstances, we all need to work together to protect the shark and ray populations and ensure the health of our oceans.</p>
+	</div>
+    <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/Animals/bottomhomeani.png"></a></div>
+  </div> <!-- end content -->  
+    
+  
+  <!--<div class="audiopanel">-->
+    <!-- images are in slidebarnat.js 
+         note: change the ids to be able play the narration
+    -->
+    <div class="micbtnholder"><div class="micbtnSharkAndRays" id="playstopFishingFiningAndFuture"></div></div>
+    <div class="bSharkAndRays"><div class="rwSharkAndRays" id="FishingFiningAndFutureaudiobbtn"></div></div>
+    <div class="plSharkAndRays"><div class="plpsSharkAndRays" id="FishingFiningAndFutureaudioplbtn"></div></div>
+    <div class="fSharkAndRays"><div class="fwSharkAndRays" id="FishingFiningAndFutureaudiofbtn"></div></div>
+    <div id="actualaudio-FishingFiningAndFuture" style="visibility:hidden;"></div>
+  <!--</div>-->
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+    var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+	    
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-FishingFiningAndFuture').html('<audio id="FishingFiningAndFutureaudio" controls preload onpause="playsSharkAndRays()" onplay="pauseSharkAndRays()"><source src="audio/Shark_And_Rays/Fishing_Fining_And_Future.mp3" type="audio/mpeg"></audio>');
+      } 
+    
+      $("#sub-sharks-and-rays-sharks-rays-and-us-fishing-fining-and-future").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+	$('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundSharkAndRays.pause(); bgsoundSharkAndRays.currentTime = 0;});
+    
+    function goBack() {
+      $.mobile.changePage("sub-sharks-and-rays-sharks-rays-and-us.html", {transition: "slide", reverse: true });
+    }
+    
+    function playsSharkAndRays() {
+         bgsoundSharkAndRays.play();
+    }
+       
+    function pauseSharkAndRays() {
+         bgsoundSharkAndRays.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+    $("#playstopFishingFiningAndFuture").on('tap', function() {
+      if(!playing) {
+        FishingFiningAndFutureaudio.play();
+        $('.micbtnSharkAndRays').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        FishingFiningAndFutureaudio.pause(); FishingFiningAndFutureaudio.currentTime = 0;
+        $('.micbtnSharkAndRays').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#FishingFiningAndFutureaudioplbtn").on('tap', function() {
+      if(!paused) {
+        FishingFiningAndFutureaudio.pause();
+        paused = true;
+      } else {
+        FishingFiningAndFutureaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#FishingFiningAndFutureaudiofbtn").on('tap', function() {
+      var ctime = FishingFiningAndFutureaudio.currentTime;
+      FishingFiningAndFutureaudio.currentTime = ctime + 10;
+    });
+    
+    $("#FishingFiningAndFutureaudiobbtn").on('tap', function() {
+      var ctime = FishingFiningAndFutureaudio.currentTime;
+      FishingFiningAndFutureaudio.currentTime = ctime - 10;
+    });
+    
+    $("#FishingFiningAndFutureaudiopsbtn").on('tap', function() {
+      FishingFiningAndFutureaudio.pause();
+    });
+  </script>
+</div> <!--//home-->

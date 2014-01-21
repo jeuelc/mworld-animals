@@ -1,0 +1,177 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-sharks-and-rays-famous-faces-great-white-shark">
+  <script src="js/hammer.js"></script>
+  <script src="js/jquery.hammer.js"></script>
+  <script src="js/slidebar_shark_and_rays.js"></script>
+  <link rel="stylesheet" href="css/style_shark_and_rays.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnSharkAndRays"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnSharkAndRays"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnSharkAndRays"></div></div>
+  <div class="infobtnholder"><div class="infobtnSharkAndRays"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnSharkAndRays"></div></div>
+  <div class="menubtnholder"><div class="menubtnSharkAndRays"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:0px;"><h1>Great White Shark</h1></div>
+  <div id="spacechar">&nbsp;
+    <div data-role="content" class="kidzcontent">
+      <div class="v-spacer"></div>
+      <div class="sidebarleft-half">
+        
+		<a id="electriclink" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/Animals/Shark_And_Rays/Famous_Faces/Great_White_Shark/Great_White_Xsect_Hi_Res.jpg', 'This is a cross section of a great white sharks anatomy');">click here</a>
+		
+		<a id="guitarfishlink" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/Animals/Shark_And_Rays/Famous_Faces/Great_White_Shark/Up_Close_Hi_Res.jpg', 'An up close and personal encounter with a Great White, best keep your arms and legs inside the cage!');">click here</a>
+        
+		<div id="zoomwrapper">
+          <div id="pol1" class="pPiece" style="left:100px;top:270px;">
+             <img src="css/images/9-12/Animals/Shark_And_Rays/Famous_Faces/Great_White_Shark/Great_White_Shark_Surpeise.png" alt="" />
+          </div>
+		  <div id="pol2"class="pPiece" style="left:75px;top:290px;">
+             <img src="css/images/9-12/Animals/Shark_And_Rays/Famous_Faces/Great_White_Shark/Mermaids_Purse.png" alt="" />
+          </div>
+		  <div id="pol3"class="pPiece" style="left:80px;top:270px;">
+             <img src="css/images/9-12/Animals/Shark_And_Rays/Famous_Faces/Great_White_Shark/Great_White_Xsect.png" alt="" />
+          </div>
+		  <div id="pol4"class="pPiece" style="left:70px;top:270px;">
+             <img src="css/images/9-12/Animals/Shark_And_Rays/Famous_Faces/Great_White_Shark/Up_Close.png" alt="" />
+          </div>
+        </div><!--/zoomwrapper-->
+      </div>
+      
+      <div class="bpcontentSharkAndRays">
+        <p>The great white shark,<i>'Carcharodon carcharias'</i>, is named after its distinctive two-toned colouration and is the most famous of all sharks.  They can measure four to six metres long and weigh more than 2000 kilograms, the size of a minibus!  Even their pups are huge, measuring just over one metre and weighing about 35 kilograms.</p>
+		<p>Great whites show enormous learning ability and rely on experience to attack fast and clever seals.  Their teeth are specialised for tearing the tough skin of seals and whales.  Triangular, serrated teeth act like a giant saw as the head shakes from side to side to tear off large chunks of flesh.</p>
+		<p>Great whites can travel extraordinary distances.  One shark was found to have travelled from South Africa to Australia (and back!), a distance of more than 15,000 kilometres, in less than nine months!</p>
+      </div>
+       
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/Animals/bottomhomeani.png"></a></div>
+    </div> <!-- end content -->  
+  </div><!--/spacechar-->        
+  
+    <div class="micbtnholder"><div class="micbtnSharkAndRays" id="playstopGreatWhiteShark"></div></div>
+    <div class="bSharkAndRays"><div class="rwSharkAndRays" id="GreatWhiteSharkaudiobbtn"></div></div>
+    <div class="plSharkAndRays"><div class="plpsSharkAndRays" id="GreatWhiteSharkaudioplbtn"></div></div>
+    <div class="fSharkAndRays"><div class="fwSharkAndRays" id="GreatWhiteSharkaudiofbtn"></div></div>
+    <div id="actualaudio-GreatWhiteShark" style="visibility:hidden;"></div>
+  <!-- </div> -->
+  <!-- ----------------------- Video embedding --------------------------- -->
+  
+	<div id="watchSharkVideo" style="width:1024px;height:748px;position:absolute;left:0px;top:0px;visibility:hidden;background:#000000;z-index:-1;">
+    <video id="watchShark" width="1024" height="748" preload>
+      <source src="css/images/9-12/Animals/Shark_And_Rays/Famous_Faces/Great_White_Shark/Great_White_Shark_Surpeise.mpg" type="video/mp4">
+    </video>
+  </div>
+  
+  <!-- ------------------------------------------------------------------ -->
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+ 
+	var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      $('div#pol1').css("z-index", 3);
+      $('div#pol2').css("z-index", 2);
+      $('div#pol3').css("z-index", 1);
+      $('div#pol1 > img').css("-webkit-transform", "rotate(0deg)");
+	  $('#watchSharkVideo').css({"visibility":"hidden", "z-index":-10});
+      $('div#pol2 > img').css("-webkit-transform", "rotate(5deg)");
+      $('div#pol3 > img').css("-webkit-transform", "rotate(-3deg)");
+      $('div#pol4 > img').css("-webkit-transform", "rotate(-3deg)");
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-GreatWhiteShark').html('<audio id="GreatWhiteSharkaudio" controls preload onpause="playsSharkAndRays()" onplay="pauseSharkAndRays()"><source src="audio/Shark_And_Rays/Great_White_Shark.mp3" type="audio/mpeg"></audio>');
+      }             
+      $("#sub-sharks-and-rays-famous-faces-great-white-shark").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+	
+    watchShark.addEventListener('ended', function() { 
+        $("#watchSharkVideo").css({"visibility":"hidden", "z-index":-1});
+        $("#watchShark").css({"z-index":-1});
+        bgsoundSharkAndRays.play(); 
+    });
+	 
+    $("#watchShark").on('tap', function() {
+        $("#watchSharkVideo").css({"visibility":"hidden", "z-index":-1});
+        $("#watchShark").css({"z-index":-1});
+        bgsoundSharkAndRays.play();
+        watchShark.pause();
+        watchShark.currentTime = 0;
+    });
+	
+    $('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundSharkAndRays.pause(); bgsoundSharkAndRays.currentTime = 0;});
+	
+    $("#pol1").on('tap', function() {
+      $("#watchSharkVideo").css({"visibility":"visible", "z-index":10});
+      $("#watchShark").css({"z-index":9});
+      bgsoundSharkAndRays.pause();
+      watchShark.play();
+    });
+	
+    $("#pol2").on('tap', function() {
+      $.mobile.changePage("sub-super-fast-trains-overcoming-resistance-rolling-resistance-maglev-trains.html", {transition: "slide"});
+    });
+	
+	$("#pol3").on('tap', function() {
+      $('#electriclink')[0].click();
+    });
+	
+	$("#pol4").on('tap', function() {
+      $('#guitarfishlink')[0].click();
+    });
+    
+    function goBack() {
+      $.mobile.changePage("sub-sharks-and-rays-famous-faces.html", {transition: "slide", reverse: true });
+    }
+    
+    function playsSharkAndRays() {
+         bgsoundSharkAndRays.play();
+    }
+       
+    function pauseSharkAndRays() {
+         bgsoundSharkAndRays.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+    $("#playstopGreatWhiteShark").on('tap', function() {
+      if(!playing) {
+        GreatWhiteSharkaudio.play();
+        $('.micbtnSharkAndRays').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        GreatWhiteSharkaudio.pause(); GreatWhiteSharkaudio.currentTime = 0;
+        $('.micbtnSharkAndRays').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#GreatWhiteSharkaudioplbtn").on('tap', function() {
+      if(!paused) {
+        GreatWhiteSharkaudio.pause();
+        paused = true;
+      } else {
+        GreatWhiteSharkaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#GreatWhiteSharkaudiofbtn").on('tap', function() {
+      var ctime = GreatWhiteSharkaudio.currentTime;
+      GreatWhiteSharkaudio.currentTime = ctime + 10;
+    });
+    
+    $("#GreatWhiteSharkaudiobbtn").on('tap', function() {
+      var ctime = GreatWhiteSharkaudio.currentTime;
+      GreatWhiteSharkaudio.currentTime = ctime - 10;
+    });
+    
+    $("#GreatWhiteSharkaudiopsbtn").on('tap', function() {
+      GreatWhiteSharkaudio.pause();
+    });
+  </script>
+  <script src="js/fourcardLogic.js"></script>  <!-- for card dragging effects -->
+</div> <!--//home-->

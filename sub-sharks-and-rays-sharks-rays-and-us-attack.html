@@ -1,0 +1,177 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-sharks-and-rays-sharks-rays-and-us-attack">
+  <script src="js/hammer.js"></script>
+  <script src="js/jquery.hammer.js"></script>
+  <script src="js/slidebar_shark_and_rays.js"></script>
+  <link rel="stylesheet" href="css/style_shark_and_rays.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnSharkAndRays"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnSharkAndRays"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnSharkAndRays"></div></div>
+  <div class="infobtnholder"><div class="infobtnSharkAndRays"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnSharkAndRays"></div></div>
+  <div class="menubtnholder"><div class="menubtnSharkAndRays"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:0px;"><h1>Attack?</h1></div>
+  <div id="spacechar">&nbsp;
+    <div data-role="content" class="kidzcontent">
+      <div class="v-spacer"></div>
+      <div class="sidebarleft-half">
+        <a id="cagelink" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/Animals/Shark_And_Rays/Sharks_Rays_And_Us/Attack/Cage_Hi_Res.jpg', 'A group of divers in a shark cage, a popular way to safely view sharks with minimal impact on sharks and their environment.');">click here</a>
+		
+		<a id="bluelink" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/Animals/Shark_And_Rays/Sharks_Rays_And_Us/Attack/Blue_Shark_Hi_Res.jpg', 'A curious blue shark or <i>\'Prionace glauca\'</i> comes to see what\'s going on, this can get him in trouble and humans too!');">click here</a>
+		
+		<div id="f1_container" style="visibility:hidden;position:absolute;left:100px;top:270px;">
+          <div id="f1_card">
+            <div class="front face">
+              <img id="dopple" src="css/images/9-12/Animals/Shark_And_Rays/Sharks_Rays_And_Us/Attack/Tf.png">
+            </div>
+            <div id="backofcard" class="back face center" style="background:url(css/images/9-12/Animals/Shark_And_Rays/Sharks_Rays_And_Us/Attack/Tf_Reverse.png) no-repeat;">
+              <div class="returncard" style="position:absolute;left:0px;top:0px;width:362px;height:170px;"></div>
+              <div id="trueans" style="position:absolute;left:90px;top:180px;width:70px;height:50px;"></div>
+              <div id="falseans" style="position:absolute;left:200px;top:180px;width:70px;height:50px;"></div>
+            </div>
+          </div><!--/f1+card-->
+        </div><!--/f1_container-->
+		
+        <div id="zoomwrapper">
+          <div id="pol1" class="pPiece" style="left:100px;top:270px;">
+             <img src="css/images/9-12/Animals/Shark_And_Rays/Sharks_Rays_And_Us/Attack/Tf.png" alt="" />
+          </div>
+		  <div id="pol2"class="pPiece" style="left:75px;top:290px;">
+             <img src="css/images/9-12/Animals/Shark_And_Rays/Sharks_Rays_And_Us/Attack/Cage.png" alt="" />
+          </div>
+		  <div id="pol3"class="pPiece" style="left:80px;top:270px;">
+             <img src="css/images/9-12/Animals/Shark_And_Rays/Sharks_Rays_And_Us/Attack/Blue_Shark.png" alt="" />
+          </div>
+		</div><!--/zoomwrapper-->
+      </div>
+      
+      <div class="bpcontentSharkAndRays">
+        <p>Sharks are victims of us more than we are of them.  Although we are captivated by these majestic animals, our fear can take over.  Newspapers and TV often paint them as merciless killers, prompting people to go out and hunt for the 'killers'.</p>
+		<p>Sharks are perhaps more curious about us than we are about them.  Since they have no hands, sharks often test or inspect items like boats or cages with a gentle bite.  However, this 'testing' bite for most humans is damaging and often ends in the loss of limbs or life.</p>
+		<p>What we must remember is that many 'attacks' are not from hunger but probably curiosity.  Most deaths are from blood loss rather than being eaten.  Sharks are dangerous and should be respected as such, but do you think hunting them because of fear is right?  They're an animal simply going about their business in their domain.</p>
+      </div>
+       
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/Animals/bottomhomeani.png"></a></div>
+    </div> <!-- end content -->  
+  </div><!--/spacechar-->        
+  
+    <div class="micbtnholder"><div class="micbtnSharkAndRays" id="playstopAttack"></div></div>
+    <div class="bSharkAndRays"><div class="rwSharkAndRays" id="Attackaudiobbtn"></div></div>
+    <div class="plSharkAndRays"><div class="plpsSharkAndRays" id="Attackaudioplbtn"></div></div>
+    <div class="fSharkAndRays"><div class="fwSharkAndRays" id="Attackaudiofbtn"></div></div>
+    <div id="actualaudio-Attack" style="visibility:hidden;"></div>
+  <!-- </div> -->
+  
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+ 
+	var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      $('div#pol2').css("z-index", 2);
+      $('div#pol1').css("z-index", 1);
+      $('div#pol1 > img').css("-webkit-transform", "rotate(0deg)");
+      $('div#pol2 > img').css("-webkit-transform", "rotate(5deg)");
+      $('div#pol3 > img').css("-webkit-transform", "rotate(-3deg)");
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-Attack').html('<audio id="Attackaudio" controls preload onpause="playsSharkAndRays()" onplay="pauseSharkAndRays()"><source src="audio/Shark_And_Rays/Attack.mp3" type="audio/mpeg"></audio>');
+      }             
+      $("#sub-sharks-and-rays-sharks-rays-and-us-attack").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundSharkAndRays.pause(); bgsoundSharkAndRays.currentTime = 0;});
+	
+    $('#falseans').on('tap', function() {
+      alert("Wrong answer");
+    });
+    $('#trueans').on('tap', function() {
+      alert("Correct answer");
+    });
+	
+    $(".returncard").on('tap', function() {
+      $('#f1_card').css({"-webkit-transform": "rotateY(0deg)"});
+      $('#f1_card').css({"-moz-transform": "rotateY(0deg)"});
+      $('#f1_card').css({"-o-transform": "rotateY(0deg)"});
+      $('#f1_card').css({"transform": "rotateY(0deg)"});
+      setTimeout(function() {
+        $("#pol1").css({"visibility":"visible", "z-index":4});
+        $('#f1_container').css({"visibility":"hidden", "z-index":0});
+      }, 1000);
+    });
+    
+    $("#pol1").on('tap', function() {
+      $('#f1_container').css({"visibility":"visible", "z-index":10});
+      $(this).css({"visibility":"hidden"});
+      $('#f1_card').css({"-webkit-transform": "rotateY(180deg)"});
+      $('#f1_card').css({"-moz-transform": "rotateY(180deg)"});
+      $('#f1_card').css({"-o-transform": "rotateY(180deg)"});
+      $('#f1_card').css({"transform": "rotateY(180deg)"});
+    });
+	
+    $("#pol2").on('tap', function() {
+      $('#cagelink')[0].click();
+    });
+	
+	$("#pol3").on('tap', function() {
+      $('#bluelink')[0].click();
+    });
+	
+	function goBack() {
+      $.mobile.changePage("sub-sharks-and-rays-sharks-rays-and-us.html", {transition: "slide", reverse: true });
+    }
+    
+    function playsSharkAndRays() {
+         bgsoundSharkAndRays.play();
+    }
+       
+    function pauseSharkAndRays() {
+         bgsoundSharkAndRays.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+    $("#playstopAttack").on('tap', function() {
+      if(!playing) {
+        Attackaudio.play();
+        $('.micbtnSharkAndRays').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        Attackaudio.pause(); Attackaudio.currentTime = 0;
+        $('.micbtnSharkAndRays').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#Attackaudioplbtn").on('tap', function() {
+      if(!paused) {
+        Attackaudio.pause();
+        paused = true;
+      } else {
+        Attackaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#Attackaudiofbtn").on('tap', function() {
+      var ctime = Attackaudio.currentTime;
+      Attackaudio.currentTime = ctime + 10;
+    });
+    
+    $("#Attackaudiobbtn").on('tap', function() {
+      var ctime = Attackaudio.currentTime;
+      Attackaudio.currentTime = ctime - 10;
+    });
+    
+    $("#Attackaudiopsbtn").on('tap', function() {
+      Attackaudio.pause();
+    });
+  </script>
+  <script src="js/threecardLogic.js"></script>  <!-- for card dragging effects -->
+</div> <!--//home-->

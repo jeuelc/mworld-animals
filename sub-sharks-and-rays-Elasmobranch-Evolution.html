@@ -1,0 +1,119 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-sharks-and-rays-Elasmobranch-Evolution">
+  <script src="js/slidebar_shark_and_rays.js"></script>
+  <link rel="stylesheet" href="css/style_shark_and_rays.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnSharkAndRays"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnSharkAndRays"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnSharkAndRays"></div></div>
+  <div class="infobtnholder"><div class="infobtnSharkAndRays"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnSharkAndRays"></div></div>
+  <div class="menubtnholder"><div class="menubtnSharkAndRays"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:14px;"><h1>Elasmobranch Evolution</h1></div>
+  <div id="modernsharklink" style="position: absolute;left: 564px;top: 291px;width: 188px;height: 220px;"></div>
+  <div id="firstrayslink" style="position: absolute;left: 574px;top: 43px;width: 145px;height: 202px;"></div>
+  <div id="firstsharkslink" style="position: absolute;left: 803px;top: 122px;width: 165px;height: 210px;"></div>
+  <div data-role="content" class="kidzcontent">
+	<div class="bpcontentSharkAndRays-ElasmobranchEvolution">
+        <p>The first 'elasmobranchs' (sharks and rays) appeared about 400 million years ago in the Devonian Period on the geological time scale, which is also known as the 'age of fish'!  The first elasmobranchs were prehistoric sharks and it wasn't until around 150 million years ago, in the late Jurassic Period, that the first rays appeared.</p>
+		<p>What you may not realise is that many prehistoric sharks became extinct along with the dinosaurs!  The species we see today are the <i>'neoselachians'</i> (the modern sharks and rays) which evolved about 200 million years ago.  Of these modern sharks, there was one particular shark, a giant super-predator which the world's oceans had never seen before... Megalodon!  Tap the buttons to find out about the evolution of sharks and rays!</p>
+	</div>
+    <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/Animals/bottomhomeani.png"></a></div>
+  </div> <!-- end content -->  
+    
+  
+  <!--<div class="audiopanel">-->
+    <!-- images are in slidebarnat.js 
+         note: change the ids to be able play the narration
+    -->
+    <div class="micbtnholder"><div class="micbtnSharkAndRays" id="playstopElasmobranchEvolution"></div></div>
+    <div class="bSharkAndRays"><div class="rwSharkAndRays" id="ElasmobranchEvolutionaudiobbtn"></div></div>
+    <div class="plSharkAndRays"><div class="plpsSharkAndRays" id="ElasmobranchEvolutionaudioplbtn"></div></div>
+    <div class="fSharkAndRays"><div class="fwSharkAndRays" id="ElasmobranchEvolutionaudiofbtn"></div></div>
+    <div id="actualaudio-ElasmobranchEvolution" style="visibility:hidden;"></div>
+  <!--</div>-->
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+    var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+	  $('#watchBatVideo').css({"visibility":"hidden", "z-index":-10});
+	  $('#watchMozzieVideo').css({"visibility":"hidden", "z-index":-10});
+	  $('#watchButterflyVideo').css({"visibility":"hidden", "z-index":-10});
+	  
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-ElasmobranchEvolution').html('<audio id="ElasmobranchEvolutionaudio" controls preload onpause="playsSharkAndRays()" onplay="pauseSharkAndRays()"><source src="audio/Shark_And_Rays/Elasmobranch_Evolution.mp3" type="audio/mpeg"></audio>');
+      } 
+    
+      $("#sub-sharks-and-rays-Elasmobranch-Evolution").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+	$('#modernsharklink').on('tap', function() {
+      $.mobile.changePage("sub-sharks-and-rays-Elasmobranch-Evolution-the-dawn-of-modern-sharks.html", {transition: "slide"});
+    });
+	$('#firstrayslink').on('tap', function() {
+      $.mobile.changePage("sub-sharks-and-rays-Elasmobranch-Evolution-the-first-rays.html", {transition: "slide"});
+    });
+	$('#firstsharkslink').on('tap', function() {
+      $.mobile.changePage("sub-sharks-and-rays-Elasmobranch-Evolution-the-first-sharks.html", {transition: "slide"});
+    });
+	
+	$('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundSharkAndRays.pause(); bgsoundSharkAndRays.currentTime = 0;});
+    
+    function goBack() {
+      $.mobile.changePage("sub-sharks-and-rays.html", {transition: "slide", reverse: true });
+    }
+    
+    function playsSharkAndRays() {
+         bgsoundSharkAndRays.play();
+    }
+       
+    function pauseSharkAndRays() {
+         bgsoundSharkAndRays.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+    $("#playstopElasmobranchEvolution").on('tap', function() {
+      if(!playing) {
+        ElasmobranchEvolutionaudio.play();
+        $('.micbtnSharkAndRays').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        ElasmobranchEvolutionaudio.pause(); ElasmobranchEvolutionaudio.currentTime = 0;
+        $('.micbtnSharkAndRays').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#ElasmobranchEvolutionaudioplbtn").on('tap', function() {
+      if(!paused) {
+        ElasmobranchEvolutionaudio.pause();
+        paused = true;
+      } else {
+        ElasmobranchEvolutionaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#ElasmobranchEvolutionaudiofbtn").on('tap', function() {
+      var ctime = ElasmobranchEvolutionaudio.currentTime;
+      ElasmobranchEvolutionaudio.currentTime = ctime + 10;
+    });
+    
+    $("#ElasmobranchEvolutionaudiobbtn").on('tap', function() {
+      var ctime = ElasmobranchEvolutionaudio.currentTime;
+      ElasmobranchEvolutionaudio.currentTime = ctime - 10;
+    });
+    
+    $("#ElasmobranchEvolutionaudiopsbtn").on('tap', function() {
+      ElasmobranchEvolutionaudio.pause();
+    });
+  </script>
+</div> <!--//home-->

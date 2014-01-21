@@ -1,0 +1,148 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-sharks-and-rays-Elasmobranch-Evolution-the-dawn-of-modern-sharks">
+  <script src="js/hammer.js"></script>
+  <script src="js/jquery.hammer.js"></script>
+  <script src="js/slidebar_shark_and_rays.js"></script>
+  <link rel="stylesheet" href="css/style_shark_and_rays.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnSharkAndRays"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnSharkAndRays"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnSharkAndRays"></div></div>
+  <div class="infobtnholder"><div class="infobtnSharkAndRays"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnSharkAndRays"></div></div>
+  <div class="menubtnholder"><div class="menubtnSharkAndRays"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:0px;"><h1>The Dawn of the Modern Sharks</h1></div>
+  <div id="spacechar">&nbsp;
+    <div data-role="content" class="kidzcontent">
+      <div class="v-spacer"></div>
+      <div class="sidebarleft-half">
+        <a id="phylolink" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/Animals/Shark_And_Rays/Elasmobranch_Evolution/Dawn_Of_Modern_Shark/Phylo_Tree_Hi_Res.jpg', 'This is part of an inferred phylogenetic or \'evolutionary\' tree for the <i>elasmobranchii</i>, can you spot the rays?  ');">click here</a>
+		
+		<a id="sharklink" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/Animals/Shark_And_Rays/Elasmobranch_Evolution/Dawn_Of_Modern_Shark/Shark_Painting_Hi_Res.jpg', 'A 19th Century shark painting');">click here</a>
+        
+		<div id="zoomwrapper">
+          <div id="pol1" class="pPiece" style="left:100px;top:270px;">
+             <img src="css/images/9-12/Animals/Shark_And_Rays/Elasmobranch_Evolution/Dawn_Of_Modern_Shark/Megalodon.png" alt="" />
+          </div>
+		  <div id="pol2"class="pPiece" style="left:75px;top:290px;">
+             <img src="css/images/9-12/Animals/Shark_And_Rays/Elasmobranch_Evolution/Dawn_Of_Modern_Shark/Phylo_Tree.png" alt="" />
+          </div>
+		  <div id="pol3"class="pPiece" style="left:80px;top:270px;">
+             <img src="css/images/9-12/Animals/Shark_And_Rays/Elasmobranch_Evolution/Dawn_Of_Modern_Shark/Shark_Painting.png" alt="" />
+          </div>
+        </div><!--/zoomwrapper-->
+      </div>
+      
+      <div class="bpcontentSharkAndRays">
+        <p>All the sharks we see today came from a second burst of shark evolution around 200 million years ago in the late Triassic to early Jurassic Periods.  These sharks became known as the <i>'neoselacians'</i>.  Following the extinction of the dinosaurs, many large marine predators like the ichthyosaurs and plesiosaurs became extinct, freeing up the ocean for sharks to evolve and rule as they do today.</p>
+		<p>Fortunately for many sailors and seals, one particular 'modern shark', 'Megalodon' (meaning 'big tooth') became extinct about 1.5 million years ago.  This was an 18-metre super-predator and is what you could call the great-great-grandfather of the great white and mako sharks.</p>
+		<p>Today's sharks fall into two groups, the <i>'galeomorphi'</i> and the <i>'squalomorphi'</i>.  Many of the sharks you may know of, such as the tiger, great white, bronze whaler and whale sharks, belong to the <i>galeomorphi</i>.</p>
+      </div>
+       
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/Animals/bottomhomeani.png"></a></div>
+    </div> <!-- end content -->  
+  </div><!--/spacechar-->        
+  
+    <div class="micbtnholder"><div class="micbtnSharkAndRays" id="playstopModernSharks"></div></div>
+    <div class="bSharkAndRays"><div class="rwSharkAndRays" id="ModernSharksaudiobbtn"></div></div>
+    <div class="plSharkAndRays"><div class="plpsSharkAndRays" id="ModernSharksaudioplbtn"></div></div>
+    <div class="fSharkAndRays"><div class="fwSharkAndRays" id="ModernSharksaudiofbtn"></div></div>
+    <div id="actualaudio-ModernSharks" style="visibility:hidden;"></div>
+  <!-- </div> -->
+  
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+ 
+	var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      $('div#pol2').css("z-index", 1);
+      $('div#pol1').css("z-index", 2);
+      $('div#pol1 > img').css("-webkit-transform", "rotate(0deg)");
+      $('div#pol2 > img').css("-webkit-transform", "rotate(5deg)");
+      $('div#pol3 > img').css("-webkit-transform", "rotate(-3deg)");
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-ModernSharks').html('<audio id="ModernSharksaudio" controls preload onpause="playsSharkAndRays()" onplay="pauseSharkAndRays()"><source src="audio/Shark_And_Rays/Modern_Sharks.mp3" type="audio/mpeg"></audio>');
+      }             
+      $("#sub-sharks-and-rays-Elasmobranch-Evolution-the-dawn-of-modern-sharks").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundSharkAndRays.pause(); bgsoundSharkAndRays.currentTime = 0;});
+	
+    $('#falseans').on('tap', function() {
+      alert("Wrong answer");
+    });
+    $('#trueans').on('tap', function() {
+      alert("Correct answer");
+    });
+	
+    $("#pol1").on('tap', function() {
+      $.mobile.changePage("sub-sharks-and-rays-Elasmobranch-Evolution-the-dawn-of-modern-sharks-megalodon.html", {transition: "slide"});
+    });
+	
+    $("#pol2").on('tap', function() {
+      $('#phylolink')[0].click();
+    });
+	
+	$("#pol3").on('tap', function() {
+      $('#sharklink')[0].click();
+    });
+    
+    function goBack() {
+      $.mobile.changePage("sub-sharks-and-rays-Elasmobranch-Evolution.html", {transition: "slide", reverse: true });
+    }
+    
+    function playsSharkAndRays() {
+         bgsoundSharkAndRays.play();
+    }
+       
+    function pauseSharkAndRays() {
+         bgsoundSharkAndRays.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+    $("#playstopModernSharks").on('tap', function() {
+      if(!playing) {
+        ModernSharksaudio.play();
+        $('.micbtnSharkAndRays').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        ModernSharksaudio.pause(); ModernSharksaudio.currentTime = 0;
+        $('.micbtnSharkAndRays').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#ModernSharksaudioplbtn").on('tap', function() {
+      if(!paused) {
+        ModernSharksaudio.pause();
+        paused = true;
+      } else {
+        ModernSharksaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#ModernSharksaudiofbtn").on('tap', function() {
+      var ctime = ModernSharksaudio.currentTime;
+      ModernSharksaudio.currentTime = ctime + 10;
+    });
+    
+    $("#ModernSharksaudiobbtn").on('tap', function() {
+      var ctime = ModernSharksaudio.currentTime;
+      ModernSharksaudio.currentTime = ctime - 10;
+    });
+    
+    $("#ModernSharksaudiopsbtn").on('tap', function() {
+      ModernSharksaudio.pause();
+    });
+  </script>
+  <script src="js/threecardLogic.js"></script>  <!-- for card dragging effects -->
+</div> <!--//home-->

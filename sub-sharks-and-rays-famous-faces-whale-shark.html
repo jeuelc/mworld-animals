@@ -1,0 +1,137 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-sharks-and-rays-famous-faces-whale-shark">
+<script src="js/slidebar_shark_and_rays.js"></script>
+  <link rel="stylesheet" href="css/style_shark_and_rays.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnSharkAndRays"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnSharkAndRays"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnSharkAndRays"></div></div>
+  <div class="infobtnholder"><div class="infobtnSharkAndRays"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnSharkAndRays"></div></div>
+  <div class="menubtnholder"><div class="menubtnSharkAndRays"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:14px;"><h1>Whale Shark</h1></div>
+  
+  <div data-role="content" class="kidzcontent">
+	<div class="bpcontentSharkAndRays-WhaleShark">
+        <p>The manta ray, <i>'Manta birostris'</i>, is the largest and most famous of all rays.  It's easily identified by its two extending lobes (extension of the head) on either side of its mouth and is a beautiful bluish-black colour.  Its wings from tip to tip can measure between six and nine metres across!</p>
+		<p>Mantas live in tropical waters and are some of the most graceful swimmers you will see in the water.  Mantas can be seen in groups of up to 50 and are curious creatures, often encountering scuba divers on their travels.</p>
+		<p>Mantas are capable of extraordinary acrobatics and can be seen leaping high out of the water or performing barrel roll after barrel roll in the water.  Their barrel rolls are believed to help create a current in the water that allows them to concentrate plankton for a nice big mouthful of food!</p>
+	</div>
+	<div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/Animals/bottomhomeani.png"></a></div>
+  </div> <!-- end content -->  
+    
+  
+  <!--<div class="audiopanel">-->
+    <!-- images are in slidebarnat.js 
+         note: change the ids to be able play the narration
+    -->
+    <div class="micbtnholder"><div class="micbtnSharkAndRays" id="playstopWhaleShark"></div></div>
+    <div class="bSharkAndRays"><div class="rwSharkAndRays" id="WhaleSharkaudiobbtn"></div></div>
+    <div class="plSharkAndRays"><div class="plpsSharkAndRays" id="WhaleSharkaudioplbtn"></div></div>
+    <div class="fSharkAndRays"><div class="fwSharkAndRays" id="WhaleSharkaudiofbtn"></div></div>
+    <div id="actualaudio-WhaleShark" style="visibility:hidden;"></div>
+  <!--</div>-->
+  <!-- Video embedding -->
+  
+  <div id="watchWhaleSharkVideo" style="width:1024px;height:748px;position:absolute;left:0px;top:0px;visibility:hidden;background:#000000;z-index:-1;">
+    <video id="watchWhaleShark" width="1024" height="748" preload>
+      <source src="css/images/9-12/Animals/Shark_And_Rays/Famous_Faces/Whale_Shark/Whale_Shark_BG.mpg" type="video/mp4">
+    </video>
+  </div>
+  <div id="WhaleSharkVideo" style="position: absolute;left: 328px;top: 605px;width: 117px;height: 48px;"><div>
+  <!-- --------------- -->
+  
+  
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+    var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+	  $('#watchWhaleSharkVideo').css({"visibility":"hidden", "z-index":-10});
+	  if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-WhaleShark').html('<audio id="WhaleSharkaudio" controls preload onpause="playsSharkAndRays()" onplay="pauseSharkAndRays()"><source src="audio/Shark_And_Rays/Whale_Shark.mp3" type="audio/mpeg"></audio>');
+      } 
+    
+      $("#sub-sharks-and-rays-famous-faces-whale-shark").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+	watchWhaleShark.addEventListener('ended', function() { 
+        $("#watchWhaleSharkVideo").css({"visibility":"hidden", "z-index":-1});
+        $("#watchWhaleShark").css({"z-index":-1});
+        bgsoundSharkAndRays.play(); 
+    });
+    
+    $("#watchWhaleShark").on('tap', function() {
+        $("#watchWhaleSharkVideo").css({"visibility":"hidden", "z-index":-1});
+        $("#watchWhaleShark").css({"z-index":-1});
+        bgsoundSharkAndRays.play();
+        watchWhaleShark.pause();
+        watchWhaleShark.currentTime = 0;
+    });
+	  	  	
+	$('#WhaleSharkVideo').on('tap', function() {
+      $("#watchWhaleSharkVideo").css({"visibility":"visible", "z-index":10});
+      $("#watchWhaleShark").css({"z-index":9});
+      bgsoundSharkAndRays.pause();
+      watchWhaleShark.play();
+    });
+    
+    $('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundSharkAndRays.pause(); bgsoundSharkAndRays.currentTime = 0;});
+    
+    function goBack() {
+      $.mobile.changePage("sub-sharks-and-rays-famous-faces.html", {transition: "slide", reverse: true });
+    }
+    
+    function playsSharkAndRays() {
+         bgsoundSharkAndRays.play();
+    }
+       
+    function pauseSharkAndRays() {
+         bgsoundSharkAndRays.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+    $("#playstopWhaleShark").on('tap', function() {
+      if(!playing) {
+        WhaleSharkaudio.play();
+        $('.micbtnSharkAndRays').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        WhaleSharkaudio.pause(); WhaleSharkaudio.currentTime = 0;
+        $('.micbtnSharkAndRays').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#WhaleSharkaudioplbtn").on('tap', function() {
+      if(!paused) {
+        WhaleSharkaudio.pause();
+        paused = true;
+      } else {
+        WhaleSharkaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#WhaleSharkaudiofbtn").on('tap', function() {
+      var ctime = WhaleSharkaudio.currentTime;
+      WhaleSharkaudio.currentTime = ctime + 10;
+    });
+    
+    $("#WhaleSharkaudiobbtn").on('tap', function() {
+      var ctime = WhaleSharkaudio.currentTime;
+      WhaleSharkaudio.currentTime = ctime - 10;
+    });
+    
+    $("#WhaleSharkaudiopsbtn").on('tap', function() {
+      WhaleSharkaudio.pause();
+    });
+  </script>
+</div> <!--//home-->

@@ -1,0 +1,107 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-sharks-and-rays-Elasmobranch-Evolution-the-dawn-of-modern-sharks-megalodon">
+  <script src="js/slidebar_shark_and_rays.js"></script>
+  <link rel="stylesheet" href="css/style_shark_and_rays.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnSharkAndRays"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnSharkAndRays"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnSharkAndRays"></div></div>
+  <div class="infobtnholder"><div class="infobtnSharkAndRays"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnSharkAndRays"></div></div>
+  <div class="menubtnholder"><div class="menubtnSharkAndRays"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:14px;"><h1>Megalodon</h1></div>
+  <div id="firstsharkslink" style="position: absolute;left: 803px;top: 122px;width: 165px;height: 210px;"></div>
+  <div data-role="content" class="kidzcontent">
+	<div class="bpcontentSharkAndRays-Megalodon-left">
+        <p>Imagine you're on a boat five million years ago.  As you look around, you see a fin pierce the surface.  At first it looks small but eventually it is two metres tall and one metre wide!  You've just spotted Megalodon, supreme king of the ocean!</p>
+		<p>Megalodon was first discovered by its fossilised teeth in the 17th century.  Since cartilage doesn't fossilise as well as bone, scientists used the teeth to estimate</p>
+	</div>
+	<div class="bpcontentSharkAndRays-Megalodon-right">
+	<p>its size, weight and shape. By comparing its teeth with those of modern sharks, experts believe Megalodon was 18 metres long and looked like a fatter version of a great white, weighing 50 tonnes! By comparing the bite force of a great white and scaling it to Megalodon's size, we can figure out that its bite was six times stronger and it loved nothing more than eating large whales! Megalodon is considered one of the largest and most powerful predators in history.</p>
+	</div>
+    <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/Animals/bottomhomeani.png"></a></div>
+  </div> <!-- end content -->  
+    
+  
+  <!--<div class="audiopanel">-->
+    <!-- images are in slidebarnat.js 
+         note: change the ids to be able play the narration
+    -->
+    <div class="micbtnholder"><div class="micbtnSharkAndRays" id="playstopMegalodon"></div></div>
+    <div class="bSharkAndRays"><div class="rwSharkAndRays" id="Megalodonaudiobbtn"></div></div>
+    <div class="plSharkAndRays"><div class="plpsSharkAndRays" id="Megalodonaudioplbtn"></div></div>
+    <div class="fSharkAndRays"><div class="fwSharkAndRays" id="Megalodonaudiofbtn"></div></div>
+    <div id="actualaudio-Megalodon" style="visibility:hidden;"></div>
+  <!--</div>-->
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+    var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+	  
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-Megalodon').html('<audio id="Megalodonaudio" controls preload onpause="playsSharkAndRays()" onplay="pauseSharkAndRays()"><source src="audio/Shark_And_Rays/Megalodon.mp3" type="audio/mpeg"></audio>');
+      } 
+    
+      $("#sub-sharks-and-rays-Elasmobranch-Evolution-the-dawn-of-modern-sharks-megalodon").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+	$('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundSharkAndRays.pause(); bgsoundSharkAndRays.currentTime = 0;});
+    
+    function goBack() {
+      $.mobile.changePage("sub-sharks-and-rays-Elasmobranch-Evolution-the-dawn-of-modern-sharks.html", {transition: "slide", reverse: true });
+    }
+    
+    function playsSharkAndRays() {
+         bgsoundSharkAndRays.play();
+    }
+       
+    function pauseSharkAndRays() {
+         bgsoundSharkAndRays.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+    $("#playstopMegalodon").on('tap', function() {
+      if(!playing) {
+        Megalodonaudio.play();
+        $('.micbtnSharkAndRays').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        Megalodonaudio.pause(); Megalodonaudio.currentTime = 0;
+        $('.micbtnSharkAndRays').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#Megalodonaudioplbtn").on('tap', function() {
+      if(!paused) {
+        Megalodonaudio.pause();
+        paused = true;
+      } else {
+        Megalodonaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#Megalodonaudiofbtn").on('tap', function() {
+      var ctime = Megalodonaudio.currentTime;
+      Megalodonaudio.currentTime = ctime + 10;
+    });
+    
+    $("#Megalodonaudiobbtn").on('tap', function() {
+      var ctime = Megalodonaudio.currentTime;
+      Megalodonaudio.currentTime = ctime - 10;
+    });
+    
+    $("#Megalodonaudiopsbtn").on('tap', function() {
+      Megalodonaudio.pause();
+    });
+  </script>
+</div> <!--//home-->

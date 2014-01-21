@@ -1,0 +1,167 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-sharks-and-rays-famous-faces-tiger-shark">
+  <script src="js/hammer.js"></script>
+  <script src="js/jquery.hammer.js"></script>
+  <script src="js/slidebar_shark_and_rays.js"></script>
+  <link rel="stylesheet" href="css/style_shark_and_rays.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnSharkAndRays"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnSharkAndRays"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnSharkAndRays"></div></div>
+  <div class="infobtnholder"><div class="infobtnSharkAndRays"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnSharkAndRays"></div></div>
+  <div class="menubtnholder"><div class="menubtnSharkAndRays"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:0px;"><h1>Tiger Shark</h1></div>
+  <div id="spacechar">&nbsp;
+    <div data-role="content" class="kidzcontent">
+      <div class="v-spacer"></div>
+      <div class="sidebarleft-half">
+        <a id="thresherlink" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/Animals/Shark_And_Rays/Famous_Faces/Tiger_Shark/Baby_Hi_Res.jpg', 'A baby tiger shark cruising around in a tidal pool');">click here</a>
+		
+		<a id="reallink" style="visibility:hidden;" href="JavaScript:html5Lightbox.showLightbox(0, 'css/images/9-12/Animals/Shark_And_Rays/Famous_Faces/Tiger_Shark/Mouth_Hi_Res.jpg', 'Hellooo! A tiger shark gives us a good view of his throat, Bahamas');">click here</a>
+		
+		<div id="zoomwrapper">
+          <div id="pol1" class="pPiece" style="left:100px;top:270px;">
+             <img src="css/images/9-12/Animals/Shark_And_Rays/Famous_Faces/Tiger_Shark/Tiger_Shark_Roaming.png" alt="" />
+          </div>
+		  <div id="pol2"class="pPiece" style="left:75px;top:290px;">
+             <img src="css/images/9-12/Animals/Shark_And_Rays/Famous_Faces/Tiger_Shark/Baby.png" alt="" />
+          </div>
+		  <div id="pol3"class="pPiece" style="left:80px;top:270px;">
+             <img src="css/images/9-12/Animals/Shark_And_Rays/Famous_Faces/Tiger_Shark/Mouth.png" alt="" />
+          </div>
+		</div><!--/zoomwrapper-->
+      </div>
+      
+      <div class="bpcontentSharkAndRays">
+        <p>Tiger sharks,<i>'Galeocerdo cuvier'</i>, are named for their tiger-like stripes.  They can grow up to six metres long.  They live in the warmer tropical and sub-tropical waters of the world.  They're also common around the Pacific islands.</p>
+		<p>Tiger sharks usually hunt during the night in shallow waters and eat a lot of foods including fish, crustaceans, dolphins, turtles and birds.  They are sometimes called the 'garbage bin of the sea' because they eat so many things; people have even found car licence plates, tyres and baseballs in their stomachs!</p>
+		<p>Because of their wide choice of food and love of shallow waters, tiger sharks are considered especially dangerous to humans.  In Hawaii there is an average of four attacks per year, which thankfully are rarely fatal.  Amazingly, the attack rate is very low considering the hundreds of people that use the water each day.</p>
+      </div>
+       
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/Animals/bottomhomeani.png"></a></div>
+    </div> <!-- end content -->  
+  </div><!--/spacechar-->        
+  
+    <div class="micbtnholder"><div class="micbtnSharkAndRays" id="playstopTigerShark"></div></div>
+    <div class="bSharkAndRays"><div class="rwSharkAndRays" id="TigerSharkaudiobbtn"></div></div>
+    <div class="plSharkAndRays"><div class="plpsSharkAndRays" id="TigerSharkaudioplbtn"></div></div>
+    <div class="fSharkAndRays"><div class="fwSharkAndRays" id="TigerSharkaudiofbtn"></div></div>
+    <div id="actualaudio-TigerShark" style="visibility:hidden;"></div>
+  <!-- </div> -->
+  <!-- ----------------------- Video embedding --------------------------- -->
+  
+	<div id="watchTigerSharkVideo" style="width:1024px;height:748px;position:absolute;left:0px;top:0px;visibility:hidden;background:#000000;z-index:-1;">
+    <video id="watchTigerSharkRoamin" width="1024" height="748" preload>
+      <source src="css/images/9-12/Animals/Shark_And_Rays/Famous_Faces/Tiger_Shark/Tiger_Shark_Roaming.mpg" type="video/mp4">
+    </video>
+  </div>
+  
+  <!-- ------------------------------------------------------------------ -->
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+ 
+	var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      $('div#pol2').css("z-index", 2);
+      $('div#pol1').css("z-index", 1);
+      $('div#pol1 > img').css("-webkit-transform", "rotate(0deg)");
+	  $('#watchTigerSharkVideo').css({"visibility":"hidden", "z-index":-10});
+      $('div#pol2 > img').css("-webkit-transform", "rotate(5deg)");
+      $('div#pol3 > img').css("-webkit-transform", "rotate(-3deg)");
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-TigerShark').html('<audio id="TigerSharkaudio" controls preload onpause="playsSharkAndRays()" onplay="pauseSharkAndRays()"><source src="audio/Shark_And_Rays/Tiger_Shark.mp3" type="audio/mpeg"></audio>');
+      }             
+      $("#sub-sharks-and-rays-famous-faces-tiger-shark").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundSharkAndRays.pause(); bgsoundSharkAndRays.currentTime = 0;});
+	
+	watchTigerSharkRoamin.addEventListener('ended', function() { 
+        $("#watchTigerSharkVideo").css({"visibility":"hidden", "z-index":-1});
+        $("#watchTigerSharkRoamin").css({"z-index":-1});
+        bgsoundvol.play(); 
+    });
+    
+    $("#watchTigerSharkRoamin").on('tap', function() {
+        $("#watchTigerSharkVideo").css({"visibility":"hidden", "z-index":-1});
+        $("#watchTigerSharkRoamin").css({"z-index":-1});
+        bgsoundvol.play();
+        watchTigerSharkRoamin.pause();
+        watchTigerSharkRoamin.currentTime = 0;
+    });
+	
+	$("#pol1").on('tap', function(){
+      $("#watchTigerSharkVideo").css({"visibility":"visible", "z-index":10});
+      $("#watchTigerSharkRoamin").css({"z-index":9});
+      bgsoundvol.pause();
+      watchTigerSharkRoamin.play();
+    });
+	
+    $("#pol2").on('tap', function() {
+      $('#thresherlink')[0].click();
+    });
+	
+	$("#pol3").on('tap', function() {
+      $('#reallink')[0].click();
+    });
+	
+	function goBack() {
+      $.mobile.changePage("sub-sharks-and-rays-famous-faces.html", {transition: "slide", reverse: true });
+    }
+    
+    function playsSharkAndRays() {
+         bgsoundSharkAndRays.play();
+    }
+       
+    function pauseSharkAndRays() {
+         bgsoundSharkAndRays.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+    $("#playstopTigerShark").on('tap', function() {
+      if(!playing) {
+        TigerSharkaudio.play();
+        $('.micbtnSharkAndRays').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        TigerSharkaudio.pause(); TigerSharkaudio.currentTime = 0;
+        $('.micbtnSharkAndRays').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#TigerSharkaudioplbtn").on('tap', function() {
+      if(!paused) {
+        TigerSharkaudio.pause();
+        paused = true;
+      } else {
+        TigerSharkaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#TigerSharkaudiofbtn").on('tap', function() {
+      var ctime = TigerSharkaudio.currentTime;
+      TigerSharkaudio.currentTime = ctime + 10;
+    });
+    
+    $("#TigerSharkaudiobbtn").on('tap', function() {
+      var ctime = TigerSharkaudio.currentTime;
+      TigerSharkaudio.currentTime = ctime - 10;
+    });
+    
+    $("#TigerSharkaudiopsbtn").on('tap', function() {
+      TigerSharkaudio.pause();
+    });
+  </script>
+  <script src="js/threecardLogic.js"></script>  <!-- for card dragging effects -->
+</div> <!--//home-->
