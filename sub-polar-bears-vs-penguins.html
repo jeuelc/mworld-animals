@@ -1,0 +1,134 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-polar-bears-vs-penguins">
+  <!-- <script src="js/slidebarnat.js"></script> -->
+  <script src="js/slidebar_polar_bears_vs_penguins.js"></script>
+  <link rel="stylesheet" href="css/style_polar_bears_vs_penguins.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnPolarBears"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnPolarBears"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnPolarBears"></div></div>
+  <div class="infobtnholder"><div class="infobtnPolarBears"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnPolarBears"></div></div>
+  <div class="menubtnholder"><div class="menubtnPolarBears"></div></div>
+  
+  <div class="bptitleholder" style="padding-top:14px;"><h1>Polar Bears vs. Penguins</h1></div>
+  
+    <div data-role="content" class="kidzcontent">
+      <div class="navPolarBears-content">
+      </div>
+      <div class="navbtn1">
+        <p><a href="sub-polar-bears-vs-penguins-the-poles.html" data-transition="slide"><img src="css/images/9-12/Animals/Polar_bears_vs_Penguins/the-poles.png"></a></p>
+      </div>
+      <div class="navbtn2">
+        <p><a href="" data-transition="slide"><img src="css/images/9-12/Animals/Polar_bears_vs_Penguins/top-and-bottom-defferences.png"></a></p>
+      </div>
+      <div class="navbtn3">
+        <p><a href="" data-transition="slide"><img src="css/images/9-12/Animals/Polar_bears_vs_Penguins/biodiversity.png"></a></p>
+      </div>
+      <div class="navbtn4">
+        <p><a href="" data-transition="slide"><img src="css/images/9-12/Animals/Polar_bears_vs_Penguins/humans-and-the-poles.png"></a></p>
+      </div>
+        
+      <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/Animals/bottomhomeani.png"></a></div>
+    </div> <!-- end content -->  
+    
+  
+  <!--<div class="audiopanel">-->
+    <!-- images are in slidebarnat.js -->
+    <div class="micbtnholder"><div class="micbtnPolarBears" id="playstopPolarBears"></div></div>
+    <div class="bPolarBears"><div class="rwPolarBears" id="PolarBearsaudiobbtn"></div></div>
+    <div class="plPolarBears"><div class="plpsPolarBears" id="PolarBearsaudioplbtn"></div></div>
+    <div class="fPolarBears"><div class="fwPolarBears" id="PolarBearsaudiofbtn"></div></div>
+    <div id="actualaudio-PolarBears" style="visibility:hidden;"></div>
+  <!--</div>-->
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+    var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-PolarBears').html('<audio id="PolarBearsaudio" controls preload onpause="playsPolarBears()" onplay="pausePolarBears()"><source src="audio/Polar_Bears_vs_Penguins/Polar-Bears-vs-Penguins-Bg.mp3" type="audio/mpeg"></audio>');
+      } 
+    
+      $("#sub-polar-bears-vs-penguins").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+    $('.homelinkbh').on('tap', function() { bgsoundPolarBears.pause(); bgsoundPolarBears.currentTime = 0; mainaudiobg.play(); });
+    
+    function goBack() {
+      $.mobile.changePage("sub-animals.html", {transition: "slide", reverse: true });
+      bgsoundPolarBears.pause(); 
+      bgsoundPolarBears.currentTime = 0;
+      animalsoundbg.play();
+    }
+    
+    function playsPolarBears() {
+         bgsoundPolarBears.play();
+    }
+       
+    function pausePolarBears() {
+         bgsoundPolarBears.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+	
+    $("#playstopPolarBears").on('tap', function() {
+      if(!playing) {
+        PolarBearsaudio.play();
+        $('.micbtnPolarBears').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        PolarBearsaudio.pause(); PolarBearsaudio.currentTime = 0;
+        $('.micbtnPolarBears').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#PolarBearsaudioplbtn").on('tap', function() {
+      if(!paused) {
+        PolarBearsaudio.pause();
+        paused = true;
+      } else {
+        PolarBearsaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#PolarBearsaudiofbtn").on('tap', function() {
+      var ctime = PolarBearsaudio.currentTime;
+      PolarBearsaudio.currentTime = ctime + 10;
+    });
+    
+    $("#PolarBearsaudiobbtn").on('tap', function() {
+      var ctime = PolarBearsaudio.currentTime;
+      PolarBearsaudio.currentTime = ctime - 10;
+    });
+    
+    $("#PolarBearsaudiopsbtn").on('tap', function() {
+      PolarBearsaudio.pause();
+      //$(".audiopanel").css({"backgroundPosition":"0px 0px"});
+    });
+    
+    $('.navbtn1').on('tap', function() { 
+      nav1Effects(); 
+    });
+    
+    $('.navbtn2').on('tap', function() { 
+      nav2Effects(); 
+    });
+    
+    $('.navbtn3').on('tap', function() { 
+      nav3Effects(); 
+    });
+    
+    $('.navbtn4').on('tap', function() { 
+      nav4Effects(); 
+    });
+  </script>
+</div> <!--//home-->

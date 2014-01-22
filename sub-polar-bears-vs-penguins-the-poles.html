@@ -1,0 +1,126 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-polar-bears-vs-penguins-the-poles">
+  <script src="js/slidebar_polar_bears_vs_penguins.js"></script>
+  <link rel="stylesheet" href="css/style_polar_bears_vs_penguins.css" />
+  <div class="menuhousing"></div>
+  <div class="homebtnholder"><div class="homebtnPolarBears"></div></div>
+  <div class="mpbtnholder"><div class="mpbtnPolarBears"></div></div>
+  <div class="cpbtnholder"><div class="cpbtnPolarBears"></div></div>
+  <div class="infobtnholder"><div class="infobtnPolarBears"></div></div>
+  <div class="credsbtnholder"><div class="credsbtnPolarBears"></div></div>
+  <div class="menubtnholder"><div class="menubtnPolarBears"></div></div>
+  
+  <div id="tiltlink" style="position: absolute;left: 90px;top: 515px;width: 120px;height: 120px;"></div>
+  <div id="coldearthlink" style="position: absolute;left: 330px;top: 515px;width: 120px;height: 120px;"></div>
+  <div id="glatioationlink" style="position: absolute;left: 560px;top: 515px;width: 120px;height: 120px;"></div>
+  <div id="fluctuationlink" style="position: absolute;left: 800px;top: 515px;width: 120px;height: 120px;"></div>
+  <div id="thepoleslink" style="position: absolute;left: 140px;top: 140px;width: 239px;height: 227px;"></div>
+  
+  <div data-role="content" class="kidzcontent">
+	<div class="bpcontentPolarBears-the-poles">
+        <p>Animals can do some pretty crazy things to get their food  push out their stomachs, or eat their own spit.  But all of these end up being good for the animal.  In this section you'll see some of the wonderful ways that animals feed, and how weird they can be!</p>
+	</div>
+    <div class="botlogoholder"><a href="home.html" class="homelinkbh"><img src="css/images/9-12/Animals/bottomhomeani.png"></a></div>
+  </div> <!-- end content -->  
+    
+  
+  <!--<div class="audiopanel">-->
+    <!-- images are in slidebarnat.js 
+         note: change the ids to be able play the narration
+    -->
+    <div class="micbtnholder"><div class="micbtnPolarBears" id="playstopthePoles"></div></div>
+    <div class="bPolarBears"><div class="rwPolarBears" id="thePolesaudiobbtn"></div></div>
+    <div class="plPolarBears"><div class="plpsPolarBears" id="thePolesaudioplbtn"></div></div>
+    <div class="fPolarBears"><div class="fwPolarBears" id="thePolesaudiofbtn"></div></div>
+    <div id="actualaudio-thePoles" style="visibility:hidden;"></div>
+  <!--</div>-->
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+    var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      if(sound.canPlayType('audio/mpeg')) {
+        $('#actualaudio-thePoles').html('<audio id="weirdWonderfulaudio" controls preload onpause="playsPolarBears()" onplay="pausePolarBears()"><source src="audio/Fang_How_Animals_Eat/Weird_And_Wonderfull.mp3" type="audio/mpeg"></audio>');
+      } 
+    
+      $("#sub-polar-bears-vs-penguins-the-poles").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+    
+	$('#tiltlink').on('tap', function() {
+ //     $.mobile.changePage("sub-fang-how-animals-eat-weird-and-wonderful-eat-your-own-poo.html", {transition: "slide"});
+    });
+    
+    $('#coldearthlink').on('tap', function() {
+   //   $.mobile.changePage("sub-fang-how-animals-eat-weird-and-wonderful-spit-on-food.html", {transition: "slide"});
+    });
+    
+    $('#glatioationlink').on('tap', function() {
+ //     $.mobile.changePage("sub-fang-how-animals-eat-weird-and-wonderful-spear-time.html", {transition: "slide"});
+    });
+	
+	$('#fluctuationlink').on('tap', function() {
+  //    $.mobile.changePage("sub-fang-how-animals-eat-weird-and-wonderful-blood-and-honey.html", {transition: "slide"});
+    });
+	
+	$('#thepoleslink').on('tap', function() {
+   //   $.mobile.changePage("sub-fang-how-animals-eat-weird-and-wonderful-stomachs-stones-starfish-snakes.html", {transition: "slide"});
+    });
+	
+    $('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundPolarBears.pause(); bgsoundPolarBears.currentTime = 0;});
+    
+    function goBack() {
+      $.mobile.changePage("sub-polar-bears-vs-penguins.html", {transition: "slide", reverse: true });
+    }
+    
+    function playsPolarBears() {
+         bgsoundPolarBears.play();
+    }
+       
+    function pausePolarBears() {
+         bgsoundPolarBears.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+    $("#playstopthePoles").on('tap', function() {
+      if(!playing) {
+        weirdWonderfulaudio.play();
+        $('.micbtnPolarBears').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        weirdWonderfulaudio.pause(); weirdWonderfulaudio.currentTime = 0;
+        $('.micbtnPolarBears').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#thePolesaudioplbtn").on('tap', function() {
+      if(!paused) {
+        weirdWonderfulaudio.pause();
+        paused = true;
+      } else {
+        weirdWonderfulaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#thePolesaudiofbtn").on('tap', function() {
+      var ctime = weirdWonderfulaudio.currentTime;
+      weirdWonderfulaudio.currentTime = ctime + 10;
+    });
+    
+    $("#thePolesaudiobbtn").on('tap', function() {
+      var ctime = weirdWonderfulaudio.currentTime;
+      weirdWonderfulaudio.currentTime = ctime - 10;
+    });
+    
+    $("#weirdWonderfulaudiopsbtn").on('tap', function() {
+      weirdWonderfulaudio.pause();
+    });
+  </script>
+</div> <!--//home-->
