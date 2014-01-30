@@ -36,6 +36,13 @@
 }
 
 
+#sub-adapting-to-new-world-safety-in-diversity-safety-in-the-food-web-quiz {
+	background:url('images/9-12/Animals/Adapting_To_New_Worlds/Safety_In_Diversity/Safety_In_The_Food_Web/Safety_In_The_Food_Web_Quiz/Background.png') no-repeat;
+  height:748px !important;
+  overflow:hidden !important;
+  width:1024px !important;
+}
+
 #sub-adapting-to-new-world-extinction-and-new-species-extinction-the-end-melting-habitats{
   background:url('images/9-12/Animals/Adapting_To_New_Worlds/Extinctions_And_New_Species/Extinction_The_End/Melting_Habitats/Melting_Habitats_BG.png') no-repeat;
   height:748px !important;
@@ -383,29 +390,170 @@
 }
 
 
-		.jungle_highway-bx{
-			background: url('images/9-12/Animals/Adapting_To_New_Worlds/Safety_In_Diversity/Safety_In_The_Food_Web/jungle_highway.png') no-repeat;
-			width: 419px;
-			height: 203px;
-			position: absolute;
-			left: 530px;
-			top: 60px;
-			
-		}
-		.cockroach_feast-bx{
-				background: url('images/9-12/Animals/Adapting_To_New_Worlds/Safety_In_Diversity/Safety_In_The_Food_Web/cockroach_feast.png') no-repeat;
-				width: 419px;
-				height: 203px;
-				position: absolute;
-				left: 530px;
-				top: 267px;		
-		}
+.jungle_highway-bx{
+	background: url('images/9-12/Animals/Adapting_To_New_Worlds/Safety_In_Diversity/Safety_In_The_Food_Web/jungle_highway.png') no-repeat;
+	width: 419px;
+	height: 203px;
+	position: absolute;
+	left: 530px;
+	top: 60px;
+	
+}
+.cockroach_feast-bx{
+		background: url('images/9-12/Animals/Adapting_To_New_Worlds/Safety_In_Diversity/Safety_In_The_Food_Web/cockroach_feast.png') no-repeat;
+		width: 419px;
+		height: 203px;
+		position: absolute;
+		left: 530px;
+		top: 267px;		
+}
+
+.food_web_quiz-bx{ 
+		background: url('images/9-12/Animals/Adapting_To_New_Worlds/Safety_In_Diversity/Safety_In_The_Food_Web/food_web_quiz.png') no-repeat;
+		width: 419px;
+		height: 203px;
+		position: absolute;
+		left: 530px;
+		top: 480px;			
+}
 		
-		.food_web_quiz-bx{ 
-				background: url('images/9-12/Animals/Adapting_To_New_Worlds/Safety_In_Diversity/Safety_In_The_Food_Web/food_web_quiz.png') no-repeat;
-				width: 419px;
-				height: 203px;
-				position: absolute;
-				left: 530px;
-				top: 480px;			
-		}
+/* ----------------------------------- Food Web Quiz Game ---------------------------- */
+
+.back_link{
+	background: url('images/9-12/Animals/Adapting_To_New_Worlds/Safety_In_Diversity/Safety_In_The_Food_Web/Safety_In_The_Food_Web_Quiz/Button_Back.png') no-repeat;
+	position: absolute;
+	top: 600px;
+	left: 35px;
+	height: 35px;
+	width: 90px;
+}
+
+.sprite_buttons{
+	background: url('images/9-12/Animals/Adapting_To_New_Worlds/Safety_In_Diversity/Safety_In_The_Food_Web/Safety_In_The_Food_Web_Quiz/button_Sprite_Sheet.png') no-repeat;
+	position: absolute;
+	top: 495px;
+	left: 35px;
+	height: 77px;
+	width: 355px;
+}
+
+.heading_link{
+	background: url('images/9-12/Animals/Adapting_To_New_Worlds/Safety_In_Diversity/Safety_In_The_Food_Web/Safety_In_The_Food_Web_Quiz/Heading.png') no-repeat;
+	position: absolute;
+	top: 75px;
+	left: 35px;
+	height: 240px;
+	width: 370px;
+}
+
+.corret_msg{
+	background: url('images/9-12/Animals/Adapting_To_New_Worlds/Safety_In_Diversity/Safety_In_The_Food_Web/Safety_In_The_Food_Web_Quiz/Correct_Message_Box.png') no-repeat;
+	position: absolute;
+	top: 195px;
+	left: 335px;
+	height: 350px;
+	width: 352px;
+	display:none;
+	z-index:1;
+}
+
+.corret_first_msg{
+	background: url('images/9-12/Animals/Adapting_To_New_Worlds/Safety_In_Diversity/Safety_In_The_Food_Web/Safety_In_The_Food_Web_Quiz/Correct_First_Message_Box.png') no-repeat;
+	position: absolute;
+	top: 195px;
+	left: 335px;
+	height: 350px;
+	width: 352px;
+	display:none;
+	z-index:1;
+}
+
+.corret_second_msg{
+	background: url('images/9-12/Animals/Adapting_To_New_Worlds/Safety_In_Diversity/Safety_In_The_Food_Web/Safety_In_The_Food_Web_Quiz/Correct_Second_Message_Box.png') no-repeat;
+	position: absolute;
+	top: 195px;
+	left: 335px;
+	height: 350px;
+	width: 352px;
+	display:none;
+	z-index:1;
+}
+
+.incorrect_msg{
+	background: url('images/9-12/Animals/Adapting_To_New_Worlds/Safety_In_Diversity/Safety_In_The_Food_Web/Safety_In_The_Food_Web_Quiz/Incorrect_Message_Box.png') no-repeat;
+	position: absolute;
+	top: 195px;
+	left: 335px;
+	height: 350px;
+	width: 352px;
+	display:none;
+	z-index:1;
+}
+
+.mpoints_awarded{
+	background: url('images/9-12/Animals/Adapting_To_New_Worlds/Safety_In_Diversity/Safety_In_The_Food_Web/Safety_In_The_Food_Web_Quiz/Mpoints_Awarded_Message_Box.png') no-repeat;
+	position: absolute;
+	top: 195px;
+	left: 335px;
+	height: 350px;
+	width: 352px;
+	display:none;
+	z-index:1;
+}
+
+.food_web_diagram{
+	background: url('images/9-12/Animals/Adapting_To_New_Worlds/Safety_In_Diversity/Safety_In_The_Food_Web/Safety_In_The_Food_Web_Quiz/Food_Web_Diagram.png') no-repeat;
+	position: absolute;
+	top: 72px;
+	left: 435px;
+	height: 680px;
+	width: 591px;
+}
+
+.navAdaptingNewWorld-FoodWebQuiz{
+	position: absolute;
+	left: 39px;
+	top: 329px;
+	width: 291px;
+	height: 145px;
+	text-align: left;
+	font-family: "comic sans ms";
+	font-size: 20px;
+	font-weight: normal;
+	color: #ffffff;
+}
+
+.false1{
+	position: absolute;
+	width: 73px;
+	height: 75px;
+}
+
+.false2{
+	position:absolute;
+	width:75px;
+	height:75px;
+	left:187px;
+}
+
+.false3{
+	position:absolute;
+	width:75px;
+	height:75px;
+	left:280px
+}
+
+.true_ans{
+	position: absolute;
+	width: 75px;
+	height: 75px;
+	left: 92px;
+}
+
+.try_again{
+	position: absolute;
+	width: 165px;
+	height: 46px;
+	top: 123px;
+	left: 91px;
+}

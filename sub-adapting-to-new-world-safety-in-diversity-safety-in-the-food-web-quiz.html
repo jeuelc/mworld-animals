@@ -1,0 +1,127 @@
+<!-- i-C-a -->
+<div data-role="page" id="sub-adapting-to-new-world-safety-in-diversity-safety-in-the-food-web-quiz">
+  <script src="js/slidebar_Adapting_New_World.js"></script>
+  <link rel="stylesheet" href="css/style_Adapting_New_World.css" />
+  
+  
+  <div class="bptitleholder" style="padding-top:14px;"></div>
+  <div class="back_link" id="back_bx"></div>
+  <div class="sprite_buttons" id="sprite_bx">
+	<div id="falseans1" class="false1"></div>
+	<div id="supertrueans" class="true_ans"></div>
+	<div id="falseans2" class="false2"></div>
+	<div id="falseans3" class="false3"></div>	
+  </div>
+  <div class="heading_link" id=""></div>
+  <div class="corret_msg" id="correct_bx"></div>
+  <div class="corret_first_msg" id="correctfirst_bx"></div>
+  <div class="corret_second_msg" id="correctsecond_bx"></div>
+  <div class="incorrect_msg" id="incorrect_bx"><div class="try_again" id="tryagain"></div></div>
+  <div class="mpoints_awarded" id="mpoints_awarded_bx"></div>
+  <div class="food_web_diagram" id="foodweb_bx"></div>
+  
+  <div data-role="content" class="kidzcontent">
+    <div class="navAdaptingNewWorld-FoodWebQuiz">
+		<p>On this island, how many mammal species will need to adapt, move or die if the plants are destroyed?</p>
+    </div>
+  </div> <!-- end content -->  
+    
+  <script>
+  // sound setup is in home.html and index.js
+    sound = new Audio(); // 'sound' is now an audio object
+    var playing;
+    var paused;
+    (function() {
+      playing = false;
+      paused = true;
+      $("#sub-adapting-to-new-world-safety-in-diversity-safety-in-the-food-web-quiz").swipe( { swipeRight:goBack, allowPageScroll:"auto"} );
+    })();
+	
+    $('#supertrueans').on('tap', function() {
+		$('#correct_bx').show();
+    });
+	
+    $('#falseans1').on('tap', function() {
+      if($('#incorrect_bx').css('display') == 'none'){
+		$('#incorrect_bx').show();		
+	  }
+    });
+	
+	$('#falseans2').on('tap', function() {
+      if($('#incorrect_bx').css('display') == 'none'){
+		$('#incorrect_bx').show();
+	  }
+    });
+	
+	$('#falseans3').on('tap', function() {
+      if($('#incorrect_bx').css('display') == 'none'){
+		$('#incorrect_bx').show();
+	  }
+    });
+	
+	$('#correct_bx').on('tap', function() {
+		$('#correct_bx').hide();
+    });
+	
+	$('#incorrect_bx').on('tap', function() {
+      $('#incorrect_bx').hide();
+    });
+	    
+    $('.homelinkbh').on('tap', function() { mainaudiobg.play(); bgsoundsuperfastAdaptingNewWorld.pause(); bgsoundsuperfastAdaptingNewWorld.currentTime = 0;});
+    
+    function goBack() {
+      $.mobile.changePage("sub-adapting-to-new-world-safety-in-diversity-safety-in-the-food-web.html", {transition: "slide", reverse: true });
+    }
+    
+	$('#back_bx').on('tap', function() {
+		$.mobile.changePage("sub-adapting-to-new-world-safety-in-diversity-safety-in-the-food-web.html", {transition: "slide", reverse: true });
+    });
+    function playsAdaptingNewWorld() {
+         bgsoundsuperfastAdaptingNewWorld.play();
+    }
+       
+    function pauseAdaptingNewWorld() {
+         bgsoundsuperfastAdaptingNewWorld.pause();
+    }
+    /* ******************** */
+    /* this is the microphone button */
+    $("#playstopFoodWebQuiz").on('tap', function() {
+      if(!playing) {
+        FoodWebQuizaudio.play();
+        $('.micbtnAdaptingNewWorld').css('background-position-x', '-81px');
+        playing = true;
+        paused = false;
+      } else {
+        FoodWebQuizaudio.pause(); FoodWebQuizaudio.currentTime = 0;
+        $('.micbtnAdaptingNewWorld').css('background-position-x', '0px');
+        playing = false;
+        paused = true;
+      }
+    });
+    
+    $("#FoodWebQuizaudioplbtn").on('tap', function() {
+      if(!paused) {
+        FoodWebQuizaudio.pause();
+        paused = true;
+      } else {
+        FoodWebQuizaudio.play();
+        paused = false;
+      }
+      //$(".audiopanel").css({"backgroundPosition":"-197px 0px"});
+    });
+    
+    $("#FoodWebQuizaudiofbtn").on('tap', function() {
+      var ctime = FoodWebQuizaudio.currentTime;
+      FoodWebQuizaudio.currentTime = ctime + 10;
+    });
+    
+    $("#FoodWebQuizaudiobbtn").on('tap', function() {
+      var ctime = FoodWebQuizaudio.currentTime;
+      FoodWebQuizaudio.currentTime = ctime - 10;
+    });
+    
+    $("#FoodWebQuizaudiopsbtn").on('tap', function() {
+      FoodWebQuizaudio.pause();
+    });
+  </script>
+</div> <!--//home-->
